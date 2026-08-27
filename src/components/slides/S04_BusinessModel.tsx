@@ -33,56 +33,80 @@ export function S04_BusinessModel({ index, total }: { index: number; total: numb
       title="Business Model"
       subtitle="From Platform Subscriptions to Premium Subscriptions, supporting a land and expand strategy"
     >
-      <div className="grid h-full grid-cols-2 content-center gap-x-16">
-        {TIERS.map((t, i) => (
-          <div key={`head-${t.title}`} className="relative flex flex-col justify-end pb-1.5">
-            {i === 1 && (
-              <svg
-                viewBox="0 0 64 24"
-                className="absolute top-[6px] -left-[68px] h-5 w-14 text-[var(--accent)]"
-              >
-                <path
-                  d="M2 12h52M46 4l10 8-10 8"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            )}
+      <div className="grid h-full grid-cols-[1fr_auto_1fr] content-center items-center gap-x-8">
+        {[TIERS[0]].map((t) => (
+          <div
+            key={t.title}
+            className="flex flex-col rounded-[12px] border border-[var(--hairline)] p-7"
+          >
             <div className="eyebrow !text-[var(--muted)]">{t.step}</div>
-            <h3 className="mt-1.5 text-[24px] font-bold leading-tight text-[var(--ink)]">
+            <h3 className="mt-1.5 text-[22px] font-bold leading-tight text-[var(--ink)]">
               {t.title}
             </h3>
-          </div>
-        ))}
 
-        {TIERS.map((t) => (
-          <div key={`desc-${t.title}`} className="flex flex-col justify-start pt-3">
-            <p className="text-[13.5px] leading-relaxed text-[var(--body)]">{t.desc}</p>
+            <p className="mt-3 text-[13.5px] leading-relaxed text-[var(--body)]">{t.desc}</p>
             <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--body)]">
               <span className="font-semibold text-[var(--ink)]">{t.focusLabel}</span>{" "}
               {t.focus}
             </p>
+
+            <div className="mt-6 grid grid-cols-[140px_90px_1fr] gap-4 border-t border-[var(--hairline)] pt-5">
+              <div>
+                <div className="text-[20px] font-bold text-[var(--accent-deep)]">{t.price}</div>
+                <div className="text-[11px] text-[var(--muted)]">{t.priceSub}</div>
+              </div>
+              <div>
+                <div className="text-[20px] font-bold text-[var(--ink)]">{t.margin}</div>
+                <div className="text-[11px] text-[var(--muted)]">Gross margin</div>
+              </div>
+              <div>
+                <div className="text-[13px] font-semibold text-[var(--ink)]">{t.terms}</div>
+                <div className="text-[11px] text-[var(--muted)]">Contract terms</div>
+              </div>
+            </div>
           </div>
         ))}
 
-        <div className="col-span-2 mt-6 border-t border-[var(--hairline)]" />
+        <svg viewBox="0 0 40 24" className="h-5 w-10 text-[var(--accent)]">
+          <path
+            d="M2 12h28M24 4l10 8-10 8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
 
-        {TIERS.map((t) => (
-          <div key={`metrics-${t.title}`} className="flex gap-10 pt-5">
-            <div>
-              <div className="text-[20px] font-bold text-[var(--accent-deep)]">{t.price}</div>
-              <div className="text-[11px] text-[var(--muted)]">{t.priceSub}</div>
-            </div>
-            <div>
-              <div className="text-[20px] font-bold text-[var(--ink)]">{t.margin}</div>
-              <div className="text-[11px] text-[var(--muted)]">Gross margin</div>
-            </div>
-            <div>
-              <div className="text-[13px] font-semibold text-[var(--ink)]">{t.terms}</div>
-              <div className="text-[11px] text-[var(--muted)]">Contract terms</div>
+        {[TIERS[1]].map((t) => (
+          <div
+            key={t.title}
+            className="flex flex-col rounded-[12px] border border-[var(--hairline)] p-7"
+          >
+            <div className="eyebrow !text-[var(--muted)]">{t.step}</div>
+            <h3 className="mt-1.5 text-[22px] font-bold leading-tight text-[var(--ink)]">
+              {t.title}
+            </h3>
+
+            <p className="mt-3 text-[13.5px] leading-relaxed text-[var(--body)]">{t.desc}</p>
+            <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--body)]">
+              <span className="font-semibold text-[var(--ink)]">{t.focusLabel}</span>{" "}
+              {t.focus}
+            </p>
+
+            <div className="mt-6 grid grid-cols-[140px_90px_1fr] gap-4 border-t border-[var(--hairline)] pt-5">
+              <div>
+                <div className="text-[20px] font-bold text-[var(--accent-deep)]">{t.price}</div>
+                <div className="text-[11px] text-[var(--muted)]">{t.priceSub}</div>
+              </div>
+              <div>
+                <div className="text-[20px] font-bold text-[var(--ink)]">{t.margin}</div>
+                <div className="text-[11px] text-[var(--muted)]">Gross margin</div>
+              </div>
+              <div>
+                <div className="text-[13px] font-semibold text-[var(--ink)]">{t.terms}</div>
+                <div className="text-[11px] text-[var(--muted)]">Contract terms</div>
+              </div>
             </div>
           </div>
         ))}

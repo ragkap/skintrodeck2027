@@ -83,7 +83,6 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
     <Slide
       index={index}
       total={total}
-      eyebrow="AI Strategy"
       title="AI is a Force Multiplier"
       subtitle="Foundation models are becoming abundant. Proprietary data and expert networks are not."
     >

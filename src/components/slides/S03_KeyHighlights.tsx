@@ -30,9 +30,8 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
     <Slide
       index={index}
       total={total}
-      eyebrow="Proven · Profitable · Scaling"
       title="Key Highlights"
-      subtitle="Financial and shareholder profile at a glance"
+      subtitle="Proven · Profitable · Scaling"
     >
       <div className="flex h-full flex-col justify-center gap-10">
         <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">

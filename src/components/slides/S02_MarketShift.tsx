@@ -40,13 +40,15 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
             >
               <defs>
                 <marker id="growthArrow" markerWidth="7" markerHeight="7" refX="3.2" refY="3.5" orient="auto">
-                  <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--accent)" />
+                  <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--ink)" />
                 </marker>
               </defs>
-              <path
-                d="M26,86 C42,58 56,26 72,15"
-                fill="none"
-                stroke="var(--accent)"
+              <line
+                x1="43"
+                y1="84"
+                x2="69"
+                y2="18"
+                stroke="var(--ink)"
                 strokeWidth="1.3"
                 strokeDasharray="4 3"
                 strokeLinecap="round"

@@ -34,11 +34,13 @@ export function Slide({
     >
       {!bare && (
         <div className="px-16 pt-12 pb-6">
-          {eyebrow && (
+          {eyebrow ? (
             <div className="mb-2 flex items-center gap-2.5">
               <span className="rule" />
               <span className="eyebrow">{eyebrow}</span>
             </div>
+          ) : (
+            <span className="rule mb-3 block" />
           )}
           {title && (
             <h1 className="text-[34px] leading-[1.15] font-bold tracking-[-0.01em] text-[var(--ink)]">

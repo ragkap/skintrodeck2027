@@ -44,34 +44,6 @@ function TierIcon({ kind }: { kind: "package" | "gem" }) {
   );
 }
 
-function PriceTagIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-      <path d="M20 12.5 12.5 20a1.5 1.5 0 0 1-2.12 0l-6.38-6.38a1.5 1.5 0 0 1 0-2.12L11.5 4H19a1 1 0 0 1 1 1v7.5Z" strokeLinejoin="round" />
-      <circle cx="15" cy="8" r="1.4" />
-    </svg>
-  );
-}
-
-function MarginIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-      <path d="M19 5 5 19" strokeLinecap="round" />
-      <circle cx="7" cy="7" r="2.5" />
-      <circle cx="17" cy="17" r="2.5" />
-    </svg>
-  );
-}
-
-function TermsIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-      <rect x="4" y="5" width="16" height="15" rx="2" />
-      <path d="M4 10h16M8 3v4M16 3v4" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function TierCard({ t }: { t: (typeof TIERS)[number] }) {
   return (
     <div className="flex h-full flex-col rounded-[12px] border border-[var(--hairline)] p-7">
@@ -92,24 +64,15 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
 
       <div className="mt-auto grid grid-cols-[140px_90px_1fr] gap-4 border-t border-[var(--hairline)] pt-5">
         <div>
-          <div className="mb-1 text-[var(--accent-deep)]">
-            <PriceTagIcon />
-          </div>
           <div className="text-[20px] font-bold text-[var(--accent-deep)]">{t.price}</div>
           <div className="text-[11px] text-[var(--muted)]">{t.priceSub}</div>
         </div>
         <div>
-          <div className="mb-1 text-[var(--muted)]">
-            <MarginIcon />
-          </div>
           <div className="text-[20px] font-bold text-[var(--ink)]">{t.margin}</div>
           <div className="text-[11px] text-[var(--muted)]">Gross margin</div>
         </div>
         <div>
-          <div className="mb-1 text-[var(--muted)]">
-            <TermsIcon />
-          </div>
-          <div className="text-[13px] font-semibold text-[var(--ink)]">{t.terms}</div>
+          <div className="text-[20px] font-bold text-[var(--ink)]">{t.terms}</div>
           <div className="text-[11px] text-[var(--muted)]">Contract terms</div>
         </div>
       </div>

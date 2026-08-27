@@ -12,6 +12,9 @@ const MIX = [
   { year: "2025", premium: 65, platform: 35 },
 ];
 
+const ACV_SCALE = 6.5;
+const MIX_SCALE = 2.9;
+
 export function S08_RevenueGrowth({ index, total }: { index: number; total: number }) {
   return (
     <Slide
@@ -30,7 +33,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
                 <div className="tabular text-[14px] font-bold text-[var(--accent-deep)]">
                   {b.v}%
                 </div>
-                <div style={{ height: b.v * 3.2 }} className="w-14 bg-[var(--accent)]" />
+                <div style={{ height: b.v * ACV_SCALE }} className="w-14 bg-[var(--accent)]" />
                 <div className="caption uppercase tracking-wide">{b.l}</div>
               </div>
             ))}
@@ -41,19 +44,29 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
         </div>
 
         <div className="flex flex-col pl-10">
-          <div className="caption mb-5 uppercase tracking-wide">Share of Premium Subscriptions</div>
-          <div className="flex flex-1 items-end justify-center gap-12 pb-2">
+          <div className="flex items-center justify-between">
+            <div className="caption uppercase tracking-wide">Share of Premium Subscriptions</div>
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
+                <span className="h-2.5 w-2.5 rounded-sm bg-[var(--accent)]" /> Premium
+              </span>
+              <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
+                <span className="h-2.5 w-2.5 rounded-sm bg-[#e7eaee]" /> Platform
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-1 items-end justify-center gap-12 pb-2 pt-4">
             {MIX.map((m) => (
               <div key={m.year} className="flex flex-col items-center gap-2">
                 <div className="flex w-16 flex-col-reverse">
                   <div
-                    style={{ height: m.platform * 2.4 }}
+                    style={{ height: m.platform * MIX_SCALE }}
                     className="flex items-start justify-center bg-[#e7eaee] pt-1"
                   >
                     <span className="tabular text-[10px] text-[var(--body)]">{m.platform}%</span>
                   </div>
                   <div
-                    style={{ height: m.premium * 2.4 }}
+                    style={{ height: m.premium * MIX_SCALE }}
                     className="flex items-start justify-center bg-[var(--accent)] pt-1"
                   >
                     <span className="tabular text-[10px] text-white">{m.premium}%</span>
@@ -63,15 +76,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-6 border-t border-[var(--hairline)] pt-4">
-            <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
-              <span className="h-2.5 w-2.5 rounded-sm bg-[var(--accent)]" /> Premium
-            </span>
-            <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
-              <span className="h-2.5 w-2.5 rounded-sm bg-[#e7eaee]" /> Platform
-            </span>
-          </div>
-          <p className="pt-3 text-center font-serif text-[13px] italic text-[var(--body)]">
+          <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
             Higher-margin premium subscriptions continue to gain share
           </p>
         </div>

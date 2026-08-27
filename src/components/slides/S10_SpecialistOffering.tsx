@@ -16,7 +16,7 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
       title="Specialist Product Offering"
       subtitle="Multi-asset, differentiated and demand-driven — specialist, Asia-first, with a growing private markets edge"
     >
-      <div className="flex h-full flex-col gap-8 pt-2">
+      <div className="flex h-full flex-col justify-center gap-10">
         <div className="grid grid-cols-4 divide-x divide-[var(--hairline)]">
           <Stat value="300+" label="Content providers" />
           <div className="pl-8">
@@ -44,14 +44,14 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
           </div>
         </div>
 
-        <div className="grid flex-1 grid-cols-2 gap-16 border-t border-[var(--hairline)] pt-6">
-          <div className="flex flex-col justify-center">
+        <div className="grid grid-cols-2 gap-16 border-t border-[var(--hairline)] pt-6">
+          <div>
             <div className="caption mb-3 uppercase tracking-wide">Research Focus — Asia-First</div>
             <BarRow label="APAC" value={50} />
             <BarRow label="Americas & EMEA" value={24} />
             <BarRow label="Macro / Thematic" value={26} />
           </div>
-          <div className="flex flex-col justify-center">
+          <div>
             <div className="caption mb-3 uppercase tracking-wide">
               Market Cap Distribution — Small & Mid-Cap Focus
             </div>

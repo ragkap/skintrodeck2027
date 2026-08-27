@@ -13,8 +13,8 @@ import { useEffect, useRef } from "react";
  */
 
 const NODES = ["Real-time Insight", "Specialist Alt Data", "On-Demand Access"];
-const TEAL = "#24a9a7";
-const GREEN = "#4db364";
+const ACCENT = "#4db364";
+const ACCENT_DEEP = "#3a9a53";
 const SIZE = 460; // logical px (canvas is DPR-scaled)
 
 export function HeroTriangle() {
@@ -27,10 +27,24 @@ export function HeroTriangle() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = SIZE * dpr;
-    canvas.height = SIZE * dpr;
-    ctx.scale(dpr, dpr);
+    // The canvas is drawn once at a fixed logical SIZE, but ScaledStage
+    // stretches the whole slide via a CSS transform that can scale it well
+    // beyond 1:1 on large screens. Size the backing bitmap off the canvas's
+    // actual rendered box (post-transform) rather than just devicePixelRatio,
+    // or the triangle looks soft on anything bigger than the design size.
+    let scaleFactor = 1;
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect();
+      const renderedScale = rect.width > 0 ? rect.width / SIZE : 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      scaleFactor = Math.min(renderedScale * dpr, 3);
+      canvas.width = Math.round(SIZE * scaleFactor);
+      canvas.height = Math.round(SIZE * scaleFactor);
+      ctx.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
+    };
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas);
 
     const cx = SIZE / 2;
     const cy = SIZE / 2;
@@ -52,7 +66,7 @@ export function HeroTriangle() {
       const p = verts(t);
 
       const halo = ctx.createRadialGradient(cx, cy, 10, cx, cy, R + 60);
-      halo.addColorStop(0, "rgba(36,169,167,0.10)");
+      halo.addColorStop(0, "rgba(58,154,83,0.10)");
       halo.addColorStop(1, "rgba(77,179,100,0)");
       ctx.fillStyle = halo;
       ctx.beginPath();
@@ -60,7 +74,7 @@ export function HeroTriangle() {
       ctx.fill();
 
       const fill = ctx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
-      fill.addColorStop(0, "rgba(36,169,167,0.13)");
+      fill.addColorStop(0, "rgba(58,154,83,0.13)");
       fill.addColorStop(1, "rgba(77,179,100,0.13)");
       ctx.beginPath();
       ctx.moveTo(p[0].x, p[0].y);
@@ -71,14 +85,14 @@ export function HeroTriangle() {
       ctx.fill();
 
       const stroke = ctx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
-      stroke.addColorStop(0, TEAL);
-      stroke.addColorStop(1, GREEN);
+      stroke.addColorStop(0, ACCENT_DEEP);
+      stroke.addColorStop(1, ACCENT);
       ctx.strokeStyle = stroke;
       ctx.lineWidth = 1.75;
       ctx.lineJoin = "round";
       ctx.stroke();
 
-      ctx.strokeStyle = "rgba(36,169,167,0.18)";
+      ctx.strokeStyle = "rgba(58,154,83,0.18)";
       ctx.lineWidth = 1;
       for (const v of p) {
         ctx.beginPath();
@@ -86,14 +100,14 @@ export function HeroTriangle() {
         ctx.lineTo(v.x, v.y);
         ctx.stroke();
       }
-      ctx.fillStyle = "rgba(36,169,167,0.5)";
+      ctx.fillStyle = "rgba(58,154,83,0.5)";
       ctx.beginPath();
       ctx.arc(cx, cy, 3, 0, Math.PI * 2);
       ctx.fill();
 
       p.forEach((v, i) => {
-        const accent = i === NODES.length - 1 ? GREEN : TEAL;
-        ctx.fillStyle = i === NODES.length - 1 ? "rgba(77,179,100,0.16)" : "rgba(36,169,167,0.16)";
+        const accent = i === NODES.length - 1 ? ACCENT : ACCENT_DEEP;
+        ctx.fillStyle = i === NODES.length - 1 ? "rgba(77,179,100,0.16)" : "rgba(58,154,83,0.16)";
         ctx.beginPath();
         ctx.arc(v.x, v.y, 15, 0, Math.PI * 2);
         ctx.fill();
@@ -122,7 +136,7 @@ export function HeroTriangle() {
 
     if (reduce) {
       draw(0);
-      return;
+      return () => ro.disconnect();
     }
     let raf = 0;
     const loop = (t: number) => {
@@ -130,7 +144,10 @@ export function HeroTriangle() {
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
   }, []);
 
   return (
@@ -142,7 +159,7 @@ export function HeroTriangle() {
           ref={(el) => {
             labelRefs.current[i] = el;
           }}
-          className="pointer-events-none absolute top-0 left-0 whitespace-nowrap rounded-full border border-[rgba(36,169,167,0.35)] bg-white/90 px-2.5 py-1 text-[11.5px] font-semibold text-[var(--accent-deep)] shadow-sm backdrop-blur-sm will-change-transform"
+          className="pointer-events-none absolute top-0 left-0 whitespace-nowrap rounded-full border border-[rgba(58,154,83,0.35)] bg-white/90 px-2.5 py-1 text-[11.5px] font-semibold text-[var(--accent-deep)] shadow-sm backdrop-blur-sm will-change-transform"
         >
           {label}
         </div>

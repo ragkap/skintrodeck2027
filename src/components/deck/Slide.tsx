@@ -48,7 +48,7 @@ export function Slide({
             </h1>
           )}
           {subtitle && (
-            <p className="mt-2.5 text-[15.5px] leading-snug whitespace-nowrap text-[var(--body)]">
+            <p className="mt-2.5 max-w-[1100px] text-[15.5px] leading-snug text-[var(--body)]">
               {subtitle}
             </p>
           )}

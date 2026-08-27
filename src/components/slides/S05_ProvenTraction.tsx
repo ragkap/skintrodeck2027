@@ -35,7 +35,6 @@ export function S05_ProvenTraction({ index, total }: { index: number; total: num
           <Stat value="$14T" label="Client AUM" />
           <Stat value="70k+" label="Users" />
           <Stat value="30k" label="Press Mentions" />
-          <Stat value="10k" label="Companies Covered" />
         </div>
         <div className="grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-7 self-center">
           {GROUPS.map((g) => (

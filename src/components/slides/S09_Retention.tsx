@@ -3,19 +3,57 @@ import { Slide } from "../deck/Slide";
 const SCALE = 4.5;
 
 const CHURN = [
-  { l: "Left firm", v: 54 },
-  { l: "Other (not provided)", v: 37 },
-  { l: "Budget", v: 9 },
-  { l: "Engagement", v: 1 },
+  { l: "Left firm", v: 54, featured: true },
+  { l: "Other (not provided)", v: 37, featured: false },
+  { l: "Budget", v: 9, featured: false },
+  { l: "Engagement", v: 1, featured: false },
 ];
 
 const RESUB = [
-  { l: "1", v: 6 },
-  { l: "2", v: 70 },
-  { l: "3", v: 17 },
-  { l: "4", v: 6 },
-  { l: "5", v: 1 },
+  { l: "1", v: 6, featured: false },
+  { l: "2", v: 70, featured: true },
+  { l: "3", v: 17, featured: true },
+  { l: "4", v: 6, featured: true },
+  { l: "5", v: 1, featured: true },
 ];
+
+function BarChart({
+  data,
+  dividerAfter,
+}: {
+  data: { l: string; v: number; featured: boolean }[];
+  dividerAfter: number;
+}) {
+  return (
+    <div
+      className="relative grid flex-1 items-end pt-4 pb-2"
+      style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}
+    >
+      <div
+        className="marching-line pointer-events-none absolute top-0 bottom-0 w-[2px]"
+        style={{ left: `${(dividerAfter / data.length) * 100}%` }}
+      />
+      {data.map((b) => (
+        <div key={b.l} className="flex flex-col items-center gap-2">
+          <div
+            className={`tabular text-[11px] font-semibold ${
+              b.featured ? "text-[var(--accent-deep)]" : "text-[var(--ai-pink)]"
+            }`}
+          >
+            {b.v}%
+          </div>
+          <div
+            style={{ height: Math.max(b.v * SCALE, 4) }}
+            className={`w-11 ${b.featured ? "bg-[var(--accent)]" : "bg-[var(--ai-pink)]"}`}
+          />
+          <div className="w-16 text-center text-[9px] font-medium leading-tight text-[var(--muted)]">
+            {b.l}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function S09_Retention({ index, total }: { index: number; total: number }) {
   return (
@@ -28,20 +66,7 @@ export function S09_Retention({ index, total }: { index: number; total: number }
       <div className="grid h-full grid-cols-2 divide-x divide-[var(--hairline)] pt-2">
         <div className="flex flex-col pr-10">
           <div className="caption uppercase tracking-wide">Reasons for Churn</div>
-          <div className="flex flex-1 items-end justify-center gap-8 pb-2 pt-4">
-            {CHURN.map((b) => (
-              <div key={b.l} className="flex flex-col items-center gap-2">
-                <div className="tabular text-[11px] font-semibold text-[var(--ink)]">{b.v}%</div>
-                <div
-                  style={{ height: Math.max(b.v * SCALE, 4) }}
-                  className={`w-11 ${b.l === "Left firm" ? "bg-[var(--accent)]" : "bg-[#e7eaee]"}`}
-                />
-                <div className="w-16 text-center text-[9px] font-medium leading-tight text-[var(--muted)]">
-                  {b.l}
-                </div>
-              </div>
-            ))}
-          </div>
+          <BarChart data={CHURN} dividerAfter={1} />
           <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
             Over 50% of reported platform revenue churn is structural, driven by users
             exiting their firms
@@ -52,22 +77,7 @@ export function S09_Retention({ index, total }: { index: number; total: number }
           <div className="caption uppercase tracking-wide">
             Resubscription Across Firms — by Number Subscribed At
           </div>
-          <div className="flex flex-1 items-end justify-center gap-7 pb-2 pt-4">
-            {RESUB.map((b) => (
-              <div key={b.l} className="flex flex-col items-center gap-2">
-                <div className="tabular text-[11px] font-semibold text-[var(--accent-deep)]">
-                  {b.v}%
-                </div>
-                <div
-                  style={{ height: Math.max(b.v * SCALE, 4) }}
-                  className="w-10 bg-[var(--accent)]"
-                />
-                <div className="w-16 text-center text-[9px] font-medium leading-tight text-[var(--muted)]">
-                  {b.l}
-                </div>
-              </div>
-            ))}
-          </div>
+          <BarChart data={RESUB} dividerAfter={1} />
           <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
             94% of users re-subscribe after joining new firms, highlighting strong
             loyalty and retention

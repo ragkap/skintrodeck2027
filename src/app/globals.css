@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────
+   Design system — minimal editorial deck. Two typefaces only:
+   Roboto (structure, body, headlines) and PT Serif italic
+   (reserved for emphasis and pull-quotes). White throughout.
+   One accent color, #4db364, spent sparingly — a rule, a number,
+   an icon stroke — never as a fill or a badge background.
+   ───────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --accent: #4db364;
+  --accent-deep: #3a9a53;
+
+  --ink: #111827;
+  --body: #475569;
+  --muted: #94a3b8;
+
+  --hairline: #e7eaee;
+  --hairline-strong: #d7dce2;
+
+  --danger: #c4334a;
+  --positive: #2f9e57;
+
+  --slide-w: 1280px;
+  --slide-h: 720px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-roboto), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
+  background: #f4f5f6;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+::selection {
+  background: rgba(77, 179, 100, 0.18);
+  color: var(--accent-deep);
+}
+
+em,
+.emphasis {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Small uppercase kicker — plain Roboto, not mono. Used once per slide, at most. */
+.eyebrow {
+  font-family: var(--font-roboto), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-deep);
+}
+
+.caption {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* Short accent underline — the one recurring brand mark, used under an
+   eyebrow or a headline, never as a filled bar or gradient block. */
+.rule {
+  height: 2px;
+  width: 36px;
+  background: var(--accent);
+}
+
+.hairline {
+  border-color: var(--hairline);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes arrow-flow {
+  from {
+    stroke-dashoffset: 16;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.arrow-flow {
+  animation: arrow-flow 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-flow {
+    animation: none;
+  }
 }

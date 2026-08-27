@@ -1,69 +1,48 @@
-import Image from "next/image";
+import { Deck } from "@/components/deck/Deck";
+import { S01_Cover } from "@/components/slides/S01_Cover";
+import { S02_MarketShift } from "@/components/slides/S02_MarketShift";
+import { S03_KeyHighlights } from "@/components/slides/S03_KeyHighlights";
+import { S04_BusinessModel } from "@/components/slides/S04_BusinessModel";
+import { S05_ProvenTraction } from "@/components/slides/S05_ProvenTraction";
+import { S06_CompetitiveLandscape } from "@/components/slides/S06_CompetitiveLandscape";
+import { S07_GoToMarket } from "@/components/slides/S07_GoToMarket";
+import { S08_RevenueGrowth } from "@/components/slides/S08_RevenueGrowth";
+import { S09_Retention } from "@/components/slides/S09_Retention";
+import { S10_SpecialistOffering } from "@/components/slides/S10_SpecialistOffering";
+import { S11_AIAccelerator } from "@/components/slides/S11_AIAccelerator";
+import { S12_SpecialistDatasets } from "@/components/slides/S12_SpecialistDatasets";
+import { S13_PrivateMarkets } from "@/components/slides/S13_PrivateMarkets";
+import { S14_WhyNow } from "@/components/slides/S14_WhyNow";
+import { S15_Consolidation } from "@/components/slides/S15_Consolidation";
+import { S16_UniquelyPositioned } from "@/components/slides/S16_UniquelyPositioned";
+import { S17_SynergisticMA } from "@/components/slides/S17_SynergisticMA";
+import { S18_FundraiseHistory } from "@/components/slides/S18_FundraiseHistory";
+import { S19_ThankYou } from "@/components/slides/S19_ThankYou";
+
+const COMPONENTS = [
+  S01_Cover,
+  S02_MarketShift,
+  S03_KeyHighlights,
+  S04_BusinessModel,
+  S05_ProvenTraction,
+  S06_CompetitiveLandscape,
+  S07_GoToMarket,
+  S08_RevenueGrowth,
+  S09_Retention,
+  S10_SpecialistOffering,
+  S11_AIAccelerator,
+  S12_SpecialistDatasets,
+  S13_PrivateMarkets,
+  S14_WhyNow,
+  S15_Consolidation,
+  S16_UniquelyPositioned,
+  S17_SynergisticMA,
+  S18_FundraiseHistory,
+  S19_ThankYou,
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  const total = COMPONENTS.length;
+  const slides = COMPONENTS.map((Comp, i) => <Comp key={i} index={i + 1} total={total} />);
+  return <Deck slides={slides} />;
 }

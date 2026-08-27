@@ -21,6 +21,9 @@
   --danger: #c4334a;
   --positive: #2f9e57;
 
+  /* Reserved for AI / αSK surfaces only — used sparingly for extra pop. */
+  --ai-pink: #b63998;
+
   --slide-w: 1280px;
   --slide-h: 720px;
 }

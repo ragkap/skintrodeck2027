@@ -111,7 +111,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
           <div className="grid grid-cols-6 gap-6">
             {FEATURES.map((f) => (
               <div key={f.t} className="flex flex-col gap-2">
-                <div className="text-[var(--accent-deep)]">
+                <div className="text-[var(--ai-pink)]">
                   <f.icon />
                 </div>
                 <div className="text-[12px] font-bold text-[var(--ink)]">{f.t}</div>

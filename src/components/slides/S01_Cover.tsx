@@ -33,10 +33,11 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
               <span className="text-[var(--accent-deep)]">for the AI Era</span>
             </h1>
             <p className="mt-5 max-w-[560px] text-[15px] leading-relaxed text-[var(--body)]">
-              The only platform unifying real-time independent insight, specialist
-              alternative data and on-demand analyst access — with an AI layer grounded
-              in that research that points readers to the analysts behind it, not
-              around them.
+              Smartkarma is a proprietary investment intelligence platform that unifies
+              real-time independent research, specialist alternative data and
+              on-demand access to the analysts behind it — with an AI layer,{" "}
+              <span className="font-semibold text-[var(--ai-pink)]">αSK</span>, grounded
+              in a decade of vetted research.
             </p>
           </div>
           <div className="flex items-center justify-center">

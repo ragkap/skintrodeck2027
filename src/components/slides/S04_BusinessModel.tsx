@@ -4,9 +4,9 @@ const TIERS = [
   {
     step: "Land",
     title: "Platform Subscription",
-    desc: "Real-time insight from 300+ curated sources, under 1 subscription.",
+    desc: "Real-time insight from 300+ curated sources, under 1 subscription",
     focusLabel: "Specialist Focus:",
-    focus: "Event-Driven, Index Rebalance, ECM, Private Markets.",
+    focus: "Event-Driven, Index Rebalance, ECM, Private Markets",
     price: "US$10,950",
     priceSub: "per user, annual, in advance",
     margin: "30%+",
@@ -15,9 +15,9 @@ const TIERS = [
   {
     step: "Expand",
     title: "Premium Subscription",
-    desc: "Specialist alternative data subscriptions and high-touch access.",
+    desc: "Specialist alternative data subscriptions and high-touch access",
     focusLabel: "Delivery:",
-    focus: "Sold per-team, per-dataset basis, via API and MCP.",
+    focus: "Sold per-team, per-dataset basis, via API and MCP",
     price: "US$35k–200k",
     priceSub: "per dataset, per team, annual, in advance",
     margin: "30–90%",
@@ -81,7 +81,7 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
 
       <p className="mt-4 text-[13.5px] leading-relaxed text-[var(--body)]">{t.desc}</p>
       <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--body)]">
-        <span className="font-semibold text-[var(--ink)]">{t.focusLabel}</span> {t.focus}
+        <span className="text-[var(--ink)]">{t.focusLabel}</span> {t.focus}
       </p>
 
       <div className="mt-auto grid grid-cols-[1fr_90px] gap-4 border-t border-[var(--hairline)] pt-5">

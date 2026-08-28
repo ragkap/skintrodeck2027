@@ -1,5 +1,5 @@
 import { Slide } from "../deck/Slide";
-import { Bullet } from "../deck/ui";
+import { Bullet, Mark } from "../deck/ui";
 
 export function S02_MarketShift({ index, total }: { index: number; total: number }) {
   return (
@@ -13,13 +13,13 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
         <ul className="flex flex-col justify-center gap-6">
           <Bullet title="Real-time proprietary data and insight are now mission-critical:">
             portfolio managers cite real-time specialist data and insight as critical to
-            front-office decision-making. 67% report using alternative data in 2025 (vs
-            ~31% in 2022), with 94% of those planning to increase budgets.
+            front-office decision-making. <Mark>67% report using alternative data</Mark> in
+            2025 (vs ~31% in 2022), with <Mark>94% planning to increase budgets</Mark>.
           </Bullet>
           <Bullet title="The Alt-Intelligence market is exploding:">
-            projected to grow from $12B in 2025 to $112B by 2030. APAC will outpace the
-            world — jumping from $1.2B in 2022 to $42B by 2030, a major monetisation
-            opportunity.
+            projected to grow from <Mark>$12B in 2025 to $112B by 2030</Mark>. APAC will
+            outpace the world — jumping from $1.2B in 2022 to $42B by 2030, a major
+            monetisation opportunity.
           </Bullet>
           <Bullet title="Legacy solutions are being left behind:">
             asset managers and institutions are shifting spend to real-time, AI-native
@@ -40,15 +40,15 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
             >
               <defs>
                 <marker id="growthArrow" markerWidth="7" markerHeight="7" refX="3.2" refY="3.5" orient="auto">
-                  <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--ink)" />
+                  <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--ai-pink)" />
                 </marker>
               </defs>
               <line
                 x1="43"
-                y1="84"
+                y1="76"
                 x2="69"
-                y2="18"
-                stroke="var(--ink)"
+                y2="9"
+                stroke="var(--ai-pink)"
                 strokeWidth="1.3"
                 strokeDasharray="4 3"
                 strokeLinecap="round"

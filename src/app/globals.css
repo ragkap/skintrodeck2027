@@ -12,8 +12,8 @@
   --accent-deep: #3a9a53;
 
   --ink: #111827;
-  --body: #475569;
-  --muted: #94a3b8;
+  --body: #3a4550;
+  --muted: #64748b;
 
   --hairline: #e7eaee;
   --hairline-strong: #d7dce2;
@@ -90,8 +90,9 @@ em,
 /* Short accent underline — the one recurring brand mark, used under an
    eyebrow or a headline, never as a filled bar or gradient block. */
 .rule {
-  height: 2px;
-  width: 36px;
+  height: 4px;
+  width: 40px;
+  border-radius: 1px;
   background: var(--accent);
 }
 

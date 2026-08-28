@@ -56,7 +56,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
           ))}
         </div>
 
-        <div className="relative mt-5 flex items-end justify-between border-t border-[var(--hairline)] pt-5">
+        <div className="relative mt-3 flex items-end justify-between border-t border-[var(--hairline)] pt-3">
           <div className="flex items-center gap-6">
             <span className="caption uppercase tracking-wide">Shareholders</span>
             <div className="flex items-center gap-5 opacity-80">
@@ -81,9 +81,9 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
             <Image
               src="/logos/winner-badge-hires.png"
               alt="MAS Knowledge Enterprise Award — Winner"
-              width={104}
-              height={98}
-              className="-my-3 object-contain"
+              width={114}
+              height={107}
+              className="object-contain"
             />
           </div>
           <div className="flex items-center gap-2 caption">

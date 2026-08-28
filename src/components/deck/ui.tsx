@@ -20,6 +20,14 @@ export function Stat({
   );
 }
 
+export function Mark({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-[3px] bg-[rgba(77,179,100,0.16)] px-1 font-semibold text-[var(--ink)]">
+      {children}
+    </span>
+  );
+}
+
 export function Bullet({
   title,
   children,

@@ -54,7 +54,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
 
         <div className="flex flex-col pl-10">
           <div className="flex items-center justify-between">
-            <div className="caption uppercase tracking-wide">Share of Premium Subscriptions</div>
+            <div className="caption uppercase tracking-wide">Growing Share of Premium Subscriptions</div>
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
                 <span className="h-2.5 w-2.5 rounded-sm bg-[var(--premium)]" /> Premium

@@ -61,7 +61,7 @@ const GROUPS: { label: string; logos: Logo[] }[] = [
     ],
   },
   {
-    label: "Wealthtecs",
+    label: "Wealthtechs/Intermediaries",
     logos: [
       { name: "grOw", file: "grow.webp" },
       { name: "Syfe" },

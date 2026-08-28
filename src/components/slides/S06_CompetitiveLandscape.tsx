@@ -37,7 +37,7 @@ export function S06_CompetitiveLandscape({ index, total }: { index: number; tota
       title="Competitive Landscape"
       subtitle="Smartkarma is uniquely positioned as the only platform combining real-time insight, specialist alternative data, and on-demand analyst expertise across the full institutional decision cycle"
     >
-      <div className="grid h-full grid-cols-[1.5fr_1fr] items-center gap-8">
+      <div className="grid h-full grid-cols-[1.85fr_0.85fr] items-center gap-6">
         <Image
           src="/graphics/competitive-landscape.png"
           alt="Competitive landscape quadrant: Smartkarma positioned as the unified platform combining on-demand access and specialist depth, versus AI tools, expert networks, specialist research firms, broker research, news platforms, and crowd-sourced tools"

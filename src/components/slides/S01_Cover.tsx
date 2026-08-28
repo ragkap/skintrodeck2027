@@ -13,7 +13,7 @@ const STATS = [
 export function S01_Cover({ index, total }: { index: number; total: number }) {
   return (
     <Slide index={index} total={total} bare noFooter>
-      <div className="relative flex h-[720px] w-[1280px] flex-col bg-white px-16 pt-12 pb-8">
+      <div className="relative flex h-[720px] w-[1280px] flex-col bg-white px-16 pt-12 pb-6">
         <div className="relative flex items-center justify-between">
           <Image
             src="/logos/smartkarma-logo.png"
@@ -57,7 +57,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
           ))}
         </div>
 
-        <div className="relative mt-3 flex items-end border-t border-[var(--hairline)] pt-3">
+        <div className="relative mt-2 flex items-end border-t border-[var(--hairline)] pt-2">
           <div className="flex items-center gap-6">
             <span className="caption uppercase tracking-wide">Shareholders</span>
             <div className="flex items-center gap-5 opacity-80">
@@ -86,7 +86,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
                 className="object-contain"
               />
             </div>
-            <MASBadge className="h-[96px] w-[96px]" />
+            <MASBadge className="h-[116px] w-[116px]" />
           </div>
         </div>
       </div>

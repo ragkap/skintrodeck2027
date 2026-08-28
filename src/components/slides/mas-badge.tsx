@@ -2,8 +2,8 @@ export function MASBadge({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 200 200"
-      width={96}
-      height={96}
+      width={116}
+      height={116}
       className={className}
       role="img"
       aria-label="MAS Knowledge Enterprise Award — Winner"
@@ -16,9 +16,9 @@ export function MASBadge({ className }: { className?: string }) {
 
       <text
         fontFamily="var(--font-roboto), system-ui, sans-serif"
-        fontSize="9.2"
+        fontSize="10"
         fontWeight="700"
-        letterSpacing="1.1"
+        letterSpacing="0.9"
         fill="var(--ink)"
       >
         <textPath href="#masBadgeTopArc" startOffset="50%" textAnchor="middle">
@@ -27,9 +27,9 @@ export function MASBadge({ className }: { className?: string }) {
       </text>
       <text
         fontFamily="var(--font-roboto), system-ui, sans-serif"
-        fontSize="9.2"
+        fontSize="10"
         fontWeight="700"
-        letterSpacing="1.1"
+        letterSpacing="0.9"
         fill="var(--ink)"
       >
         <textPath href="#masBadgeBottomArc" startOffset="50%" textAnchor="middle">

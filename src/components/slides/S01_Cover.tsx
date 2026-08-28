@@ -29,8 +29,8 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
         <div className="relative grid flex-1 grid-cols-[1.25fr_1fr] items-center gap-10">
           <div>
             <span className="rule mb-6 block" />
-            <h1 className="max-w-[600px] text-[44px] font-bold leading-[1.15] tracking-[-0.015em] text-[var(--ink)]">
-              The Investment Intelligence Platform{" "}
+            <h1 className="max-w-[660px] text-[38px] font-bold leading-[1.18] tracking-[-0.015em] text-[var(--ink)]">
+              Building the Leading Proprietary Investment Intelligence Platform{" "}
               <span className="text-[var(--accent-deep)]">for the AI Era</span>
             </h1>
             <p className="mt-5 max-w-[560px] text-[15px] leading-relaxed text-[var(--body)]">

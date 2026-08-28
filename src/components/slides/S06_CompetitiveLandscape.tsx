@@ -35,7 +35,7 @@ export function S06_CompetitiveLandscape({ index, total }: { index: number; tota
       index={index}
       total={total}
       title="Competitive Landscape"
-      subtitle="Smartkarma is uniquely positioned as the only platform combining real-time insight, specialist alternative data, and on-demand analyst expertise across the full institutional decision cycle"
+      subtitle="Smartkarma is uniquely positioned as the only platform combining real-time insight, specialist alternative data, and on-demand analyst expertise across the full institutional decision cycle — an APAC-first advantage that also places it squarely in the consolidation path of global strategics"
     >
       <div className="grid h-full grid-cols-[1.85fr_0.85fr] items-center gap-6">
         <Image

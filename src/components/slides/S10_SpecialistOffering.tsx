@@ -42,7 +42,7 @@ const EXPERTISE = [
     d: "APAC, Americas & EMEA index event coverage",
     icon: IconRebalance,
   },
-  { t: "ECM", d: "Equity capital markets — IPOs, placements, block trades", icon: IconECM },
+  { t: "ECM", d: "Equity capital markets — IPOs & placements", icon: IconECM },
   {
     t: "Private Capital Markets",
     d: "New — Asia's private & pre-IPO markets (pvtIQ)",

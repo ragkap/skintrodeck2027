@@ -72,10 +72,10 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
                   </marker>
                 </defs>
                 <line
-                  x1="43"
+                  x1="41"
                   y1="76"
-                  x2="69"
-                  y2="2"
+                  x2="60"
+                  y2="7"
                   stroke="var(--ai-pink)"
                   strokeWidth="1.3"
                   strokeDasharray="4 3"

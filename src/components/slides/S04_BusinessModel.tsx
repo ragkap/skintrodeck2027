@@ -15,7 +15,7 @@ const TIERS = [
   {
     step: "Expand",
     title: "Premium Subscription",
-    desc: "Specialist alternative data subscriptions and high-touch analyst desk access.",
+    desc: "Specialist alternative data subscriptions and high-touch access.",
     focusLabel: "Delivery:",
     focus: "Sold per-team, per-dataset basis, via API and MCP.",
     price: "US$35k–200k",

@@ -24,7 +24,7 @@ const GROUPS: { label: string; logos: Logo[] }[] = [
       { name: "Brevan Howard", file: "brevan-howard.webp" },
       { name: "BlackRock", file: "blackrock.webp" },
       { name: "Sequoia", file: "sequoia.webp" },
-      { name: "First Sentier", file: "first-sentier.webp" },
+      { name: "Citadel", file: "citadel.webp" },
     ],
   },
   {
@@ -56,19 +56,19 @@ const GROUPS: { label: string; logos: Logo[] }[] = [
       { name: "Olam", file: "olam.webp" },
       { name: "First REIT", file: "first-reit.webp" },
       { name: "DBS", file: "dbs.webp" },
-      { name: "Elevandi" },
-      { name: "RedDoorz", file: "reddoorz.webp" },
+      { name: "Veon", file: "veon.webp" },
+      { name: "Geo Energy" },
     ],
   },
   {
-    label: "Wealth Managers",
+    label: "Wealthtecs",
     logos: [
       { name: "grOw", file: "grow.webp" },
       { name: "Syfe" },
       { name: "Maybank", file: "maybank.webp" },
       { name: "Interactive Brokers", file: "interactive-brokers.webp" },
       { name: "CFA Institute", file: "cfa-institute.webp" },
-      { name: "The Economic Times" },
+      { name: "Caixin", file: "caixin.webp" },
     ],
   },
 ];
@@ -82,7 +82,7 @@ function LogoCell({ logo }: { logo: Logo }) {
           alt={logo.name}
           width={120}
           height={32}
-          className="h-[18px] w-auto object-contain grayscale opacity-80"
+          className="h-[18px] w-auto object-contain"
           unoptimized
         />
       ) : (

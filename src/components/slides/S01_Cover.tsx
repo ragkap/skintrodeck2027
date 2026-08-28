@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Slide } from "../deck/Slide";
 import { HeroTriangle } from "./hero-triangle";
+import { MASBadge } from "./mas-badge";
 
 const STATS = [
   { v: "60M+", l: "Data points" },
@@ -22,7 +23,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
             className="h-[26px] w-auto"
             priority
           />
-          <div className="eyebrow !text-[var(--muted)]">Introduction</div>
+          <div className="eyebrow !text-[var(--muted)]">Private &amp; Confidential</div>
         </div>
 
         <div className="relative grid flex-1 grid-cols-[1.25fr_1fr] items-center gap-10">
@@ -56,7 +57,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
           ))}
         </div>
 
-        <div className="relative mt-3 flex items-end justify-between border-t border-[var(--hairline)] pt-3">
+        <div className="relative mt-3 flex items-end border-t border-[var(--hairline)] pt-3">
           <div className="flex items-center gap-6">
             <span className="caption uppercase tracking-wide">Shareholders</span>
             <div className="flex items-center gap-5 opacity-80">
@@ -69,7 +70,14 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
                 className="object-contain"
               />
               <span className="text-[11px] font-medium text-[var(--body)]">Jungle</span>
-              <span className="text-[11px] font-medium text-[var(--body)]">Wavemaker</span>
+              <Image
+                src="/logos/wavemaker.webp"
+                alt="Wavemaker Partners"
+                width={69}
+                height={18}
+                className="h-4 w-auto object-contain"
+                unoptimized
+              />
               <Image
                 src="/logos/enterprise-singapore.png"
                 alt="Enterprise Singapore"
@@ -78,19 +86,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
                 className="object-contain"
               />
             </div>
-            <Image
-              src="/logos/winner-badge-hires.png"
-              alt="MAS Knowledge Enterprise Award — Winner"
-              width={114}
-              height={107}
-              className="object-contain"
-            />
-          </div>
-          <div className="flex items-center gap-2 caption">
-            <span className="uppercase tracking-wide">Private &amp; Confidential</span>
-            <span className="tabular">
-              {String(index).padStart(2, "0")} / {String(total).padStart(2, "0")}
-            </span>
+            <MASBadge className="h-[96px] w-[96px]" />
           </div>
         </div>
       </div>

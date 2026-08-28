@@ -24,7 +24,13 @@ const POINTS = [
   },
   {
     title: "Legacy solutions are being left behind:",
-    body: "asset managers and institutions are shifting spend to real-time, AI-native alternative-data and insight platforms, leaving traditional providers with shrinking relevance and lower demand.",
+    body: (
+      <>
+        asset managers and institutions are shifting spend to{" "}
+        <Mark>real-time, AI-native alternative-data and insight platforms</Mark>, leaving
+        traditional providers with <Mark>shrinking relevance and lower demand</Mark>.
+      </>
+    ),
   },
 ];
 

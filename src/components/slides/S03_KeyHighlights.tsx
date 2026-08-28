@@ -104,7 +104,7 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
     <Slide
       index={index}
       total={total}
-      title="Key Highlights"
+      title="Smartkarma Highlights"
       subtitle="Proven · Profitable · Scaling"
     >
       <div className="flex h-full flex-col justify-center gap-8">

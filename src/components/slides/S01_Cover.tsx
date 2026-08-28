@@ -46,7 +46,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
           </div>
         </div>
 
-        <div className="relative grid grid-cols-4 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
+        <div className="relative grid grid-cols-5 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
           {STATS.map((s, i) => (
             <div key={s.l} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
               <div className="tabular text-[20px] font-bold leading-none text-[var(--accent-deep)]">
@@ -55,39 +55,45 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
               <div className="mt-1 text-[11px] font-medium text-[var(--body)]">{s.l}</div>
             </div>
           ))}
+          <div className="flex items-center px-6">
+            <MASBadge className="h-[48px] w-auto" />
+          </div>
         </div>
 
-        <div className="relative mt-2 flex items-end justify-between border-t border-[var(--hairline)] pt-2">
-          <div className="flex items-center gap-6">
-            <span className="caption uppercase tracking-wide">Shareholders</span>
-            <div className="flex items-center gap-5 opacity-80">
-              <Image src="/logos/sgx.png" alt="SGX" width={50} height={20} className="object-contain" />
-              <Image
-                src="/logos/peak-xv.jpg"
-                alt="Peak XV"
-                width={50}
-                height={20}
-                className="object-contain"
-              />
-              <span className="text-[11px] font-medium text-[var(--body)]">Jungle</span>
-              <Image
-                src="/logos/wavemaker.webp"
-                alt="Wavemaker Partners"
-                width={69}
-                height={18}
-                className="h-4 w-auto object-contain"
-                unoptimized
-              />
-              <Image
-                src="/logos/enterprise-singapore.png"
-                alt="Enterprise Singapore"
-                width={40}
-                height={20}
-                className="object-contain"
-              />
-            </div>
+        <div className="relative mt-2 flex items-center gap-6 border-t border-[var(--hairline)] pt-2">
+          <span className="caption uppercase tracking-wide">Shareholders</span>
+          <div className="flex items-center gap-5 opacity-80">
+            <Image src="/logos/sgx.png" alt="SGX" width={50} height={20} className="object-contain" />
+            <Image
+              src="/logos/peak-xv.jpg"
+              alt="Peak XV"
+              width={50}
+              height={20}
+              className="object-contain"
+            />
+            <Image
+              src="/logos/jungle.jpg"
+              alt="Jungle Ventures"
+              width={70}
+              height={26}
+              className="h-4 w-auto object-contain"
+            />
+            <Image
+              src="/logos/wavemaker.webp"
+              alt="Wavemaker Partners"
+              width={69}
+              height={18}
+              className="h-4 w-auto object-contain"
+              unoptimized
+            />
+            <Image
+              src="/logos/enterprise-singapore.png"
+              alt="Enterprise Singapore"
+              width={40}
+              height={20}
+              className="object-contain"
+            />
           </div>
-          <MASBadge className="h-[48px] w-auto" />
         </div>
       </div>
     </Slide>

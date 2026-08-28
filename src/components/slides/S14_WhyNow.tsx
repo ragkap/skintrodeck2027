@@ -16,7 +16,7 @@ const POINTS = [
     t: "AI becoming core to investment workflows:",
     d: (
       <>
-        automating research, extracting signals, and accelerating insight —{" "}
+        automating research, extracting signals, and accelerating insight,{" "}
         <Mark>making speed a decisive edge</Mark>.
       </>
     ),
@@ -34,7 +34,7 @@ const POINTS = [
     t: "Need for operational leverage:",
     d: (
       <>
-        institutions must <Mark>scale insight, not headcount</Mark> — driving adoption
+        institutions must <Mark>scale insight, not headcount</Mark>, driving adoption
         of AI-native intelligence platforms.
       </>
     ),

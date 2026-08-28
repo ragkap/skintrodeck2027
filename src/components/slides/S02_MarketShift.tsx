@@ -17,7 +17,7 @@ const POINTS = [
     body: (
       <>
         projected to grow from <Mark>$12B in 2025 to $112B by 2030</Mark>. APAC will
-        outpace the world — jumping from $1.2B in 2022 to $42B by 2030, a major
+        outpace the world, jumping from $1.2B in 2022 to $42B by 2030, a major
         monetisation opportunity.
       </>
     ),
@@ -40,7 +40,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
       index={index}
       total={total}
       title="Institutional Decision-Making is Shifting"
-      subtitle="From human-powered research to AI-augmented intelligence — reshaping a $100B B2B research market."
+      subtitle="From human-powered research to AI-augmented intelligence, reshaping a $100B B2B research market."
     >
       <div className="flex h-full flex-col">
         <div className="grid min-h-0 flex-1 grid-cols-[1.05fr_0.95fr] gap-14 pt-2">
@@ -58,7 +58,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
 
           <div className="flex flex-col border-l border-[var(--hairline)] pl-10">
             <div className="caption mb-6 text-center uppercase tracking-wide">
-              Alternative Data &amp; Insight Market — USD Bn
+              Alternative Data &amp; Insight Market (USD Bn)
             </div>
             <div className="relative flex flex-1 items-end justify-center gap-20 pb-2">
               <svg

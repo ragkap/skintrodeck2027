@@ -112,7 +112,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
 
         <div className="flex flex-col">
           <div className="caption mb-4 uppercase tracking-wide">
-            AI-Augmented — Live in the Platform Today
+            AI-Augmented: Live in the Platform Today
           </div>
           <div className="grid grid-cols-6 gap-6">
             {FEATURES.map((f) => (
@@ -128,7 +128,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
         </div>
 
         <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
-          Recent investment from the world&apos;s fastest-growing quant hedge fund —
+          Recent investment from the world&apos;s fastest-growing quant hedge fund,
           alongside a top-up from SGX, confirms it: the most sophisticated AI users want{" "}
           <em>more</em> proprietary data, not less.
         </p>

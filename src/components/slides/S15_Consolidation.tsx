@@ -104,7 +104,7 @@ export function S15_Consolidation({ index, total }: { index: number; total: numb
       index={index}
       total={total}
       title="An Industry Ripe for Consolidation"
-      subtitle="Rapidly growing, highly fragmented, increasingly strategic — deal activity is consistent and accelerating"
+      subtitle="Rapidly growing, highly fragmented, increasingly strategic: deal activity is consistent and accelerating"
     >
       <div className="grid h-full grid-cols-[0.85fr_1.15fr] items-center gap-10 pt-1">
         <ul className="flex flex-col gap-5 border-r border-[var(--hairline)] pr-8">

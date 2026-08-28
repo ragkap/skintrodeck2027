@@ -26,7 +26,7 @@ const ptSerif = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Smartkarma — Investor Introduction",
+  title: "Smartkarma: Investor Introduction",
   description:
     "Smartkarma: the proprietary investment intelligence platform for the AI era.",
   robots: {

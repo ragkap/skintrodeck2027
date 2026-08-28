@@ -42,10 +42,10 @@ const EXPERTISE = [
     d: "APAC, Americas & EMEA index event coverage",
     icon: IconRebalance,
   },
-  { t: "ECM", d: "Equity capital markets — IPOs & placements", icon: IconECM },
+  { t: "ECM", d: "Equity capital markets: IPOs & placements", icon: IconECM },
   {
     t: "Private Capital Markets",
-    d: "New — Asia's private & pre-IPO markets (pvtIQ)",
+    d: "New: Asia's private & pre-IPO markets (pvtIQ)",
     icon: IconLock,
   },
 ];
@@ -56,7 +56,7 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
       index={index}
       total={total}
       title="Specialist Product Offering"
-      subtitle="Multi-asset, differentiated and demand-driven — specialist, Asia-first, with a growing private markets edge"
+      subtitle="Multi-asset, differentiated and demand-driven: specialist, Asia-first, with a growing private markets edge"
     >
       <div className="flex h-full flex-col justify-center gap-10">
         <div className="grid grid-cols-4 divide-x divide-[var(--hairline)]">
@@ -91,14 +91,14 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
 
         <div className="grid grid-cols-2 gap-16 border-t border-[var(--hairline)] pt-6">
           <div>
-            <div className="caption mb-3 uppercase tracking-wide">Research Focus — Asia-First</div>
+            <div className="caption mb-3 uppercase tracking-wide">Research Focus: Asia-First</div>
             <BarRow label="APAC" value={50} delay={0} />
             <BarRow label="Americas & EMEA" value={24} delay={0.08} />
             <BarRow label="Macro / Thematic" value={26} delay={0.16} />
           </div>
           <div>
             <div className="caption mb-3 uppercase tracking-wide">
-              Market Cap Distribution — Small & Mid-Cap Focus
+              Market Cap Distribution: Small & Mid-Cap Focus
             </div>
             <BarRow label="Small Cap" value={44} delay={0} />
             <BarRow label="Large Cap" value={42} delay={0.08} />

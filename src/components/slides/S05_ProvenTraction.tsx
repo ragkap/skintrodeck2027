@@ -100,7 +100,7 @@ export function S05_ProvenTraction({ index, total }: { index: number; total: num
       index={index}
       total={total}
       title="Proven Traction"
-      subtitle="Tier-1, blue-chip clients spanning the full spectrum of knowledge-network use cases — primary insight, agentic on-demand consumption, and dataset delivery"
+      subtitle="Tier-1, blue-chip clients spanning the full spectrum of knowledge-network use cases: primary insight, agentic on-demand consumption, and dataset delivery"
     >
       <div className="flex h-full flex-col justify-center gap-3 pt-2">
         <div className="grid grid-cols-[200px_1fr] gap-10">
@@ -122,7 +122,7 @@ export function S05_ProvenTraction({ index, total }: { index: number; total: num
             ))}
           </div>
         </div>
-        <div className="caption pl-[240px] italic">Selection shown — client list is not exhaustive.</div>
+        <div className="caption pl-[240px] italic">Selection shown; client list is not exhaustive.</div>
       </div>
     </Slide>
   );

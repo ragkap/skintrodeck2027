@@ -4,7 +4,7 @@ export function MASBadge({ className }: { className?: string }) {
       viewBox="0 0 220 60"
       className={className}
       role="img"
-      aria-label="MAS Knowledge Enterprise Award — Winner"
+      aria-label="MAS Knowledge Enterprise Award: Winner"
     >
       <text
         x="0"

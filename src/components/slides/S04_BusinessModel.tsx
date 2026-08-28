@@ -145,7 +145,7 @@ export function S04_BusinessModel({ index, total }: { index: number; total: numb
         </div>
         <p className="text-center text-[12.5px] leading-relaxed text-[var(--body)]">
           <span className="font-semibold text-[var(--ink)]">The content layer drives the funnel:</span>{" "}
-          Platform Subscription content fuels discovery, and every login becomes an upsell path — expanding
+          Platform Subscription content fuels discovery, and every login becomes an upsell path, expanding
           one team account into multiple Premium dataset sales.
         </p>
       </div>

@@ -26,7 +26,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
       <div className="grid h-full grid-cols-2 divide-x divide-[var(--hairline)] pt-2">
         <div className="flex flex-col pr-10">
           <div className="flex items-baseline justify-between">
-            <div className="caption uppercase tracking-wide">Top Clients — ACV Growth</div>
+            <div className="caption uppercase tracking-wide">Top Clients: ACV Growth</div>
             <div className="text-[11px] text-[var(--muted)]">CAGR (2021-25)</div>
           </div>
           <div className="flex flex-1 items-end justify-center gap-12 pb-2 pt-4">

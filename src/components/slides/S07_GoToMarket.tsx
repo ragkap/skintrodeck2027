@@ -66,7 +66,7 @@ export function S07_GoToMarket({ index, total }: { index: number; total: number 
       index={index}
       total={total}
       title="Go To Market"
-      subtitle="An inbound-led flywheel — repurposed content, automation and SEO feed direct sales, then platform usage data drives personalised upsell into premium"
+      subtitle="An inbound-led flywheel: repurposed content, automation and SEO feed direct sales, then platform usage data drives personalised upsell into premium"
     >
       <div className="grid h-full grid-cols-[0.85fr_1.15fr] items-center gap-10">
         <div className="flex h-full items-center justify-center">

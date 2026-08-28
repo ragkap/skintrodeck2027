@@ -34,7 +34,7 @@ function IconLock() {
 const EXPERTISE = [
   {
     t: "Event-Driven",
-    d: "Special situations, deals & catalysts tracked in real time",
+    d: "Special situations, M&A, and arbitrage",
     icon: IconBolt,
   },
   {

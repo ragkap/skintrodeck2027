@@ -1,12 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ScaledStage } from "./ScaledStage";
 import type { ReactNode } from "react";
 
-export function Deck({ slides }: { slides: ReactNode[] }) {
+export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initialIndex?: number }) {
   const total = slides.length;
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(initialIndex);
+  const router = useRouter();
+  // Avoid pushing a URL update for the index we were mounted with.
+  const lastPushed = useRef(initialIndex);
 
   const go = useCallback(
     (next: number) => {
@@ -14,6 +18,12 @@ export function Deck({ slides }: { slides: ReactNode[] }) {
     },
     [total],
   );
+
+  useEffect(() => {
+    if (index === lastPushed.current) return;
+    lastPushed.current = index;
+    router.push(`/${index + 1}`);
+  }, [index, router]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

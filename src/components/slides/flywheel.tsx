@@ -160,7 +160,7 @@ export function Flywheel() {
     >
       <canvas ref={canvasRef} style={{ width: SIZE, height: SIZE, maxWidth: "100%" }} />
 
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[74px] w-[74px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[54px] w-[54px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logos/smartkarma-icon-brand.jpg"

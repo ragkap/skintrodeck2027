@@ -50,7 +50,7 @@ export function S16_UniquelyPositioned({ index, total }: { index: number; total:
     <Slide
       index={index}
       total={total}
-      title="Smartkarma is Uniquely Positioned"
+      title="Smartkarma is Uniquely Positioned in the Path of Consolidation"
       subtitle="Digital distribution platform for insight, data and expertise"
     >
       <div className="grid h-full grid-cols-[1.2fr_1fr] gap-16 pt-2">

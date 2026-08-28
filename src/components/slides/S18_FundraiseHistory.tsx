@@ -2,10 +2,10 @@ import { Slide } from "../deck/Slide";
 
 const ROUNDS = [
   { date: "Jan 2015", round: "Seed", label: "Launch Tech", rev: "-", val: "-" },
-  { date: "May 2016", round: "Series A", label: "Scale Supplyside", rev: "-", val: "1.6x" },
+  { date: "May 2016", round: "Series A", label: "Grow Supplyside", rev: "-", val: "1.6x" },
   { date: "Oct 2017", round: "Series B1", label: "Grow Demandside", rev: "1.5x", val: "2.3x" },
   { date: "Jul 2019", round: "Series B2", label: "Expand Offerings", rev: "2.3x", val: "1.3x" },
-  { date: "May 2026", round: "Latest Raise", label: "Accelerated Scale-Up", rev: "3.5x", val: "2x", highlight: true },
+  { date: "May 2026", round: "Latest Raise", label: "Accelerate Scale-Up", rev: "3.5x", val: "2x", highlight: true },
 ];
 
 export function S18_FundraiseHistory({ index, total }: { index: number; total: number }) {

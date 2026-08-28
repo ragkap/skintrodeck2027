@@ -87,14 +87,26 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
       subtitle="Foundation models are becoming abundant. Proprietary data and expert networks are not."
     >
       <div className="flex h-full flex-col justify-center gap-14 pt-2">
-        <div className="grid grid-cols-4 divide-x divide-[var(--hairline)]">
-          {PILLARS.map((p, i) => (
-            <div key={p.n} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
-              <div className="font-serif text-[22px] italic text-[var(--accent-deep)]">{p.n}</div>
-              <div className="mt-1 text-[13.5px] font-bold text-[var(--ink)]">{p.t}</div>
-              <p className="mt-1.5 text-[11.5px] leading-snug text-[var(--body)]">{p.d}</p>
-            </div>
-          ))}
+        <div>
+          <div className="relative flex items-center justify-between px-3.5">
+            <div className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-[var(--accent)]" />
+            {PILLARS.map((p) => (
+              <div
+                key={p.n}
+                className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-white text-[12px] font-bold text-[var(--accent-deep)]"
+              >
+                {p.n}
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 grid grid-cols-4 divide-x divide-[var(--hairline)]">
+            {PILLARS.map((p, i) => (
+              <div key={p.n} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
+                <div className="text-[13.5px] font-bold text-[var(--ink)]">{p.t}</div>
+                <p className="mt-1.5 text-[11.5px] leading-snug text-[var(--body)]">{p.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col">

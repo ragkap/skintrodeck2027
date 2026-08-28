@@ -1,15 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { ScaledStage } from "./ScaledStage";
 import type { ReactNode } from "react";
 
 export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initialIndex?: number }) {
   const total = slides.length;
   const [index, setIndex] = useState(initialIndex);
-  const router = useRouter();
-  // Avoid pushing a URL update for the index we were mounted with.
+  // Avoid rewriting the URL for the index we were mounted with.
   const lastPushed = useRef(initialIndex);
 
   const go = useCallback(
@@ -22,8 +20,12 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
   useEffect(() => {
     if (index === lastPushed.current) return;
     lastPushed.current = index;
-    router.push(`/${index + 1}`);
-  }, [index, router]);
+    // Update the URL via the History API directly rather than next/navigation's
+    // router: pushing a new dynamic-route segment there remounts this whole
+    // tree (canvas re-inits, CSS re-triggers), producing a visible flicker on
+    // every slide change. A plain pushState just moves the address bar.
+    window.history.pushState(null, "", `/${index + 1}`);
+  }, [index]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

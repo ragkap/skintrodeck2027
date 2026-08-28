@@ -74,7 +74,7 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
 
         <div>
           <div className="caption mb-3 uppercase tracking-wide">
-            Areas of Expertise — On-Demand, Specialist Verticals
+            Specialist Areas of Expertise
           </div>
           <div className="grid grid-cols-4 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
             {EXPERTISE.map((e, i) => (

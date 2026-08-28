@@ -86,7 +86,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
       title="AI is a Force Multiplier"
       subtitle="Foundation models are becoming abundant. Proprietary data and expert networks are not."
     >
-      <div className="flex h-full flex-col gap-8 pt-2">
+      <div className="flex h-full flex-col justify-center gap-14 pt-2">
         <div className="grid grid-cols-4 divide-x divide-[var(--hairline)]">
           {PILLARS.map((p, i) => (
             <div key={p.n} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
@@ -97,7 +97,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
           ))}
         </div>
 
-        <div className="flex flex-1 flex-col justify-center">
+        <div className="flex flex-col">
           <div className="caption mb-4 uppercase tracking-wide">
             AI-Augmented — Live in the Platform Today
           </div>
@@ -115,9 +115,9 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
         </div>
 
         <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
-          Recent investment from one of the world&apos;s fastest-growing quant hedge funds
-          and a leader in AI-driven investing, alongside SGX, confirms it: the most
-          sophisticated AI users want <em>more</em> proprietary data — not less.
+          Recent investment from QRT — the world&apos;s fastest-growing quant hedge fund —
+          alongside a top-up from SGX, confirms it: the most sophisticated AI users want{" "}
+          <em>more</em> proprietary data, not less.
         </p>
       </div>
     </Slide>

@@ -14,10 +14,10 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
   return (
     <Slide index={index} total={total} bare noFooter>
       <div
-        className="relative flex h-[720px] w-[1280px] flex-col px-16 pt-12 pb-6"
+        className="relative flex h-[720px] w-[1280px] flex-col px-16 pt-12 pb-9"
         style={{
           background:
-            "radial-gradient(1100px 620px at 78% -12%, rgba(77,179,100,0.16), rgba(77,179,100,0) 62%), white",
+            "radial-gradient(1100px 620px at 8% -12%, rgba(77,179,100,0.16), rgba(77,179,100,0) 62%), white",
         }}
       >
         <div className="relative flex items-center justify-between">

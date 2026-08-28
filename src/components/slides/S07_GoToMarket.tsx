@@ -18,7 +18,7 @@ const STEPS: {
   {
     n: "02",
     title: "Platform Upsell",
-    desc: "Platform usage data drives targeted, personalised upsell pathways — knowing what matters most to each user, converted into premium subscriptions",
+    desc: "Platform usage data drives targeted, personalised upsell pathways",
   },
   {
     n: "03",

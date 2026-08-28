@@ -97,13 +97,6 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
           ))}
         </div>
 
-        <p className="border-t border-b border-[var(--hairline)] py-4 text-[13px] leading-snug text-[var(--body)]">
-          Recent fund raise participation from one of the world&apos;s fastest-growing
-          quantitative hedge funds and a leader in AI-driven investing, alongside
-          Singapore Exchange, reinforces this view — the most sophisticated AI users are
-          seeking <em>more</em> proprietary content and data, not less.
-        </p>
-
         <div className="flex flex-1 flex-col justify-center">
           <div className="caption mb-4 uppercase tracking-wide">
             AI-Augmented — Live in the Platform Today
@@ -120,6 +113,12 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
             ))}
           </div>
         </div>
+
+        <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
+          Recent investment from one of the world&apos;s fastest-growing quant hedge funds
+          and a leader in AI-driven investing, alongside SGX, confirms it: the most
+          sophisticated AI users want <em>more</em> proprietary data — not less.
+        </p>
       </div>
     </Slide>
   );

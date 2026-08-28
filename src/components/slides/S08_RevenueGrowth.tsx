@@ -48,7 +48,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
             ))}
           </div>
           <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
-            Revenue from top clients has tripled in the last four years
+            Revenue from top clients has tripled in the last four years (Land &amp; Expand)
           </p>
         </div>
 

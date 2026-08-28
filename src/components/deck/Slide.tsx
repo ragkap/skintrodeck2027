@@ -34,7 +34,7 @@ export function Slide({
       className={`relative flex h-[720px] w-[1280px] flex-col overflow-hidden text-[var(--ink)] ${className}`}
       style={{
         background:
-          "radial-gradient(1100px 620px at 8% -12%, rgba(77,179,100,0.16), rgba(77,179,100,0) 62%), linear-gradient(180deg, #eef1f0 0%, #f2f4f5 40%, #f6f7f8 100%)",
+          "radial-gradient(1100px 620px at 8% -12%, rgba(77,179,100,0.16), rgba(77,179,100,0) 62%), white",
       }}
     >
       {!bare && (

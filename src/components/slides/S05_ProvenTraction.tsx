@@ -1,26 +1,98 @@
+import Image from "next/image";
 import { Slide } from "../deck/Slide";
 import { Stat } from "../deck/ui";
 
-const GROUPS: { label: string; logos: string[] }[] = [
-  { label: "Asset Owners", logos: ["GIC", "PSP Investments", "SWIB", "ADIA", "JETRO", "JBIC"] },
+type Logo = { name: string; file?: string };
+
+const GROUPS: { label: string; logos: Logo[] }[] = [
+  {
+    label: "Asset Owners",
+    logos: [
+      { name: "GIC", file: "gic.webp" },
+      { name: "PSP Investments", file: "psp-investments.webp" },
+      { name: "SWIB", file: "swib.png" },
+      { name: "ADIA", file: "adia.webp" },
+      { name: "JETRO", file: "jetro.png" },
+      { name: "JBIC", file: "jbic.jpg" },
+    ],
+  },
   {
     label: "Asset Managers",
-    logos: ["Millennium", "Point72", "Brevan Howard", "BlackRock", "Sequoia", "First Sentier"],
+    logos: [
+      { name: "Millennium", file: "millennium.webp" },
+      { name: "Point72", file: "point72.webp" },
+      { name: "Brevan Howard", file: "brevan-howard.webp" },
+      { name: "BlackRock", file: "blackrock.webp" },
+      { name: "Sequoia", file: "sequoia.webp" },
+      { name: "First Sentier", file: "first-sentier.webp" },
+    ],
   },
   {
     label: "Investment Banks",
-    logos: ["J.P. Morgan", "Goldman Sachs", "Morgan Stanley", "Citi", "Société Générale", "HSBC"],
+    logos: [
+      { name: "J.P. Morgan", file: "jpmorgan.webp" },
+      { name: "Goldman Sachs", file: "goldman-sachs.webp" },
+      { name: "Morgan Stanley", file: "morgan-stanley.webp" },
+      { name: "Citi", file: "citi.webp" },
+      { name: "Société Générale", file: "societe-generale.webp" },
+      { name: "HSBC", file: "hsbc.webp" },
+    ],
   },
-  { label: "Exchanges", logos: ["SGX", "NZX", "SET", "JPX", "ASEAN Exchanges", "ADDX"] },
+  {
+    label: "Exchanges",
+    logos: [
+      { name: "SGX", file: "sgx.webp" },
+      { name: "NZX", file: "nzx.webp" },
+      { name: "SET", file: "set.webp" },
+      { name: "JPX", file: "jpx.gif" },
+      { name: "ASEAN Exchanges" },
+      { name: "ADDX", file: "addx.webp" },
+    ],
+  },
   {
     label: "Corporates",
-    logos: ["Aramco", "Olam", "First REIT", "DBS", "Elevandi", "RedDoorz"],
+    logos: [
+      { name: "Aramco", file: "aramco.webp" },
+      { name: "Olam", file: "olam.webp" },
+      { name: "First REIT", file: "first-reit.webp" },
+      { name: "DBS", file: "dbs.webp" },
+      { name: "Elevandi" },
+      { name: "RedDoorz", file: "reddoorz.webp" },
+    ],
   },
   {
     label: "Wealth Managers",
-    logos: ["grOw", "Syfe", "Maybank", "Interactive Brokers", "CFA Institute", "The Economic Times"],
+    logos: [
+      { name: "grOw", file: "grow.webp" },
+      { name: "Syfe" },
+      { name: "Maybank", file: "maybank.webp" },
+      { name: "Interactive Brokers", file: "interactive-brokers.webp" },
+      { name: "CFA Institute", file: "cfa-institute.webp" },
+      { name: "The Economic Times" },
+    ],
   },
 ];
+
+function LogoCell({ logo }: { logo: Logo }) {
+  return (
+    <div className="flex h-9 items-center justify-center rounded-[6px] border border-[var(--hairline)] px-2.5">
+      {logo.file ? (
+        <Image
+          src={`/logos/clients/${logo.file}`}
+          alt={logo.name}
+          width={120}
+          height={32}
+          className="h-[18px] w-auto object-contain grayscale opacity-80"
+          unoptimized
+        />
+      ) : (
+        <span className="text-center text-[11px] font-semibold leading-tight text-[var(--ink)]">
+          {logo.name}
+        </span>
+      )}
+    </div>
+  );
+}
 
 export function S05_ProvenTraction({ index, total }: { index: number; total: number }) {
   return (
@@ -42,12 +114,7 @@ export function S05_ProvenTraction({ index, total }: { index: number; total: num
               <div className="caption mb-3 uppercase tracking-wide">{g.label}</div>
               <div className="grid grid-cols-2 gap-2">
                 {g.logos.map((l) => (
-                  <div
-                    key={l}
-                    className="rounded-[6px] border border-[var(--hairline)] px-2.5 py-2 text-center text-[11.5px] font-semibold text-[var(--ink)]"
-                  >
-                    {l}
-                  </div>
+                  <LogoCell key={l.name} logo={l} />
                 ))}
               </div>
             </div>

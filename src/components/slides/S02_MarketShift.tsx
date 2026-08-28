@@ -90,7 +90,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
               {[
                 { year: "2025", apac: 1.2, row: 10.8, total: "$12B" },
                 { year: "2030", apac: 42, row: 70, total: "$112B" },
-              ].map((bar) => {
+              ].map((bar, i) => {
                 const scale = 3;
                 return (
                   <div key={bar.year} className="flex flex-col items-center gap-3">
@@ -99,14 +99,14 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
                     </div>
                     <div className="flex w-14 flex-col-reverse">
                       <div
-                        style={{ height: bar.row * scale }}
-                        className="flex items-start justify-center bg-[#e7eaee] pt-1"
+                        style={{ height: bar.row * scale, animationDelay: `${i * 0.15}s` }}
+                        className="bar-grow flex items-start justify-center bg-[#e7eaee] pt-1"
                       >
                         <span className="tabular text-[10px] text-[var(--body)]">{bar.row}</span>
                       </div>
                       <div
-                        style={{ height: bar.apac * scale }}
-                        className="flex items-start justify-center bg-[var(--accent)] pt-0.5"
+                        style={{ height: bar.apac * scale, animationDelay: `${i * 0.15 + 0.1}s` }}
+                        className="bar-grow flex items-start justify-center bg-[var(--accent)] pt-0.5"
                       >
                         {bar.apac >= 10 && (
                           <span className="tabular text-[10px] text-white">{bar.apac}</span>

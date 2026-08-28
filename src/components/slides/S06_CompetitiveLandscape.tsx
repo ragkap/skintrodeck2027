@@ -4,27 +4,27 @@ import { Slide } from "../deck/Slide";
 const COMPARISONS = [
   {
     label: "AI Tools",
-    desc: "Trusted primary insight, not public AI outputs",
+    desc: "Trusted primary insight vs public AI outputs",
     names: ["ChatGPT", "Perplexity", "Hebbia"],
   },
   {
     label: "News & Data Terminals",
-    desc: "Real-time insight & data, not after-market reports",
+    desc: "Real-time insight & data vs after-market reports",
     names: ["Bloomberg", "FactSet", "AlphaSense"],
   },
   {
     label: "Expert Networks",
-    desc: "Always-on access & data, not one-off, MNPI-risk calls",
+    desc: "Always-on access & data vs one-off, potential MNPI-risk calls",
     names: ["GLG", "Tegus", "Guidepoint"],
   },
   {
     label: "Specialist Data Firms",
-    desc: "Multi-asset data plus context, not single-vertical silos",
+    desc: "Multi-asset data plus context vs single-vertical silos",
     names: ["ReOrg", "CFRA", "CB Insights"],
   },
   {
     label: "Crowdsourced Research",
-    desc: "Institutional-grade & compliant, not variable quality",
+    desc: "Institutional-grade & compliant vs variable quality",
     names: ["SeekingAlpha", "SumZero", "StockTwits"],
   },
 ];

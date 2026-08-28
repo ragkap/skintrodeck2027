@@ -51,7 +51,7 @@ const CATEGORIES = [
   { t: "Point of Sales, E-commerce", icon: IconCart },
 ];
 
-type Client = { name: string; file?: string; dark?: boolean };
+type Client = { name: string; file?: string; dark?: boolean; invert?: boolean };
 
 const CLIENTS: Client[] = [
   { name: "B.A.M", file: "bam.webp" },
@@ -60,7 +60,7 @@ const CLIENTS: Client[] = [
   { name: "Millennium", file: "millennium.webp" },
   { name: "Morgan Stanley", file: "morgan-stanley.webp" },
   { name: "Point72", file: "point72.webp" },
-  { name: "Susquehanna", file: "susquehanna.webp", dark: true },
+  { name: "Susquehanna", file: "susquehanna.webp", invert: true },
   { name: "QRT", file: "qrt.webp" },
   { name: "ExodusPoint", file: "exoduspoint.webp" },
   { name: "Schonfeld", file: "schonfeld.webp" },
@@ -81,7 +81,11 @@ function ClientLogo({ c }: { c: Client }) {
           alt={c.name}
           width={100}
           height={28}
-          className="h-[15px] w-auto object-contain"
+          className={
+            c.invert
+              ? "h-[15px] w-auto object-contain invert"
+              : "h-[15px] w-auto object-contain"
+          }
           unoptimized
         />
       ) : (

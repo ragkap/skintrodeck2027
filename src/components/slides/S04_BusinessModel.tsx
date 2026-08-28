@@ -59,14 +59,19 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
         </span>
       )}
       <div className="flex items-center gap-3">
-        <div
-          className={
-            premium
-              ? "flex h-10 w-10 items-center justify-center rounded-full bg-[var(--premium)] text-white"
-              : "flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]"
-          }
-        >
-          <TierIcon kind={t.icon} />
+        <div className="relative flex h-10 w-10 flex-none items-center justify-center">
+          {premium && (
+            <span className="glow-pulse pointer-events-none absolute inset-[-4px] rounded-full border-[1.5px] border-[var(--premium)]" />
+          )}
+          <div
+            className={
+              premium
+                ? "relative flex h-10 w-10 items-center justify-center rounded-full bg-[var(--premium)] text-white"
+                : "relative flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]"
+            }
+          >
+            <TierIcon kind={t.icon} />
+          </div>
         </div>
         <div>
           <div className="eyebrow !text-[var(--muted)]">{t.step}</div>

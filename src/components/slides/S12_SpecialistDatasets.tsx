@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Slide } from "../deck/Slide";
 import { Pill, Stat } from "../deck/ui";
 
@@ -50,7 +51,47 @@ const CATEGORIES = [
   { t: "Point of Sales, E-commerce", icon: IconCart },
 ];
 
-const CLIENTS = ["B.A.M", "BlackRock", "Marshall Wace", "Millennium", "Morgan Stanley", "Point72", "grOw"];
+type Client = { name: string; file?: string; dark?: boolean };
+
+const CLIENTS: Client[] = [
+  { name: "B.A.M", file: "bam.webp" },
+  { name: "BlackRock", file: "blackrock.webp" },
+  { name: "Marshall Wace", file: "marshallwace.webp" },
+  { name: "Millennium", file: "millennium.webp" },
+  { name: "Morgan Stanley", file: "morgan-stanley.webp" },
+  { name: "Point72", file: "point72.webp" },
+  { name: "Susquehanna", file: "susquehanna.webp", dark: true },
+  { name: "QRT", file: "qrt.webp" },
+  { name: "ExodusPoint", file: "exoduspoint.webp" },
+  { name: "Schonfeld", file: "schonfeld.webp" },
+];
+
+function ClientLogo({ c }: { c: Client }) {
+  return (
+    <div
+      className={
+        c.dark
+          ? "flex h-8 items-center justify-center rounded-[5px] bg-[var(--ink)] px-1.5"
+          : "flex h-8 items-center justify-center rounded-[5px] border border-[var(--hairline)] px-1.5"
+      }
+    >
+      {c.file ? (
+        <Image
+          src={`/logos/clients/${c.file}`}
+          alt={c.name}
+          width={100}
+          height={28}
+          className="h-[15px] w-auto object-contain"
+          unoptimized
+        />
+      ) : (
+        <span className="text-center text-[9.5px] font-semibold leading-tight text-[var(--ink)]">
+          {c.name}
+        </span>
+      )}
+    </div>
+  );
+}
 
 export function S12_SpecialistDatasets({ index, total }: { index: number; total: number }) {
   return (
@@ -60,25 +101,25 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
       title="Specialist Datasets"
       subtitle="Proprietary alternative data sold per-team, per-dataset — plus AI distribution via SmartWealth"
     >
-      <div className="flex h-full flex-col gap-8 pt-2">
-        <div className="grid grid-cols-2 divide-x divide-[var(--hairline)]">
-          <Stat value="50%+" label="Data subscription revenue (2026E)" />
-          <div className="pl-8">
-            <Stat value="65%" label="Data as % of new sales" />
-          </div>
-        </div>
-
-        <div>
+      <div className="grid h-full grid-cols-[1fr_1.15fr] gap-14 pt-2">
+        <div className="flex flex-col justify-center">
           <div className="caption mb-3 uppercase tracking-wide">
             Quantitative &amp; Systematic Institutional Investors
           </div>
-          <div className="grid grid-cols-5 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
+          <div className="grid grid-cols-2 gap-3">
             {CATEGORIES.map((c, i) => (
-              <div key={c.t} className={i === 0 ? "pr-5" : "px-5 last:pr-0"}>
+              <div
+                key={c.t}
+                className={
+                  i === CATEGORIES.length - 1
+                    ? "col-span-2 rounded-[10px] border border-[var(--hairline)] p-4"
+                    : "rounded-[10px] border border-[var(--hairline)] p-4"
+                }
+              >
                 <div className="text-[var(--accent-deep)]">
                   <c.icon />
                 </div>
-                <div className="mt-2 text-[11.5px] font-semibold leading-snug text-[var(--ink)]">
+                <div className="mt-2 text-[12px] font-semibold leading-snug text-[var(--ink)]">
                   {c.t}
                 </div>
               </div>
@@ -86,34 +127,34 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
           </div>
         </div>
 
-        <div className="grid flex-1 grid-cols-[1fr_1.1fr] gap-16 border-t border-[var(--hairline)] pt-6">
-          <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center gap-6">
+          <div className="grid grid-cols-2 divide-x divide-[var(--hairline)]">
+            <Stat value="50%+" label="Data subscription revenue (2026E)" />
+            <div className="pl-8">
+              <Stat value="65%" label="Data as % of new sales" />
+            </div>
+          </div>
+
+          <div className="border-t border-[var(--hairline)] pt-5">
             <div className="caption mb-3 uppercase tracking-wide">Existing Data Clients</div>
-            <div className="grid grid-cols-3 gap-y-2 gap-x-4">
+            <div className="grid grid-cols-5 gap-2">
               {CLIENTS.map((c) => (
-                <div key={c} className="text-[12.5px] font-medium text-[var(--body)]">
-                  {c}
-                </div>
+                <ClientLogo key={c.name} c={c} />
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col justify-center gap-2.5">
+          <div className="border-t border-[var(--hairline)] pt-5">
             <div className="flex items-center gap-2.5">
               <Pill>Wealth-Tech</Pill>
               <span className="text-[14px] font-bold text-[var(--ink)]">
                 SmartWealth API &amp; MCP
               </span>
             </div>
-            <p className="text-[12px] leading-relaxed text-[var(--body)]">
+            <p className="mt-2 text-[12px] leading-relaxed text-[var(--body)]">
               Supports the Model Context Protocol, so wealth platforms build AI-powered,
               personalised conversational experiences grounded in trusted Smartkarma
               intelligence — for both RMs and end clients.
-            </p>
-            <p className="font-serif text-[11.5px] italic leading-relaxed text-[var(--muted)]">
-              Context is structured and curated through MCP, not open-ended data
-              access — institutions retain full control over content, context and
-              outputs.
             </p>
           </div>
         </div>

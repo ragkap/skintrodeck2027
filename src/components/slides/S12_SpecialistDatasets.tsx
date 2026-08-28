@@ -99,7 +99,7 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
       index={index}
       total={total}
       title="Premium Alternative Datasets"
-      subtitle="Proprietary alt-datasets for systematic & quant desks across flow, credit, POS & commodities, sold per-pod (US$25–200k)"
+      subtitle="Specialist alt-datasets for systematic & quant desks across flow, credit, POS & commodities, sold per-pod (US$25–200k)"
     >
       <div className="grid h-full grid-cols-[1fr_1.15fr] gap-14 pt-2">
         <div className="flex flex-col justify-center">
@@ -129,7 +129,7 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
 
         <div className="flex flex-col justify-center gap-6">
           <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">
-            <Stat value="~30" label="Proprietary datasets" />
+            <Stat value="30+" label="Premium Datasets" />
             <div className="pl-8">
               <Stat value="50%+" label="Data subscription revenue (2026E)" />
             </div>

@@ -57,7 +57,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
           </ol>
 
           <div className="flex flex-col border-l border-[var(--hairline)] pl-10">
-            <div className="caption mb-6 uppercase tracking-wide">
+            <div className="caption mb-6 text-center uppercase tracking-wide">
               Alternative Data &amp; Insight Market — USD Bn
             </div>
             <div className="relative flex flex-1 items-end justify-center gap-20 pb-2">
@@ -98,9 +98,9 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
                     <div className="flex w-14 flex-col-reverse">
                       <div
                         style={{ height: bar.row * scale, animationDelay: `${i * 0.15}s` }}
-                        className="bar-grow flex items-start justify-center bg-[#e7eaee] pt-1"
+                        className="bar-grow flex items-start justify-center bg-[#aab2bd] pt-1"
                       >
-                        <span className="tabular text-[10px] text-[var(--body)]">{bar.row}</span>
+                        <span className="tabular text-[10px] font-medium text-white">{bar.row}</span>
                       </div>
                       <div
                         style={{ height: bar.apac * scale, animationDelay: `${i * 0.15 + 0.1}s` }}
@@ -121,7 +121,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
                 <span className="h-2.5 w-2.5 rounded-sm accent-gradient" /> APAC
               </span>
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
-                <span className="h-2.5 w-2.5 rounded-sm bg-[#e7eaee]" /> Rest of World
+                <span className="h-2.5 w-2.5 rounded-sm bg-[#aab2bd]" /> Rest of World
               </span>
             </div>
           </div>

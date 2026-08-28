@@ -89,11 +89,12 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
       <div className="flex h-full flex-col justify-center gap-14 pt-2">
         <div>
           <div className="relative flex items-center justify-between px-3.5">
-            <div className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-[var(--accent)]" />
-            {PILLARS.map((p) => (
+            <div className="bar-grow-x absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-[var(--accent)]" />
+            {PILLARS.map((p, i) => (
               <div
                 key={p.n}
-                className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-white text-[12px] font-bold text-[var(--accent-deep)]"
+                style={{ animationDelay: `${(i / (PILLARS.length - 1)) * 0.7}s` }}
+                className="pop-in relative z-10 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-white text-[12px] font-bold text-[var(--accent-deep)]"
               >
                 {p.n}
               </div>

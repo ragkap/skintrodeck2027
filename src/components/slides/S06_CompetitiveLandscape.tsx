@@ -54,7 +54,9 @@ export function S06_CompetitiveLandscape({ index, total }: { index: number; tota
               className="border-t border-[var(--hairline)] pt-3 first:border-t-0 first:pt-0"
             >
               <div className="text-[13.5px] font-bold text-[var(--ink)]">{c.label}</div>
-              <div className="mt-0.5 text-[12px] leading-snug text-[var(--body)]">{c.desc}</div>
+              <div className="mt-0.5 font-serif text-[12px] leading-snug text-[var(--body)] italic">
+                {c.desc}
+              </div>
               <div className="mt-1 text-[11px] text-[var(--muted)]">{c.names.join(" · ")}</div>
             </div>
           ))}

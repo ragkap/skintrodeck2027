@@ -128,7 +128,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
         </div>
 
         <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
-          Recent investment from QRT — the world&apos;s fastest-growing quant hedge fund —
+          Recent investment from the world&apos;s fastest-growing quant hedge fund —
           alongside a top-up from SGX, confirms it: the most sophisticated AI users want{" "}
           <em>more</em> proprietary data, not less.
         </p>

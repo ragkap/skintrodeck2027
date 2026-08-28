@@ -28,7 +28,7 @@ export function S17_SynergisticMA({ index, total }: { index: number; total: numb
       index={index}
       total={total}
       title="Synergistic M&A Potential"
-      subtitle="Opportunities among Smartkarma's existing provider universe to accelerate organic growth roadmap"
+      subtitle="Opportunities among Smartkarma's existing provider universe"
     >
       <div className="flex h-full flex-col gap-2 pt-1">
         <div className="flex items-center justify-between">

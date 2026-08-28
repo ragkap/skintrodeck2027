@@ -37,9 +37,9 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
             <Image
               src="/logos/pvtiq.png"
               alt="pvtIQ by Smartkarma"
-              width={140}
-              height={56}
-              className="h-10 w-auto rounded-[6px] object-contain"
+              width={210}
+              height={84}
+              className="h-20 w-auto rounded-[6px] object-contain"
             />
             <div className="mt-3 text-[14px] font-bold text-[var(--ink)]">
               Private Markets Research and Data, Reimagined

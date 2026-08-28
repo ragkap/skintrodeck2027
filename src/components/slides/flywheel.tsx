@@ -153,7 +153,11 @@ export function Flywheel() {
   }, []);
 
   return (
-    <div className="relative mx-auto" style={{ width: SIZE, height: SIZE, maxWidth: "100%" }} aria-hidden>
+    <div
+      className="relative mx-auto"
+      style={{ width: SIZE, height: SIZE, maxWidth: "100%", transform: "translateY(-18px)" }}
+      aria-hidden
+    >
       <canvas ref={canvasRef} style={{ width: SIZE, height: SIZE, maxWidth: "100%" }} />
 
       <div className="pointer-events-none absolute top-1/2 left-1/2 h-[74px] w-[74px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]">

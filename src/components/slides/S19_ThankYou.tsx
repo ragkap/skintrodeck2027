@@ -1,34 +1,10 @@
 import Image from "next/image";
 import { Slide } from "../deck/Slide";
 
-function StarMark() {
-  return (
-    <svg viewBox="0 0 520 520" className="h-full w-full">
-      <g transform="translate(260 260)">
-        <path
-          d="M0 -190 L46 -46 L190 0 L46 46 L0 190 L-46 46 L-190 0 L-46 -46 Z"
-          fill="none"
-          stroke="var(--accent)"
-          strokeWidth="1.5"
-          opacity="0.5"
-        />
-        <path
-          d="M0 -90 L22 -22 L90 0 L22 22 L0 90 L-22 22 L-90 0 L-22 -22 Z"
-          fill="var(--accent)"
-        />
-      </g>
-    </svg>
-  );
-}
-
 export function S19_ThankYou({ index, total }: { index: number; total: number }) {
   return (
     <Slide index={index} total={total} bare noFooter>
       <div className="relative flex h-[720px] w-[1280px] flex-col justify-between bg-white p-16">
-        <div className="absolute top-0 right-0 h-[480px] w-[480px] opacity-90">
-          <StarMark />
-        </div>
-
         <div className="relative">
           <Image
             src="/logos/smartkarma-logo.png"
@@ -39,11 +15,15 @@ export function S19_ThankYou({ index, total }: { index: number; total: number })
           />
         </div>
 
-        <div className="relative flex flex-col gap-6">
+        <div className="relative flex max-w-[720px] flex-col gap-6">
           <span className="rule" />
-          <h1 className="text-[64px] font-bold leading-none text-[var(--ink)]">
-            <span className="font-serif italic text-[var(--accent-deep)]">Thank you</span>
-          </h1>
+          <p className="text-[13px] leading-relaxed text-[var(--muted)]">
+            This presentation is confidential and intended solely for the person to whom
+            it has been provided by Smartkarma. It may not be reproduced, distributed, or
+            disclosed, in whole or in part, without Smartkarma&apos;s prior written
+            consent. It does not constitute an offer or solicitation to sell securities
+            and should not be relied upon in connection with any investment decision.
+          </p>
         </div>
 
         <div className="relative flex items-end justify-between border-t border-[var(--hairline)] pt-6 text-[12px] text-[var(--body)]">

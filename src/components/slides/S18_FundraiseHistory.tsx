@@ -1,5 +1,4 @@
 import { Slide } from "../deck/Slide";
-import { Pill } from "../deck/ui";
 
 const ROUNDS = [
   { date: "Jan 2015", round: "Seed", label: "Launch Tech", rev: "-", val: "-" },
@@ -15,16 +14,29 @@ export function S18_FundraiseHistory({ index, total }: { index: number; total: n
       index={index}
       total={total}
       title="Fundraise History"
-      subtitle="Smartkarma closed its latest round in May 2026, with SGX and QRT Ventures among participating investors"
+      subtitle="Smartkarma closed its latest round in May 2026"
     >
-      <div className="flex h-full flex-col justify-center gap-12 pt-2">
-        <div className="grid grid-cols-5 divide-x divide-[var(--hairline)]">
+      <div className="flex h-full flex-col justify-center pt-2">
+        <div className="relative grid grid-cols-5">
+          <div
+            className="bar-grow-x absolute top-[42px] right-0 left-0 h-[2px] bg-[var(--accent)]"
+            style={{ animationDuration: "1.4s" }}
+          />
           {ROUNDS.map((r, i) => (
-            <div key={r.round} className={i === 0 ? "pr-6 text-center" : "px-6 text-center last:pr-0"}>
+            <div
+              key={r.round}
+              className={
+                i === 0
+                  ? "pop-in relative pr-6 text-center"
+                  : "pop-in relative px-6 text-center last:pr-0"
+              }
+              style={{ animationDelay: `${0.15 + i * 0.28}s` }}
+            >
               <div className="caption uppercase tracking-wide">{r.date}</div>
-              <div className="mt-1 mb-3 text-[15px] font-bold text-[var(--ink)]">{r.round}</div>
+              <div className="relative z-10 mx-auto mt-1 mb-3 flex h-3 w-3 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-white" />
+              <div className="text-[15px] font-bold text-[var(--ink)]">{r.round}</div>
               <div
-                className={`text-[11.5px] font-semibold ${
+                className={`mt-1 text-[11.5px] font-semibold ${
                   r.highlight ? "text-[var(--accent-deep)]" : "text-[var(--body)]"
                 }`}
               >
@@ -40,24 +52,6 @@ export function S18_FundraiseHistory({ index, total }: { index: number; total: n
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mx-auto flex w-[64%] flex-col items-center gap-4 border-t border-[var(--hairline)] pt-8 text-center">
-          <Pill>Fundraise · May 2026</Pill>
-          <div className="flex gap-16">
-            <div>
-              <div className="text-[28px] font-bold text-[var(--accent-deep)]">2x</div>
-              <div className="caption uppercase tracking-wide">Valuation</div>
-            </div>
-            <div>
-              <div className="text-[28px] font-bold text-[var(--accent-deep)]">3.5x</div>
-              <div className="caption uppercase tracking-wide">Revenue</div>
-            </div>
-          </div>
-          <div className="text-[13px] text-[var(--body)]">
-            <span className="font-semibold text-[var(--ink)]">Investors:</span> SGX ·
-            QRT Ventures · a Tier-1 Global Multi-Strat Fund
-          </div>
         </div>
       </div>
     </Slide>

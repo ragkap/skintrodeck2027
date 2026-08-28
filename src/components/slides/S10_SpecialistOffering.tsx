@@ -60,7 +60,7 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
     >
       <div className="flex h-full flex-col justify-center gap-10">
         <div className="grid grid-cols-4 divide-x divide-[var(--hairline)]">
-          <Stat value="300+" label="Content providers" />
+          <Stat value="300+" label="Insight providers" />
           <div className="pl-8">
             <Stat value="100k" label="Insights" />
           </div>

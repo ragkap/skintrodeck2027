@@ -131,7 +131,7 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
           <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">
             <Stat value="30+" label="Premium Datasets" />
             <div className="pl-8">
-              <Stat value="50%+" label="Data subscription revenue (2026E)" />
+              <Stat value="50%+" label="Data as % of total Revenue" />
             </div>
             <div className="pl-8">
               <Stat value="65%" label="Data as % of new sales" />

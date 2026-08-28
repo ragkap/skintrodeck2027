@@ -1,7 +1,6 @@
 import { Slide } from "../deck/Slide";
 
 const ROUNDS = [
-  { date: "Jan 2015", round: "Seed", label: "Launch Tech", rev: "-", val: "-" },
   { date: "May 2016", round: "Series A", label: "Grow Supplyside", rev: "-", val: "1.6x" },
   { date: "Oct 2017", round: "Series B1", label: "Grow Demandside", rev: "1.5x", val: "2.3x" },
   { date: "Jul 2019", round: "Series B2", label: "Expand Offerings", rev: "2.3x", val: "1.3x" },
@@ -17,7 +16,7 @@ export function S18_FundraiseHistory({ index, total }: { index: number; total: n
       subtitle="Smartkarma closed its latest round in May 2026"
     >
       <div className="flex h-full flex-col justify-center pt-2">
-        <div className="relative grid grid-cols-5">
+        <div className="relative grid grid-cols-4">
           <div
             className="bar-grow-x absolute top-[42px] right-0 left-0 h-[2px] accent-gradient"
             style={{ animationDuration: "1.4s" }}

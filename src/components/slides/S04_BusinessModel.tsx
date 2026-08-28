@@ -80,7 +80,7 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
       </div>
 
       <p className="mt-4 text-[13.5px] leading-relaxed text-[var(--body)]">{t.desc}</p>
-      <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--body)]">
+      <p className="mt-2 mb-5 text-[12.5px] leading-relaxed text-[var(--body)]">
         <span className="text-[var(--ink)]">{t.focusLabel}</span> {t.focus}
       </p>
 

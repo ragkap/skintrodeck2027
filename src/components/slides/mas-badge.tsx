@@ -13,9 +13,9 @@ export function MASBadge({ className }: { className?: string }) {
 
       <text
         x="100"
-        y="82"
+        y="86"
         fontFamily="var(--font-roboto), system-ui, sans-serif"
-        fontSize="38"
+        fontSize="29"
         fontWeight="800"
         fill="var(--ink)"
         textAnchor="middle"
@@ -29,7 +29,7 @@ export function MASBadge({ className }: { className?: string }) {
         fontSize="17"
         textAnchor="middle"
         letterSpacing="4"
-        fill="var(--muted)"
+        fill="var(--accent)"
       >
         ★★★★★
       </text>

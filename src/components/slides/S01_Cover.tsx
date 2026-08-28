@@ -57,7 +57,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
           ))}
         </div>
 
-        <div className="relative mt-2 flex items-end justify-between border-t border-[var(--hairline)] pt-2">
+        <div className="relative mt-2 flex items-center justify-between border-t border-[var(--hairline)] pt-2">
           <div className="flex items-center gap-6">
             <span className="caption uppercase tracking-wide">Shareholders</span>
             <div className="flex items-center gap-5 opacity-80">

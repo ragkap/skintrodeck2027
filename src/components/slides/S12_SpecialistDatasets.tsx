@@ -98,8 +98,8 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
     <Slide
       index={index}
       total={total}
-      title="Specialist Datasets"
-      subtitle="Proprietary alternative data sold per-team, per-dataset — plus AI distribution via SmartWealth"
+      title="Premium Alternative Datasets"
+      subtitle="Proprietary alt-datasets for systematic & quant desks across flow, credit, POS & commodities, sold per-pod (US$25–200k)"
     >
       <div className="grid h-full grid-cols-[1fr_1.15fr] gap-14 pt-2">
         <div className="flex flex-col justify-center">
@@ -128,8 +128,11 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
         </div>
 
         <div className="flex flex-col justify-center gap-6">
-          <div className="grid grid-cols-2 divide-x divide-[var(--hairline)]">
-            <Stat value="50%+" label="Data subscription revenue (2026E)" />
+          <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">
+            <Stat value="~30" label="Proprietary datasets" />
+            <div className="pl-8">
+              <Stat value="50%+" label="Data subscription revenue (2026E)" />
+            </div>
             <div className="pl-8">
               <Stat value="65%" label="Data as % of new sales" />
             </div>
@@ -154,7 +157,7 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
             <p className="mt-2 text-[12px] leading-relaxed text-[var(--body)]">
               Supports the Model Context Protocol, so wealth platforms build AI-powered,
               personalised conversational experiences grounded in trusted Smartkarma
-              intelligence — for both RMs and end clients.
+              intelligence.
             </p>
           </div>
         </div>

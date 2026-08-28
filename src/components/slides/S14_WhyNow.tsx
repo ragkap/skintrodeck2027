@@ -100,7 +100,7 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
             style={{ animationDelay: "0.35s" }}
           >
             He who lives by the crystal ball will eat shattered glass. The only way to
-            win is to understand more and faster than others — and that comes from
+            win is to understand more and faster than others, and that comes from
             data.
           </p>
           <div

@@ -34,8 +34,8 @@ const DEALS_2: [string, string, string][] = [
   ["2026", "MSCI", "PM Insights, Compass & Vantager"],
 ];
 
-function styleRows(rows: [string, string, string][]) {
-  return rows.map(([year, acquirer, target]) => {
+function styleRows(rows: [string, string, string][], padTo?: number) {
+  const styled = rows.map(([year, acquirer, target]) => {
     const recent = Number(year) >= 2025;
     return [
       <span key="y" className={recent ? "font-bold text-gradient" : undefined}>
@@ -49,6 +49,10 @@ function styleRows(rows: [string, string, string][]) {
       </span>,
     ];
   });
+  while (padTo && styled.length < padTo) {
+    styled.push([<span key="pad">&nbsp;</span>, <span key="pad2" />, <span key="pad3" />]);
+  }
+  return styled;
 }
 
 const POINTS = [
@@ -119,8 +123,16 @@ export function S15_Consolidation({ index, total }: { index: number; total: numb
         </ul>
 
         <div className="grid grid-cols-2 gap-3 text-[11px]">
-          <Table dense columns={["Year", "Acquirer", "Target"]} rows={styleRows(DEALS)} />
-          <Table dense columns={["Year", "Acquirer", "Target"]} rows={styleRows(DEALS_2)} />
+          <Table
+            dense
+            columns={["Year", "Acquirer", "Target"]}
+            rows={styleRows(DEALS, DEALS_2.length)}
+          />
+          <Table
+            dense
+            columns={["Year", "Acquirer", "Target"]}
+            rows={styleRows(DEALS_2, DEALS.length)}
+          />
         </div>
       </div>
     </Slide>

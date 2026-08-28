@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   title: "Smartkarma — Investor Introduction",
   description:
     "Smartkarma: the proprietary investment intelligence platform for the AI era.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

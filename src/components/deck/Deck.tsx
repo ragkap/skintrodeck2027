@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ScaledStage } from "./ScaledStage";
+import { ImagePrefetch } from "./ImagePrefetch";
 import type { ReactNode } from "react";
 
 export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initialIndex?: number }) {
@@ -47,6 +48,7 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
 
   return (
     <div className="fixed inset-0 bg-[#1a1d21]">
+      <ImagePrefetch />
       <ScaledStage>{slides[index]}</ScaledStage>
 
       {/* Click zones for advancing/going back without hunting for arrows */}

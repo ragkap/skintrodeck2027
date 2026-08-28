@@ -14,7 +14,7 @@ import { useEffect, useRef } from "react";
 const STEPS = ["Direct Sales", "Platform Upsell", "Channel Partners"];
 const ANGLES = [180, 0, 90]; // degrees; left, right, bottom
 const ACCENT = "#4db364";
-const ACCENT_DEEP = "#3a9a53";
+const ACCENT_DEEP = "#24a9a7";
 const SIZE = 320;
 
 export function Flywheel() {

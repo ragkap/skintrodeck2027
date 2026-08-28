@@ -89,7 +89,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
       <div className="flex h-full flex-col justify-center gap-14 pt-2">
         <div>
           <div className="relative flex items-center justify-between px-3.5">
-            <div className="bar-grow-x absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-[var(--accent)]" />
+            <div className="bar-grow-x absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 accent-gradient" />
             {PILLARS.map((p, i) => (
               <div
                 key={p.n}

@@ -4,7 +4,13 @@ import { Slide } from "../deck/Slide";
 export function S19_ThankYou({ index, total }: { index: number; total: number }) {
   return (
     <Slide index={index} total={total} bare noFooter>
-      <div className="relative flex h-[720px] w-[1280px] flex-col justify-between bg-white p-16">
+      <div
+        className="relative flex h-[720px] w-[1280px] flex-col justify-between p-16"
+        style={{
+          background:
+            "radial-gradient(1100px 620px at 78% -12%, rgba(77,179,100,0.16), rgba(77,179,100,0) 62%), linear-gradient(180deg, #eef1f0 0%, #f2f4f5 40%, #f6f7f8 100%)",
+        }}
+      >
         <div className="relative">
           <Image
             src="/logos/smartkarma-logo.png"

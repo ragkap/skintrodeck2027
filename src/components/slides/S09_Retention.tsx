@@ -44,7 +44,7 @@ function BarChart({
           </div>
           <div
             style={{ height: Math.max(b.v * SCALE, 4) }}
-            className={`w-11 ${b.featured ? "bg-[var(--accent)]" : "bg-[#d7dce2]"}`}
+            className={`w-11 ${b.featured ? "accent-gradient" : "bg-[#d7dce2]"}`}
           />
           <div className="w-16 text-center text-[9px] font-medium leading-tight text-[var(--muted)]">
             {b.l}

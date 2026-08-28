@@ -110,7 +110,7 @@ export function S15_Consolidation({ index, total }: { index: number; total: numb
         <ul className="flex flex-col gap-5 border-r border-[var(--hairline)] pr-8">
           {POINTS.map((p, i) => (
             <li key={i} className="flex gap-2.5">
-              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
+              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full accent-gradient" />
               <span className="text-[13.5px] leading-snug text-[var(--body)]">
                 <span className="font-semibold text-[var(--ink)]">{p.t}</span> {p.d}
               </span>

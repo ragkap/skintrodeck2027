@@ -19,7 +19,7 @@ export function S18_FundraiseHistory({ index, total }: { index: number; total: n
       <div className="flex h-full flex-col justify-center pt-2">
         <div className="relative grid grid-cols-5">
           <div
-            className="bar-grow-x absolute top-[42px] right-0 left-0 h-[2px] bg-[var(--accent)]"
+            className="bar-grow-x absolute top-[42px] right-0 left-0 h-[2px] accent-gradient"
             style={{ animationDuration: "1.4s" }}
           />
           {ROUNDS.map((r, i) => (

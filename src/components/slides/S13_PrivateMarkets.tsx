@@ -1,6 +1,51 @@
 import Image from "next/image";
 import { Slide } from "../deck/Slide";
-import { Bullet, Stat } from "../deck/ui";
+import { Mark, Stat } from "../deck/ui";
+
+const POINTS = [
+  {
+    t: "Smartkarma launched pvtIQ in Nov 2025",
+    d: (
+      <>to provide <Mark>intelligence into Asian private markets</Mark>.</>
+    ),
+  },
+  {
+    t: "$74bn has been invested since 2014 in private markets across SE Asia,",
+    d: (
+      <>
+        of which only $24bn has founded exits. A{" "}
+        <Mark>strong research ecosystem is essential</Mark> for sustained growth.
+      </>
+    ),
+  },
+  {
+    t: "Initial focus on emerging sectors and new economy companies,",
+    d: (
+      <>
+        with <Mark>proprietary data and insight</Mark> into leading private companies.
+      </>
+    ),
+  },
+  {
+    t: "Leverages Smartkarma&apos;s strong industry collaborations,",
+    d: (
+      <>
+        distribution and technology to ensure{" "}
+        <Mark>reliable, high-quality coverage</Mark>, with links into pre-existing
+        strength in ECM.
+      </>
+    ),
+  },
+  {
+    t: "Expected to accelerate growth, expand TAM and diversify customer base,",
+    d: (
+      <>
+        directly contributing to topline, enhancing profitability, and{" "}
+        <Mark>strengthening alignment with SGX&apos;s strategic priorities</Mark>.
+      </>
+    ),
+  },
+];
 
 export function S13_PrivateMarkets({ index, total }: { index: number; total: number }) {
   return (
@@ -11,29 +56,23 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
       subtitle="Proprietary research & data on a fast-growing yet opaque asset class"
     >
       <div className="grid h-full grid-cols-[1.15fr_1fr] gap-16 pt-2">
-        <ul className="flex flex-col justify-center gap-4">
-          <Bullet title="Smartkarma launched pvtIQ in Nov 2025">
-            to provide intelligence into Asian private markets.
-          </Bullet>
-          <Bullet title="$74bn has been invested since 2014 in private markets across SE Asia">
-            of which only $24bn has founded exits. A strong research ecosystem is
-            essential for sustained growth.
-          </Bullet>
-          <Bullet title="Initial focus on emerging sectors and new economy companies,">
-            with proprietary data and insight into leading private companies.
-          </Bullet>
-          <Bullet title="Leverages Smartkarma&apos;s strong industry collaborations,">
-            distribution and technology to ensure reliable, high-quality coverage, with
-            links into pre-existing strength in ECM.
-          </Bullet>
-          <Bullet title="Expected to accelerate growth, expand TAM and diversify customer base,">
-            directly contributing to topline, enhancing profitability, and strengthening
-            alignment with SGX&apos;s strategic priorities.
-          </Bullet>
+        <ul className="flex flex-col justify-center gap-5">
+          {POINTS.map((p, i) => (
+            <li
+              key={i}
+              className="fade-up flex gap-2.5"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full accent-gradient" />
+              <span className="text-[13.5px] leading-snug text-[var(--body)]">
+                <span className="font-semibold text-[var(--ink)]">{p.t}</span> {p.d}
+              </span>
+            </li>
+          ))}
         </ul>
 
         <div className="flex flex-col justify-center gap-6 border-l border-[var(--hairline)] pl-10">
-          <div>
+          <div className="pop-in" style={{ animationDelay: "0.2s" }}>
             <Image
               src="/logos/pvtiq.png"
               alt="pvtIQ by Smartkarma"
@@ -48,14 +87,21 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
               pvtIQ leverages Smartkarma&apos;s technology and distribution to deliver
               high-quality research and data on Asian private markets.
             </p>
-            <div className="mt-3 text-[10px] font-medium text-[var(--muted)]">
-              Backed by SGX Group · Peak XV · Jungle · Wavemaker · Enterprise Singapore
-            </div>
           </div>
           <div className="grid grid-cols-3 gap-6 border-t border-[var(--hairline)] pt-5">
-            <Stat value="$50b+" label="Exit potential" />
-            <Stat value="50k+" label="Investors" />
-            <Stat value="7+" label="Press mentions/day" />
+            {[
+              { value: "$50b+", label: "Exit potential" },
+              { value: "50k+", label: "Investors" },
+              { value: "7+", label: "Press mentions/day" },
+            ].map((s, i) => (
+              <div
+                key={s.label}
+                className="pop-in"
+                style={{ animationDelay: `${0.35 + i * 0.1}s` }}
+              >
+                <Stat value={s.value} label={s.label} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

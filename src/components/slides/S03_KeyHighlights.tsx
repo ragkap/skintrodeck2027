@@ -112,7 +112,7 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
           {CARDS.map((c, i) => (
             <div key={c.title} className={i === 0 ? "flex flex-col gap-3.5 pr-8" : "flex flex-col gap-3.5 px-8 last:pr-0"}>
               <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[9px] bg-[var(--accent)]">
+                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[9px] accent-gradient">
                   {c.icon}
                 </span>
                 <h3 className="text-[16px] font-bold leading-tight text-[var(--ink)]">

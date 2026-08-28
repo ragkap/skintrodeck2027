@@ -3,7 +3,7 @@ import { Mark } from "../deck/ui";
 
 const COLS = [40, 130, 220, 310];
 const ROWS = [30, 120, 210, 300];
-const NODE_COLOR = (i: number, j: number) => ((i + j) % 3 === 0 ? "var(--accent)" : "#d7dce2");
+const NODE_COLOR = (i: number, j: number) => ((i + j) % 3 === 0 ? "url(#accentNodeGrad)" : "#d7dce2");
 const ICON_R = 16;
 
 function NetworkGraphic() {
@@ -52,6 +52,10 @@ function NetworkGraphic() {
           <clipPath id="uniquelyIconClip">
             <circle cx={cx} cy={cy} r={ICON_R} />
           </clipPath>
+          <linearGradient id="accentNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#24a9a7" />
+            <stop offset="100%" stopColor="#4db364" />
+          </linearGradient>
         </defs>
         <circle cx={cx} cy={cy} r={ICON_R + 6} fill="white" />
         <circle
@@ -60,7 +64,7 @@ function NetworkGraphic() {
           cy={cy}
           r={ICON_R + 6}
           fill="none"
-          stroke="var(--accent)"
+          stroke="url(#accentNodeGrad)"
           strokeWidth="1.5"
           style={{ transformBox: "fill-box", transformOrigin: "center" }}
         />
@@ -138,7 +142,7 @@ export function S16_UniquelyPositioned({ index, total }: { index: number; total:
         <ul className="flex flex-col justify-center gap-5">
           {POINTS.map((p, i) => (
             <li key={i} className="flex gap-2.5">
-              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
+              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full accent-gradient" />
               <span className="text-[13.5px] leading-snug text-[var(--body)]">
                 <span className="font-semibold text-[var(--ink)]">{p.t}</span> {p.d}
               </span>

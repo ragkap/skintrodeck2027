@@ -117,7 +117,7 @@ function BarRow({ label, value, delay }: { label: string; value: number; delay: 
       <div className="h-1.5 flex-1 bg-[#eef1f4]">
         <div
           style={{ width: `${value}%`, animationDelay: `${delay}s` }}
-          className="bar-grow-x h-full bg-[var(--accent)]"
+          className="bar-grow-x h-full accent-gradient"
         />
       </div>
       <span className="tabular w-9 text-right text-[11.5px] font-semibold text-[var(--ink)]">

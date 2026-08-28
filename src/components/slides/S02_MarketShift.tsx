@@ -47,7 +47,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
           <ol className="flex flex-col justify-center gap-11">
             {POINTS.map((p) => (
               <li key={p.title} className="flex gap-3">
-                <span className="mt-2 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
+                <span className="mt-2 h-[6px] w-[6px] flex-none rounded-full accent-gradient" />
                 <span className="text-[15px] leading-relaxed text-[var(--body)]">
                   <span className="font-semibold text-[var(--ink)]">{p.title} </span>
                   {p.body}
@@ -104,7 +104,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
                       </div>
                       <div
                         style={{ height: bar.apac * scale, animationDelay: `${i * 0.15 + 0.1}s` }}
-                        className="bar-grow flex items-start justify-center bg-[var(--accent)] pt-0.5"
+                        className="bar-grow flex items-start justify-center accent-gradient pt-0.5"
                       >
                         {bar.apac >= 10 && (
                           <span className="tabular text-[10px] text-white">{bar.apac}</span>
@@ -118,7 +118,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
             </div>
             <div className="flex items-center justify-center gap-6 border-t border-[var(--hairline)] pt-4">
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
-                <span className="h-2.5 w-2.5 rounded-sm bg-[var(--accent)]" /> APAC
+                <span className="h-2.5 w-2.5 rounded-sm accent-gradient" /> APAC
               </span>
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
                 <span className="h-2.5 w-2.5 rounded-sm bg-[#e7eaee]" /> Rest of World

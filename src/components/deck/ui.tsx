@@ -37,7 +37,7 @@ export function Bullet({
 }) {
   return (
     <li className="flex gap-3">
-      <span className="mt-[9px] h-[5px] w-[5px] flex-none rounded-full bg-[var(--accent)]" />
+      <span className="mt-[9px] h-[5px] w-[5px] flex-none rounded-full accent-gradient" />
       <span className="text-[15px] leading-relaxed text-[var(--body)]">
         {title && <span className="font-semibold text-[var(--ink)]">{title} </span>}
         {children}

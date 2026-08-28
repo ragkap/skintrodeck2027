@@ -14,7 +14,7 @@ import { useEffect, useRef } from "react";
 
 const NODES = ["Real-time Insight", "Specialist Alt Data", "On-Demand Access"];
 const ACCENT = "#4db364";
-const ACCENT_DEEP = "#3a9a53";
+const ACCENT_DEEP = "#24a9a7";
 const SIZE = 460; // logical px (canvas is DPR-scaled)
 
 export function HeroTriangle() {

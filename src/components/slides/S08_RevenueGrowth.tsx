@@ -60,7 +60,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
                 <span className="h-2.5 w-2.5 rounded-sm bg-[var(--premium)]" /> Premium
               </span>
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
-                <span className="h-2.5 w-2.5 rounded-sm bg-[var(--accent)]" /> Platform
+                <span className="h-2.5 w-2.5 rounded-sm accent-gradient" /> Platform
               </span>
             </div>
           </div>
@@ -82,7 +82,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
                       height: m.platform * MIX_SCALE,
                       animationDelay: `${i * 0.15 + 0.1}s`,
                     }}
-                    className="bar-grow flex items-start justify-center bg-[var(--accent)] pt-1"
+                    className="bar-grow flex items-start justify-center accent-gradient pt-1"
                   >
                     <span className="tabular text-[10px] text-white">{m.platform}%</span>
                   </div>

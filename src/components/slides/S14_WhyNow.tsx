@@ -63,7 +63,7 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
         <ul className="flex flex-col justify-center gap-5">
           {POINTS.map((p, i) => (
             <li key={i} className="flex gap-2.5">
-              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
+              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full accent-gradient" />
               <span className="text-[13.5px] leading-snug text-[var(--body)]">
                 <span className="font-semibold text-[var(--ink)]">{p.t}</span> {p.d}
               </span>
@@ -76,7 +76,7 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
           style={{ transform: "translateY(-17px)" }}
         >
           <div
-            className="bar-grow absolute top-0 -left-[2px] h-full w-[2px] bg-[var(--accent)]"
+            className="bar-grow absolute top-0 -left-[2px] h-full w-[2px] accent-gradient"
             style={{ transformOrigin: "top" }}
           />
 

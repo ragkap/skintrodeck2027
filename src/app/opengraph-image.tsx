@@ -55,18 +55,17 @@ export default async function Image() {
         <div
           style={{
             marginTop: 36,
+            display: "flex",
+            flexDirection: "column",
             fontSize: 52,
             fontWeight: 700,
             lineHeight: 1.18,
             letterSpacing: "-0.015em",
-            color: "#111827",
-            maxWidth: 920,
-            display: "flex",
-            flexWrap: "wrap",
           }}
         >
-          The Proprietary Investment Intelligence{" "}
-          <span style={{ color: "#3a9a53" }}>Platform for the AI Era</span>
+          <div style={{ display: "flex", color: "#111827" }}>The Proprietary Investment</div>
+          <div style={{ display: "flex", color: "#111827" }}>Intelligence Platform</div>
+          <div style={{ display: "flex", color: "#3a9a53" }}>for the AI Era</div>
         </div>
         <div
           style={{

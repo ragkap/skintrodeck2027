@@ -66,7 +66,23 @@ function donutSlice(startDeg: number, endDeg: number) {
   return `M ${o1.x} ${o1.y} A ${OUTER_R} ${OUTER_R} 0 ${largeArc} 1 ${o2.x} ${o2.y} L ${i1.x} ${i1.y} A ${INNER_R} ${INNER_R} 0 ${largeArc} 0 ${i2.x} ${i2.y} Z`;
 }
 
-const ICON_R = 62;
+const ICON_R = 50;
+
+const ARROW_ANGLES = SEGMENTS.map((s) => s.end);
+
+function FlowArrow({ angleDeg }: { angleDeg: number }) {
+  const p = pt((OUTER_R + INNER_R) / 2, angleDeg);
+  return (
+    <path
+      d="M -6,5 L 0,-7 L 6,5 Z"
+      fill="var(--accent-deep)"
+      stroke="white"
+      strokeWidth="1"
+      strokeLinejoin="round"
+      transform={`translate(${p.x} ${p.y}) rotate(${angleDeg + 180})`}
+    />
+  );
+}
 
 function Flywheel() {
   return (
@@ -75,27 +91,35 @@ function Flywheel() {
         <clipPath id="skIconClip">
           <circle cx={CX} cy={CY} r={ICON_R} />
         </clipPath>
+        <filter id="wheelShadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="var(--accent-deep)" floodOpacity="0.18" />
+        </filter>
       </defs>
 
-      {SEGMENTS.map((seg, i) => {
-        const mid = (seg.start + seg.end) / 2;
-        const labelPos = pt((OUTER_R + INNER_R) / 2, mid);
-        return (
-          <g key={i}>
-            <path d={donutSlice(seg.start, seg.end)} fill={seg.color} />
-            <text
-              x={labelPos.x}
-              y={labelPos.y + 9}
-              textAnchor="middle"
-              fontSize="26"
-              fontWeight="800"
-              fill="white"
-            >
-              0{i + 1}
-            </text>
-          </g>
-        );
-      })}
+      <g filter="url(#wheelShadow)">
+        {SEGMENTS.map((seg, i) => {
+          const mid = (seg.start + seg.end) / 2;
+          const labelPos = pt((OUTER_R + INNER_R) / 2, mid);
+          return (
+            <g key={i}>
+              <path d={donutSlice(seg.start, seg.end)} fill={seg.color} />
+              <text
+                x={labelPos.x}
+                y={labelPos.y + 6}
+                textAnchor="middle"
+                fontSize="17"
+                fontWeight="800"
+                fill="white"
+              >
+                {i + 1}
+              </text>
+            </g>
+          );
+        })}
+        {ARROW_ANGLES.map((a) => (
+          <FlowArrow key={a} angleDeg={a} />
+        ))}
+      </g>
 
       <circle cx={CX} cy={CY} r={INNER_R - 6} fill="white" />
       <image
@@ -108,7 +132,6 @@ function Flywheel() {
         className="spin-slow"
         preserveAspectRatio="xMidYMid slice"
       />
-      <circle cx={CX} cy={CY} r={ICON_R} fill="none" stroke="var(--hairline-strong)" strokeWidth="1.5" />
     </svg>
   );
 }

@@ -12,8 +12,7 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
       <div className="grid h-full grid-cols-[1.15fr_1fr] gap-16 pt-2">
         <ul className="flex flex-col gap-4">
           <Bullet title="Smartkarma launched pvtIQ in Nov 2025">
-            to provide intelligence into Asian private markets, in support of MAS&apos;
-            Equity Market Development Program.
+            to provide intelligence into Asian private markets.
           </Bullet>
           <Bullet title="$74bn has been invested since 2014 in private markets across SE Asia">
             of which only $24bn has founded exits. A strong research ecosystem is

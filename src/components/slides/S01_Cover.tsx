@@ -87,7 +87,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
               />
             </div>
           </div>
-          <MASBadge className="h-[116px] w-[116px]" />
+          <MASBadge className="h-[48px] w-auto" />
         </div>
       </div>
     </Slide>

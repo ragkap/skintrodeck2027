@@ -1,47 +1,33 @@
 export function MASBadge({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 200 200"
-      width={116}
-      height={116}
+      viewBox="0 0 220 60"
       className={className}
       role="img"
       aria-label="MAS Knowledge Enterprise Award — Winner"
     >
-      <circle cx="100" cy="100" r="97" fill="none" stroke="var(--hairline-strong)" strokeWidth="1" />
-      <circle cx="100" cy="100" r="88" fill="none" stroke="var(--ink)" strokeWidth="1.3" />
-
       <text
-        x="100"
-        y="86"
+        x="0"
+        y="24"
         fontFamily="var(--font-roboto), system-ui, sans-serif"
-        fontSize="29"
+        fontSize="20"
         fontWeight="800"
         fill="var(--ink)"
-        textAnchor="middle"
       >
         WINNER
       </text>
 
-      <text
-        x="100"
-        y="112"
-        fontSize="17"
-        textAnchor="middle"
-        letterSpacing="4"
-        fill="var(--accent)"
-      >
+      <text x="0" y="42" fontSize="13" letterSpacing="3" fill="var(--accent)">
         ★★★★★
       </text>
 
       <text
-        x="100"
-        y="140"
+        x="0"
+        y="56"
         fontFamily="var(--font-roboto), system-ui, sans-serif"
-        fontSize="11.5"
+        fontSize="9.5"
         fontWeight="700"
-        letterSpacing="0.4"
-        textAnchor="middle"
+        letterSpacing="0.3"
         fill="var(--accent-deep)"
       >
         MAS Enterprise Award

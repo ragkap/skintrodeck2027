@@ -63,7 +63,7 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
         top-5 client revenue <Mark>up 3× in the last 4 years</Mark>
       </>,
       <>
-        Material operating leverage driving <Mark>2026E gross profit +57% YoY</Mark>,
+        Material operating leverage driving <Mark>2026E gross profit +70% YoY</Mark>,
         EBITDA margin 2% → 11% (Base) / 15% (Bull)
       </>,
     ],
@@ -91,7 +91,7 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
 const STATS = [
   { value: "$112B", label: "TAM by 2030" },
   { value: "60%+", label: "Gross margin, long-term target" },
-  { value: "+57%", label: "2026E gross profit, YoY" },
+  { value: "+70%", label: "2026E gross profit, YoY" },
   { value: "2%→11%", label: "EBITDA margin, 2025→FY26E" },
   { value: ">$100M", label: "M&A pipeline, ARR identified" },
   { value: "6/6", label: "Up-rounds, track record" },

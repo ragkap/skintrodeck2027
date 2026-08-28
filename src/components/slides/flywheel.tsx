@@ -12,7 +12,7 @@ import { useEffect, useRef } from "react";
  */
 
 const STEPS = ["Direct Sales", "Platform Upsell", "Channel Partners"];
-const ANGLES = [-30, 90, 210]; // degrees; upper-right, bottom, upper-left
+const ANGLES = [180, 0, 90]; // degrees; left, right, bottom
 const ACCENT = "#4db364";
 const ACCENT_DEEP = "#3a9a53";
 const SIZE = 320;
@@ -131,7 +131,7 @@ export function Flywheel() {
       ANGLES.forEach((a, i) => {
         const el = labelRefs.current[i];
         if (!el) return;
-        const lp = pt(R + 40, a);
+        const lp = pt(R + 4, a);
         el.style.transform = `translate(-50%, -50%) translate(${lp.x}px, ${lp.y}px)`;
       });
     };

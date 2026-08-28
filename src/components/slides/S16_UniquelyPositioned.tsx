@@ -101,7 +101,7 @@ const POINTS = [
     t: "Proven Market Credibility:",
     d: (
       <>
-        <Mark>quoted 6+ times per day</Mark> in financial media; recipient of the MAS
+        <Mark>quoted 7+ times per day</Mark> in financial media; recipient of the MAS
         Knowledge Enterprise Award (2021).
       </>
     ),

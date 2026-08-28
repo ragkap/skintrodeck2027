@@ -45,11 +45,9 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
       <div className="flex h-full flex-col">
         <div className="grid min-h-0 flex-1 grid-cols-[1.05fr_0.95fr] gap-14 pt-2">
           <ol className="flex flex-col justify-center gap-11">
-            {POINTS.map((p, i) => (
-              <li key={p.title} className="flex gap-4">
-                <span className="font-serif text-[24px] italic leading-none text-[var(--accent-deep)]">
-                  {i + 1}
-                </span>
+            {POINTS.map((p) => (
+              <li key={p.title} className="flex gap-3">
+                <span className="mt-2 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
                 <span className="text-[15px] leading-relaxed text-[var(--body)]">
                   <span className="font-semibold text-[var(--ink)]">{p.title} </span>
                   {p.body}
@@ -77,7 +75,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
                   x1="43"
                   y1="76"
                   x2="69"
-                  y2="9"
+                  y2="2"
                   stroke="var(--ai-pink)"
                   strokeWidth="1.3"
                   strokeDasharray="4 3"

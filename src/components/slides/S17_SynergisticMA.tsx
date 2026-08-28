@@ -34,10 +34,6 @@ export function S17_SynergisticMA({ index, total }: { index: number; total: numb
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="caption uppercase tracking-wide">Active pipeline</span>
-            <span className="flex items-center gap-1.5 text-[9.5px] font-medium text-[var(--muted)]">
-              <span className="h-2 w-2 rounded-sm bg-[#f0f8f2] ring-1 ring-inset ring-[var(--hairline-strong)]" />
-              Tier 1 priority
-            </span>
           </div>
           <Pill>Total LTM ARR: US$147m</Pill>
         </div>

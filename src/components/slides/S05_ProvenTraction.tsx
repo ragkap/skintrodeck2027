@@ -6,17 +6,6 @@ type Logo = { name: string; file?: string };
 
 const GROUPS: { label: string; logos: Logo[] }[] = [
   {
-    label: "Asset Owners",
-    logos: [
-      { name: "GIC", file: "gic.webp" },
-      { name: "PSP Investments", file: "psp-investments.webp" },
-      { name: "SWIB", file: "swib.png" },
-      { name: "ADIA", file: "adia.webp" },
-      { name: "JETRO", file: "jetro.png" },
-      { name: "JBIC", file: "jbic.jpg" },
-    ],
-  },
-  {
     label: "Asset Managers",
     logos: [
       { name: "Millennium", file: "millennium.webp" },
@@ -28,7 +17,7 @@ const GROUPS: { label: string; logos: Logo[] }[] = [
     ],
   },
   {
-    label: "Investment Banks",
+    label: "Global Investment Banks",
     logos: [
       { name: "J.P. Morgan", file: "jpmorgan.webp" },
       { name: "Goldman Sachs", file: "goldman-sachs.webp" },
@@ -36,6 +25,17 @@ const GROUPS: { label: string; logos: Logo[] }[] = [
       { name: "Citi", file: "citi.webp" },
       { name: "Société Générale", file: "societe-generale.webp" },
       { name: "HSBC", file: "hsbc.webp" },
+    ],
+  },
+  {
+    label: "Asset Owners",
+    logos: [
+      { name: "GIC", file: "gic.webp" },
+      { name: "PSP Investments", file: "psp-investments.webp" },
+      { name: "SWIB", file: "swib.png" },
+      { name: "ADIA", file: "adia.webp" },
+      { name: "JETRO", file: "jetro.png" },
+      { name: "JBIC", file: "jbic.jpg" },
     ],
   },
   {
@@ -100,26 +100,29 @@ export function S05_ProvenTraction({ index, total }: { index: number; total: num
       index={index}
       total={total}
       title="Proven Traction"
-      subtitle="With global tier-1 asset managers, hedge funds, bulge-bracket banks, exchanges and corporates"
+      subtitle="Tier-1, blue-chip clients spanning the full spectrum of knowledge-network use cases — primary insight, agentic on-demand consumption, and dataset delivery"
     >
-      <div className="grid h-full grid-cols-[200px_1fr] gap-10 pt-2">
-        <div className="flex flex-col justify-center gap-8 border-r border-[var(--hairline)] pr-8">
-          <Stat value="$14T" label="Client AUM" />
-          <Stat value="70k+" label="Users" />
-          <Stat value="30k" label="Press Mentions" />
-        </div>
-        <div className="grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-7 self-center">
-          {GROUPS.map((g) => (
-            <div key={g.label} className="flex flex-col">
-              <div className="caption mb-3 uppercase tracking-wide">{g.label}</div>
-              <div className="grid grid-cols-2 gap-2">
-                {g.logos.map((l) => (
-                  <LogoCell key={l.name} logo={l} />
-                ))}
+      <div className="flex h-full flex-col justify-center gap-3 pt-2">
+        <div className="grid grid-cols-[200px_1fr] gap-10">
+          <div className="flex flex-col justify-center gap-8 border-r border-[var(--hairline)] pr-8">
+            <Stat value="$14T" label="Client AUM" />
+            <Stat value="70k+" label="Users" />
+            <Stat value="30k" label="Press Mentions" />
+          </div>
+          <div className="grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-7 self-center">
+            {GROUPS.map((g) => (
+              <div key={g.label} className="flex flex-col">
+                <div className="caption mb-3 uppercase tracking-wide">{g.label}</div>
+                <div className="grid grid-cols-2 gap-2">
+                  {g.logos.map((l) => (
+                    <LogoCell key={l.name} logo={l} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        <div className="caption pl-[240px] italic">Selection shown — client list is not exhaustive.</div>
       </div>
     </Slide>
   );

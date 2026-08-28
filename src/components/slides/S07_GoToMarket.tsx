@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Slide } from "../deck/Slide";
-import { Mark } from "../deck/ui";
 
 type Partner = { name: string; file?: string };
 
@@ -18,13 +17,7 @@ const STEPS: {
   {
     n: "02",
     title: "Platform Upsell",
-    desc: (
-      <>
-        Platform usage data drives targeted, personalised upsell pathways — knowing
-        what matters most to each user. <Mark>60% of new revenue is inbound</Mark>,
-        then converted into premium subscriptions: a highly efficient flywheel.
-      </>
-    ),
+    desc: "Platform usage data drives targeted, personalised upsell pathways — knowing what matters most to each user, converted into premium subscriptions",
   },
   {
     n: "03",
@@ -73,11 +66,17 @@ function donutSlice(startDeg: number, endDeg: number) {
   return `M ${o1.x} ${o1.y} A ${OUTER_R} ${OUTER_R} 0 ${largeArc} 1 ${o2.x} ${o2.y} L ${i1.x} ${i1.y} A ${INNER_R} ${INNER_R} 0 ${largeArc} 0 ${i2.x} ${i2.y} Z`;
 }
 
-const NETWORK_SATELLITES = [0, 60, 120, 180, 240, 300].map((deg) => pt(32, deg));
+const ICON_R = 62;
 
 function Flywheel() {
   return (
     <svg viewBox="0 0 300 300" className="h-full w-full">
+      <defs>
+        <clipPath id="skIconClip">
+          <circle cx={CX} cy={CY} r={ICON_R} />
+        </clipPath>
+      </defs>
+
       {SEGMENTS.map((seg, i) => {
         const mid = (seg.start + seg.end) / 2;
         const labelPos = pt((OUTER_R + INNER_R) / 2, mid);
@@ -98,16 +97,18 @@ function Flywheel() {
         );
       })}
 
-      <circle cx={CX} cy={CY} r={INNER_R - 8} fill="white" />
-      <g stroke="var(--accent-deep)" strokeWidth="1.2" opacity="0.55">
-        {NETWORK_SATELLITES.map((s, i) => (
-          <line key={i} x1={CX} y1={CY} x2={s.x} y2={s.y} />
-        ))}
-      </g>
-      <circle cx={CX} cy={CY} r="5" fill="var(--accent-deep)" />
-      {NETWORK_SATELLITES.map((s, i) => (
-        <circle key={i} cx={s.x} cy={s.y} r="3.5" fill="var(--accent-deep)" opacity="0.75" />
-      ))}
+      <circle cx={CX} cy={CY} r={INNER_R - 6} fill="white" />
+      <image
+        href="/logos/smartkarma-icon.png"
+        x={CX - ICON_R}
+        y={CY - ICON_R}
+        width={ICON_R * 2}
+        height={ICON_R * 2}
+        clipPath="url(#skIconClip)"
+        className="spin-slow"
+        preserveAspectRatio="xMidYMid slice"
+      />
+      <circle cx={CX} cy={CY} r={ICON_R} fill="none" stroke="var(--hairline-strong)" strokeWidth="1.5" />
     </svg>
   );
 }

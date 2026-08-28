@@ -11,7 +11,7 @@ export function Stat({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="tabular text-[30px] font-bold leading-none tracking-[-0.01em] text-[var(--accent-deep)]">
+      <div className="tabular text-[30px] font-bold leading-none tracking-[-0.01em] text-gradient">
         {value}
       </div>
       <div className="text-[13px] font-medium text-[var(--body)]">{label}</div>
@@ -108,7 +108,7 @@ export function Table({
 
 export function IconRing({ icon }: { icon: ReactNode }) {
   return (
-    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]">
+    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--accent)] text-gradient">
       {icon}
     </div>
   );
@@ -116,7 +116,7 @@ export function IconRing({ icon }: { icon: ReactNode }) {
 
 export function Pill({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-[var(--hairline-strong)] px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-wide text-[var(--accent-deep)]">
+    <span className="inline-flex items-center rounded-full border border-[var(--hairline-strong)] px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-wide text-gradient">
       {children}
     </span>
   );

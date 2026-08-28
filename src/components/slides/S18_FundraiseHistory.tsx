@@ -37,7 +37,7 @@ export function S18_FundraiseHistory({ index, total }: { index: number; total: n
               <div className="text-[15px] font-bold text-[var(--ink)]">{r.round}</div>
               <div
                 className={`mt-1 text-[11.5px] font-semibold ${
-                  r.highlight ? "text-[var(--accent-deep)]" : "text-[var(--body)]"
+                  r.highlight ? "text-gradient" : "text-[var(--body)]"
                 }`}
               >
                 {r.label}

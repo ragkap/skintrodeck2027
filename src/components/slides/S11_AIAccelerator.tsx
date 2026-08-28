@@ -94,7 +94,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
               <div
                 key={p.n}
                 style={{ animationDelay: `${(i / (PILLARS.length - 1)) * 0.7}s` }}
-                className="pop-in relative z-10 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-white text-[12px] font-bold text-[var(--accent-deep)]"
+                className="pop-in relative z-10 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-white text-[12px] font-bold text-gradient"
               >
                 {p.n}
               </div>

@@ -37,7 +37,7 @@ function BarChart({
         <div key={b.l} className="flex flex-col items-center gap-2">
           <div
             className={`tabular text-[11px] font-semibold ${
-              b.featured ? "text-[var(--accent-deep)]" : "text-[var(--muted)]"
+              b.featured ? "text-gradient" : "text-[var(--muted)]"
             }`}
           >
             {b.v}%

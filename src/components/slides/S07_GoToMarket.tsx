@@ -76,7 +76,7 @@ export function S07_GoToMarket({ index, total }: { index: number; total: number 
         <div className="flex flex-col justify-center gap-5">
           {STEPS.map((s) => (
             <div key={s.n} className="flex gap-4">
-              <div className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-[var(--accent)] text-[13px] font-bold text-[var(--accent-deep)]">
+              <div className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-[var(--accent)] text-[13px] font-bold text-gradient">
                 {s.n.replace("0", "")}
               </div>
               <div className="flex-1">

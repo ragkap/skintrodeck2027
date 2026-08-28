@@ -32,7 +32,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
           <div className="flex flex-1 items-end justify-center gap-12 pb-2 pt-4">
             {ACV.map((b, i) => (
               <div key={b.l} className="flex flex-col items-center gap-2">
-                <div className="tabular text-[14px] font-bold text-[var(--accent-deep)]">
+                <div className="tabular text-[14px] font-bold text-gradient">
                   {b.v}%
                 </div>
                 <div

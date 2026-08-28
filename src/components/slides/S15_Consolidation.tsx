@@ -38,7 +38,7 @@ function styleRows(rows: [string, string, string][]) {
   return rows.map(([year, acquirer, target]) => {
     const recent = Number(year) >= 2025;
     return [
-      <span key="y" className={recent ? "font-bold text-[var(--accent-deep)]" : undefined}>
+      <span key="y" className={recent ? "font-bold text-gradient" : undefined}>
         {year}
       </span>,
       <span key="a" className={recent ? "font-semibold text-[var(--ink)]" : undefined}>

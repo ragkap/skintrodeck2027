@@ -67,7 +67,7 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
             className={
               premium
                 ? "relative flex h-10 w-10 items-center justify-center rounded-full bg-[var(--premium)] text-white"
-                : "relative flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]"
+                : "relative flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)] text-gradient"
             }
           >
             <TierIcon kind={t.icon} />

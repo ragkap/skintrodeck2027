@@ -37,7 +37,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
             <span className="rule mb-6 block" />
             <h1 className="max-w-[660px] text-[38px] font-bold leading-[1.18] tracking-[-0.015em] text-[var(--ink)]">
               The Proprietary Investment Intelligence Platform{" "}
-              <span className="text-[var(--accent-deep)]">for the AI Era</span>
+              <span className="text-gradient">for the AI Era</span>
             </h1>
             <p className="mt-5 max-w-[560px] text-[15px] leading-relaxed text-[var(--body)]">
               Smartkarma is a proprietary investment intelligence platform that unifies
@@ -55,7 +55,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
         <div className="relative grid grid-cols-5 items-center divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
           {STATS.map((s, i) => (
             <div key={s.l} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
-              <div className="tabular text-[20px] font-bold leading-none text-[var(--accent-deep)]">
+              <div className="tabular text-[20px] font-bold leading-none text-gradient">
                 {s.v}
               </div>
               <div className="mt-1 text-[11px] font-medium text-[var(--body)]">{s.l}</div>

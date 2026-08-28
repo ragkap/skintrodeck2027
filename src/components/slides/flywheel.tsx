@@ -176,7 +176,7 @@ export function Flywheel() {
           ref={(el) => {
             labelRefs.current[i] = el;
           }}
-          className="pointer-events-none absolute top-0 left-0 whitespace-nowrap rounded-full border border-[rgba(58,154,83,0.35)] bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-[var(--accent-deep)] shadow-sm backdrop-blur-sm will-change-transform"
+          className="pointer-events-none absolute top-0 left-0 whitespace-nowrap rounded-full border border-[rgba(58,154,83,0.35)] bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-gradient shadow-sm backdrop-blur-sm will-change-transform"
         >
           {label}
         </div>

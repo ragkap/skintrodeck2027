@@ -120,7 +120,7 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
                     : "rounded-[10px] border border-[var(--hairline)] p-4"
                 }
               >
-                <div className="text-[var(--accent-deep)]">
+                <div className="text-gradient">
                   <c.icon />
                 </div>
                 <div className="mt-2 text-[12px] font-semibold leading-snug text-[var(--ink)]">

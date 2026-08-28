@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Slide } from "../deck/Slide";
 import { Bullet, Stat } from "../deck/ui";
 
@@ -10,7 +11,7 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
       subtitle="Proprietary research & data on a fast-growing yet opaque asset class"
     >
       <div className="grid h-full grid-cols-[1.15fr_1fr] gap-16 pt-2">
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col justify-center gap-4">
           <Bullet title="Smartkarma launched pvtIQ in Nov 2025">
             to provide intelligence into Asian private markets.
           </Bullet>
@@ -25,16 +26,23 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
             distribution and technology to ensure reliable, high-quality coverage, with
             links into pre-existing strength in ECM.
           </Bullet>
-          <Bullet title="Expected to directly contribute to topline, enhance profitability,">
-            diversify revenue streams, and strengthen alignment with SGX&apos;s strategic
-            priorities.
+          <Bullet title="Expected to accelerate growth, expand TAM and diversify customer base,">
+            directly contributing to topline, enhancing profitability, and strengthening
+            alignment with SGX&apos;s strategic priorities.
           </Bullet>
         </ul>
 
         <div className="flex flex-col justify-center gap-6 border-l border-[var(--hairline)] pl-10">
           <div>
-            <div className="text-[14px] font-bold text-[var(--ink)]">
-              pvtIQ — Private Markets Research and Data, Reimagined
+            <Image
+              src="/logos/pvtiq.png"
+              alt="pvtIQ by Smartkarma"
+              width={140}
+              height={56}
+              className="h-10 w-auto rounded-[6px] object-contain"
+            />
+            <div className="mt-3 text-[14px] font-bold text-[var(--ink)]">
+              Private Markets Research and Data, Reimagined
             </div>
             <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--body)]">
               pvtIQ leverages Smartkarma&apos;s technology and distribution to deliver

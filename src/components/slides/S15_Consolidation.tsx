@@ -1,5 +1,5 @@
 import { Slide } from "../deck/Slide";
-import { Table } from "../deck/ui";
+import { Mark, Table } from "../deck/ui";
 
 const DEALS: [string, string, string][] = [
   ["2015", "SS&C", "Advent Software"],
@@ -51,6 +51,53 @@ function styleRows(rows: [string, string, string][]) {
   });
 }
 
+const POINTS = [
+  {
+    t: "Fragmented & Inefficient Market:",
+    d: (
+      <>
+        niche players, especially in APAC, lack scale, leading to{" "}
+        <Mark>inefficiencies in distribution, pricing, and client acquisition</Mark>.
+      </>
+    ),
+  },
+  {
+    t: "Regulatory Changes:",
+    d: (
+      <>
+        <Mark>falling commission rates</Mark> and other shifts weaken traditional
+        sell-side models, favoring independent, tech-driven platforms.
+      </>
+    ),
+  },
+  {
+    t: "Demand for Integrated Solutions:",
+    d: (
+      <>
+        investors seek a <Mark>one-stop platform</Mark> for research, analytics, and
+        expert access, particularly for APAC&apos;s fragmented markets.
+      </>
+    ),
+  },
+  {
+    t: "Alpha Capture:",
+    d: "asset managers prioritize specialist, high-quality research that is differentiated.",
+  },
+  {
+    t: "AI & Tech Disruptions:",
+    d: "legacy players struggle with AI, while cloud-based platforms scale efficiently.",
+  },
+  {
+    t: "Investor Interest & Recent Deals:",
+    d: (
+      <>
+        consolidation is accelerating, with major transactions involving{" "}
+        <Mark>AlphaSense, S&amp;P and Blackrock</Mark>.
+      </>
+    ),
+  },
+];
+
 export function S15_Consolidation({ index, total }: { index: number; total: number }) {
   return (
     <Slide
@@ -59,26 +106,19 @@ export function S15_Consolidation({ index, total }: { index: number; total: numb
       title="An Industry Ripe for Consolidation"
       subtitle="Rapidly growing, highly fragmented, increasingly strategic — deal activity is consistent and accelerating"
     >
-      <div className="grid h-full grid-cols-[0.85fr_1.15fr] gap-10 pt-1 text-[11px]">
-        <ul className="flex flex-col gap-3 border-r border-[var(--hairline)] pr-8">
-          {[
-            ["Fragmented & Inefficient Market:", "niche players, especially in APAC, lack scale, leading to inefficiencies in distribution, pricing, and client acquisition."],
-            ["Regulatory Changes:", "MiFID II and other shifts weaken traditional sell-side models, favoring independent, tech-driven platforms."],
-            ["Demand for Integrated Solutions:", "investors seek a one-stop platform for research, analytics, and expert access, particularly for APAC's fragmented markets."],
-            ["Alpha Capture:", "asset managers prioritize specialist, high-quality research that is differentiated."],
-            ["AI & Tech Disruptions:", "legacy players struggle with AI, while cloud-based platforms scale efficiently."],
-            ["Investor Interest & Recent Deals:", "consolidation is accelerating, with major transactions involving AlphaSense, S&P and Blackrock."],
-          ].map(([t, d], i) => (
-            <li key={i} className="flex gap-2">
-              <span className="mt-1 h-[5px] w-[5px] flex-none rounded-full bg-[var(--accent)]" />
-              <span className="leading-snug text-[var(--body)]">
-                <span className="font-semibold text-[var(--ink)]">{t}</span> {d}
+      <div className="grid h-full grid-cols-[0.85fr_1.15fr] items-center gap-10 pt-1">
+        <ul className="flex flex-col gap-5 border-r border-[var(--hairline)] pr-8">
+          {POINTS.map((p, i) => (
+            <li key={i} className="flex gap-2.5">
+              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
+              <span className="text-[13.5px] leading-snug text-[var(--body)]">
+                <span className="font-semibold text-[var(--ink)]">{p.t}</span> {p.d}
               </span>
             </li>
           ))}
         </ul>
 
-        <div className="grid grid-cols-2 gap-3 self-start">
+        <div className="grid grid-cols-2 gap-3 text-[11px]">
           <Table dense columns={["Year", "Acquirer", "Target"]} rows={styleRows(DEALS)} />
           <Table dense columns={["Year", "Acquirer", "Target"]} rows={styleRows(DEALS_2)} />
         </div>

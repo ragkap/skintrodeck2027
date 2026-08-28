@@ -38,7 +38,15 @@ function NetworkGraphic() {
           <line key={k} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#eef1f4" strokeWidth="1.5" />
         ))}
         {nodes.map((n, k) => (
-          <circle key={k} cx={n.x} cy={n.y} r="10" fill={NODE_COLOR(n.i, n.j)} />
+          <circle
+            key={k}
+            cx={n.x}
+            cy={n.y}
+            r="10"
+            fill={NODE_COLOR(n.i, n.j)}
+            className="node-drift"
+            style={{ animationDelay: `${(k % 7) * 0.4}s` }}
+          />
         ))}
         <defs>
           <clipPath id="uniquelyIconClip">
@@ -53,7 +61,6 @@ function NetworkGraphic() {
           width={ICON_R * 2}
           height={ICON_R * 2}
           clipPath="url(#uniquelyIconClip)"
-          className="spin-slow"
           preserveAspectRatio="xMidYMid slice"
         />
       </svg>
@@ -118,7 +125,7 @@ export function S16_UniquelyPositioned({ index, total }: { index: number; total:
       index={index}
       total={total}
       title="Smartkarma is Uniquely Positioned in the Path of Consolidation"
-      subtitle="Digital distribution platform for insight, data and expertise"
+      subtitle="Insight + Data + Expertise + Distribution"
     >
       <div className="grid h-full grid-cols-[1.2fr_1fr] gap-16 pt-2">
         <ul className="flex flex-col justify-center gap-5">

@@ -1,5 +1,54 @@
 import { Slide } from "../deck/Slide";
-import { Bullet } from "../deck/ui";
+import { Mark } from "../deck/ui";
+
+const POINTS = [
+  {
+    t: "Explosion of real-time & specialist data:",
+    d: (
+      <>
+        high-frequency, alternative, and unstructured data volumes now{" "}
+        <Mark>far exceed the capacity of manual research</Mark>.
+      </>
+    ),
+  },
+  {
+    t: "AI becoming core to investment workflows:",
+    d: (
+      <>
+        automating research, extracting signals, and accelerating insight —{" "}
+        <Mark>making speed a decisive edge</Mark>.
+      </>
+    ),
+  },
+  {
+    t: "Increasing market complexity:",
+    d: (
+      <>
+        cross-asset dynamics, index events, and special situations require{" "}
+        <Mark>instant, expert interpretation</Mark>.
+      </>
+    ),
+  },
+  {
+    t: "Need for operational leverage:",
+    d: (
+      <>
+        institutions must <Mark>scale insight, not headcount</Mark> — driving adoption
+        of AI-native intelligence platforms.
+      </>
+    ),
+  },
+  {
+    t: "Fragmented global markets:",
+    d: (
+      <>
+        liquidity dispersion and multi-venue trading demand{" "}
+        <Mark>integrated, real-time intelligence</Mark> across asset classes and
+        geographies.
+      </>
+    ),
+  },
+];
 
 export function S14_WhyNow({ index, total }: { index: number; total: number }) {
   return (
@@ -10,30 +59,21 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
       subtitle="Winners will be those that move fastest, with insight and AI"
     >
       <div className="grid h-full grid-cols-[1.15fr_1fr] gap-16 pt-2">
-        <ul className="flex flex-col gap-5">
-          <Bullet title="Explosion of real-time & specialist data:">
-            high-frequency, alternative, and unstructured data volumes now far exceed the
-            capacity of manual research.
-          </Bullet>
-          <Bullet title="AI becoming core to investment workflows:">
-            automating research, extracting signals, and accelerating insight — making
-            speed a decisive edge.
-          </Bullet>
-          <Bullet title="Increasing market complexity:">
-            cross-asset dynamics, index events, and special situations require instant,
-            expert interpretation.
-          </Bullet>
-          <Bullet title="Need for operational leverage:">
-            institutions must scale insight, not headcount — driving adoption of
-            AI-native intelligence platforms.
-          </Bullet>
-          <Bullet title="Fragmented global markets:">
-            liquidity dispersion and multi-venue trading demand integrated, real-time
-            intelligence across asset classes and geographies.
-          </Bullet>
+        <ul className="flex flex-col justify-center gap-5">
+          {POINTS.map((p, i) => (
+            <li key={i} className="flex gap-2.5">
+              <span className="mt-1.5 h-[6px] w-[6px] flex-none rounded-full bg-[var(--accent)]" />
+              <span className="text-[13.5px] leading-snug text-[var(--body)]">
+                <span className="font-semibold text-[var(--ink)]">{p.t}</span> {p.d}
+              </span>
+            </li>
+          ))}
         </ul>
 
-        <div className="relative flex flex-col justify-center pl-10">
+        <div
+          className="relative flex flex-col justify-center pl-10"
+          style={{ transform: "translateY(-17px)" }}
+        >
           <div
             className="bar-grow absolute top-0 -left-[2px] h-full w-[2px] bg-[var(--accent)]"
             style={{ transformOrigin: "top" }}

@@ -27,7 +27,7 @@ const DEALS_2: [string, string, string][] = [
   ["2023", "Nasdaq", "Adenza"],
   ["2024", "S&P Global", "Visible Alpha"],
   ["2024", "BlackRock", "Preqin"],
-  ["2025", "Clearwater Analytics", "Enfusion"],
+  ["2025", "Clearwater", "Enfusion"],
   ["2025", "Alphasense", "Tegus"],
   ["2025", "S&P Global", "With Intelligence"],
   ["2026", "Bloomberg", "Canoe Intelligence"],

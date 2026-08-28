@@ -15,9 +15,8 @@ export function S19_ThankYou({ index, total }: { index: number; total: number })
           />
         </div>
 
-        <div className="relative flex max-w-[720px] flex-col gap-6">
-          <span className="rule" />
-          <p className="text-[13px] leading-relaxed text-[var(--muted)]">
+        <div className="relative flex max-w-[520px] flex-col">
+          <p className="text-[16px] leading-relaxed text-[var(--muted)]">
             This presentation is confidential and intended solely for the person to whom
             it has been provided by Smartkarma. It may not be reproduced, distributed, or
             disclosed, in whole or in part, without Smartkarma&apos;s prior written

@@ -269,6 +269,36 @@ em,
   }
 }
 
+@keyframes node-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(3px, -3px);
+  }
+  50% {
+    transform: translate(-2px, 3px);
+  }
+  75% {
+    transform: translate(-3px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.node-drift {
+  animation: node-drift 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node-drift {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spin-slow {
     animation: none;

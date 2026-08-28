@@ -38,7 +38,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
               real-time independent research, specialist alternative data and
               on-demand access to the analysts behind it — amplified by an AI layer,{" "}
               <span className="font-semibold text-[var(--ai-pink)]">αSK</span>, grounded
-              in a decade of vetted research.
+              in a decade of premium insight.
             </p>
           </div>
           <div className="flex items-center justify-center">

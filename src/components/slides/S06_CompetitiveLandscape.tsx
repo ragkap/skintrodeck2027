@@ -1,6 +1,33 @@
 import Image from "next/image";
 import { Slide } from "../deck/Slide";
-import { Bullet } from "../deck/ui";
+
+const COMPARISONS = [
+  {
+    label: "AI Tools",
+    desc: "Trusted primary insight, not public AI outputs",
+    names: ["ChatGPT", "Perplexity", "Hebbia"],
+  },
+  {
+    label: "News & Data Terminals",
+    desc: "Real-time insight & data, not after-market reports",
+    names: ["Bloomberg", "FactSet", "AlphaSense"],
+  },
+  {
+    label: "Expert Networks",
+    desc: "Always-on access & data, not one-off, MNPI-risk calls",
+    names: ["GLG", "Tegus", "Guidepoint"],
+  },
+  {
+    label: "Specialist Data Firms",
+    desc: "Multi-asset data plus context, not single-vertical silos",
+    names: ["ReOrg", "CFRA", "CB Insights"],
+  },
+  {
+    label: "Crowdsourced Research",
+    desc: "Institutional-grade & compliant, not variable quality",
+    names: ["SeekingAlpha", "SumZero", "StockTwits"],
+  },
+];
 
 export function S06_CompetitiveLandscape({ index, total }: { index: number; total: number }) {
   return (
@@ -10,7 +37,7 @@ export function S06_CompetitiveLandscape({ index, total }: { index: number; tota
       title="Competitive Landscape"
       subtitle="Smartkarma is uniquely positioned as the only platform combining real-time insight, specialist alternative data, and on-demand analyst expertise across the full institutional decision cycle"
     >
-      <div className="grid h-full grid-cols-[1.15fr_1fr] items-center gap-10">
+      <div className="grid h-full grid-cols-[1.5fr_1fr] items-center gap-8">
         <Image
           src="/graphics/competitive-landscape.png"
           alt="Competitive landscape quadrant: Smartkarma positioned as the unified platform combining on-demand access and specialist depth, versus AI tools, expert networks, specialist research firms, broker research, news platforms, and crowd-sourced tools"
@@ -19,32 +46,19 @@ export function S06_CompetitiveLandscape({ index, total }: { index: number; tota
           className="h-auto max-h-full w-full object-contain"
         />
 
-        <ul className="flex flex-col justify-center gap-4">
-          <Bullet title="Traditional broker research is slow, gated, and relationship-dependent —">
-            built around PDFs, restricted distribution, and often conflicted interests.
-            Smartkarma replaces this with real-time, independent intelligence and direct
-            analyst access.
-          </Bullet>
-          <Bullet title="Beyond AI-only tools:">
-            unlike generalist LLMs, Smartkarma delivers vetted, primary intelligence and
-            specialist data from trusted experts — AI is embedded to enhance workflow,
-            not replace insight.
-          </Bullet>
-          <Bullet title="Superior to traditional news & market data platforms:">
-            that rely on bank/broker-generated after-market PDFs and closed ecosystems.
-            Smartkarma offers real-time independent insight + expert access integrated
-            in a single system.
-          </Bullet>
-          <Bullet title="More scalable than expert networks:">
-            that provide one-off, transactional calls with MNPI risk. Smartkarma
-            delivers always-on analyst interaction, continuous insight flow, and
-            compliance-safe engagement.
-          </Bullet>
-          <Bullet title="Higher quality than crowdsourced platforms:">
-            provide volume but not reliability or compliance; Smartkarma offers curated,
-            institutional-grade research from vetted analysts and data providers.
-          </Bullet>
-        </ul>
+        <div className="flex flex-col justify-center gap-3">
+          <div className="caption mb-1 uppercase tracking-wide">Smartkarma vs Alternatives</div>
+          {COMPARISONS.map((c) => (
+            <div
+              key={c.label}
+              className="border-t border-[var(--hairline)] pt-3 first:border-t-0 first:pt-0"
+            >
+              <div className="text-[13.5px] font-bold text-[var(--ink)]">{c.label}</div>
+              <div className="mt-0.5 text-[12px] leading-snug text-[var(--body)]">{c.desc}</div>
+              <div className="mt-1 text-[11px] text-[var(--muted)]">{c.names.join(" · ")}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </Slide>
   );

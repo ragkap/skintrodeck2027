@@ -105,9 +105,9 @@ export function S05_ProvenTraction({ index, total }: { index: number; total: num
       <div className="flex h-full flex-col justify-center gap-3 pt-2">
         <div className="grid grid-cols-[200px_1fr] gap-10">
           <div className="flex flex-col justify-center gap-8 border-r border-[var(--hairline)] pr-8">
-            <Stat value="$14T" label="Client AUM" />
-            <Stat value="70k+" label="Users" />
-            <Stat value="30k" label="Press Mentions" />
+            <Stat value="$14T" label="Client AUM" delay={0} />
+            <Stat value="70k+" label="Users" delay={0.1} />
+            <Stat value="30k" label="Press Mentions" delay={0.2} />
           </div>
           <div className="grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-7 self-center">
             {GROUPS.map((g) => (

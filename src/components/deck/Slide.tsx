@@ -70,7 +70,7 @@ export function Slide({
       <div className={`min-h-0 flex-1 ${bare ? "" : "px-16 pb-8"}`}>{children}</div>
 
       {!noFooter && (
-        <div className="flex items-center justify-between border-t border-[var(--hairline)] px-16 py-3.5">
+        <div className="flex items-center justify-between border-t border-[var(--hairline-footer)] px-16 py-3.5">
           <span className="caption tracking-wide uppercase">Private &amp; Confidential</span>
           <span className="caption tabular">
             {String(index).padStart(2, "0")} / {String(total).padStart(2, "0")}

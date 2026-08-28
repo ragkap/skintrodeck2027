@@ -50,7 +50,7 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
       className={
         premium
           ? "relative flex h-full flex-col rounded-[12px] border-[1.5px] border-[var(--premium)] bg-[rgba(13,69,103,0.035)] p-7 shadow-[0_8px_24px_rgba(13,69,103,0.14)]"
-          : "flex h-full flex-col rounded-[12px] border border-[var(--hairline)] p-7"
+          : "flex h-full flex-col rounded-[12px] border border-[var(--accent)] p-7"
       }
     >
       {premium && (

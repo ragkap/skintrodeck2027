@@ -94,13 +94,7 @@ export function S13_PrivateMarkets({ index, total }: { index: number; total: num
               { value: "50k+", label: "Investors" },
               { value: "7+", label: "Press mentions/day" },
             ].map((s, i) => (
-              <div
-                key={s.label}
-                className="pop-in"
-                style={{ animationDelay: `${0.35 + i * 0.1}s` }}
-              >
-                <Stat value={s.value} label={s.label} />
-              </div>
+              <Stat key={s.label} value={s.value} label={s.label} delay={0.35 + i * 0.1} />
             ))}
           </div>
         </div>

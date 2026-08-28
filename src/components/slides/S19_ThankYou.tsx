@@ -31,7 +31,7 @@ export function S19_ThankYou({ index, total }: { index: number; total: number })
           </p>
         </div>
 
-        <div className="relative flex items-end justify-between border-t border-[var(--hairline)] pt-6 text-[12px] text-[var(--body)]">
+        <div className="relative flex items-end justify-between border-t border-[var(--hairline-footer)] pt-6 text-[12px] text-[var(--body)]">
           <div>
             <div className="font-medium text-gradient">www.smartkarma.com</div>
             <div className="mt-0.5 text-[var(--muted)]">#03-01, 6 Battery Road, Singapore</div>

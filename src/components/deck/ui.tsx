@@ -4,13 +4,15 @@ export function Stat({
   value,
   label,
   sub,
+  delay = 0,
 }: {
   value: ReactNode;
   label: ReactNode;
   sub?: ReactNode;
+  delay?: number;
 }) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="pop-in flex flex-col gap-1" style={{ animationDelay: `${delay}s` }}>
       <div className="tabular text-[30px] font-bold leading-none tracking-[-0.01em] text-gradient">
         {value}
       </div>

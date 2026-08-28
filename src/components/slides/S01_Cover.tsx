@@ -54,7 +54,11 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
 
         <div className="relative grid grid-cols-5 items-center divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
           {STATS.map((s, i) => (
-            <div key={s.l} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
+            <div
+              key={s.l}
+              className={i === 0 ? "pop-in pr-6" : "pop-in px-6 last:pr-0"}
+              style={{ animationDelay: `${i * 0.08}s` }}
+            >
               <div className="tabular text-[20px] font-bold leading-none text-gradient">
                 {s.v}
               </div>

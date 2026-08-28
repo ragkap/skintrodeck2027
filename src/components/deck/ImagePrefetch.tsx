@@ -9,6 +9,7 @@ import { useEffect } from "react";
  * navigating to any slide shows it fully loaded.
  */
 const IMAGE_PATHS = [
+  "/graphics/competitive-landscape.png",
   "/logos/clients/addx.webp",
   "/logos/clients/adia.webp",
   "/logos/clients/alliancebernstein.webp",

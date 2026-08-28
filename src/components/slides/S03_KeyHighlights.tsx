@@ -132,8 +132,8 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
         </div>
 
         <div className="grid grid-cols-4 gap-x-8 gap-y-5 border-t border-[var(--hairline)] pt-5">
-          {STATS.map((s) => (
-            <Stat key={s.label} value={s.value} label={s.label} />
+          {STATS.map((s, i) => (
+            <Stat key={s.label} value={s.value} label={s.label} delay={i * 0.06} />
           ))}
         </div>
       </div>

@@ -133,12 +133,12 @@ export function S12_SpecialistDatasets({ index, total }: { index: number; total:
 
         <div className="flex flex-col justify-center gap-6">
           <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">
-            <Stat value="30+" label="Premium Datasets" />
+            <Stat value="30+" label="Premium Datasets" delay={0} />
             <div className="pl-8">
-              <Stat value="50%+" label="Data as % of total Revenue" />
+              <Stat value="50%+" label="Data as % of total Revenue" delay={0.1} />
             </div>
             <div className="pl-8">
-              <Stat value="65%" label="Data as % of new sales" />
+              <Stat value="65%" label="Data as % of new sales" delay={0.2} />
             </div>
           </div>
 

@@ -60,15 +60,15 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
     >
       <div className="flex h-full flex-col justify-center gap-10">
         <div className="grid grid-cols-4 divide-x divide-[var(--hairline)]">
-          <Stat value="300+" label="Insight providers" />
+          <Stat value="300+" label="Insight providers" delay={0} />
           <div className="pl-8">
-            <Stat value="100k" label="Insights" />
+            <Stat value="100k" label="Insights" delay={0.08} />
           </div>
           <div className="pl-8">
-            <Stat value="10k" label="Companies" />
+            <Stat value="10k" label="Companies" delay={0.16} />
           </div>
           <div className="pl-8">
-            <Stat value="58%" label="Small & mid-cap coverage" />
+            <Stat value="58%" label="Small & mid-cap coverage" delay={0.24} />
           </div>
         </div>
 

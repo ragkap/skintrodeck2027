@@ -4,27 +4,32 @@ import { Slide } from "../deck/Slide";
 const COMPARISONS = [
   {
     label: "AI Tools",
-    desc: "Trusted primary insight vs public AI outputs",
+    pre: "Trusted primary insight",
+    post: "public AI outputs",
     names: ["ChatGPT", "Perplexity", "Hebbia"],
   },
   {
     label: "News & Data Terminals",
-    desc: "Real-time insight & data vs after-market reports",
+    pre: "Real-time insight & data",
+    post: "after-market reports",
     names: ["Bloomberg", "FactSet", "AlphaSense"],
   },
   {
     label: "Expert Networks",
-    desc: "Always-on access & data vs one-off, potential MNPI-risk calls",
+    pre: "Always-on access & data",
+    post: "one-off, potential MNPI-risk calls",
     names: ["GLG", "Tegus", "Guidepoint"],
   },
   {
     label: "Specialist Data Firms",
-    desc: "Multi-asset data plus context vs single-vertical silos",
+    pre: "Multi-asset data plus context",
+    post: "single-vertical silos",
     names: ["ReOrg", "CFRA", "CB Insights"],
   },
   {
     label: "Crowdsourced Research",
-    desc: "Institutional-grade & compliant vs variable quality",
+    pre: "Institutional-grade & compliant",
+    post: "variable quality",
     names: ["SeekingAlpha", "SumZero", "StockTwits"],
   },
 ];
@@ -54,8 +59,11 @@ export function S06_CompetitiveLandscape({ index, total }: { index: number; tota
               className="border-t border-[var(--hairline)] pt-3 first:border-t-0 first:pt-0"
             >
               <div className="text-[13.5px] font-bold text-[var(--ink)]">{c.label}</div>
-              <div className="mt-0.5 font-serif text-[12px] leading-snug text-[var(--body)] italic">
-                {c.desc}
+              <div className="mt-0.5 text-[12px] leading-snug text-[var(--body)]">
+                {c.pre}{" "}
+                <span className="font-serif italic">
+                  vs {c.post}
+                </span>
               </div>
               <div className="mt-1 text-[11px] text-[var(--muted)]">{c.names.join(" · ")}</div>
             </div>

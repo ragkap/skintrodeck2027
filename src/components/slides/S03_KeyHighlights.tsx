@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Slide } from "../deck/Slide";
-import { Bullet, Mark, Stat } from "../deck/ui";
+import { Mark, Stat } from "../deck/ui";
 
 function IconShield() {
   return (
@@ -42,7 +42,7 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
       </>,
       <>
         Global blue-chip customer base of <Mark>300+ Tier-1 institutions</Mark>, corporates
-        and exchanges with <Mark>US$14T+ in AUM</Mark>
+        and exchanges with US$14T+ in AUM
       </>,
       <>
         <Mark>10+ year insight archive</Mark> serves as a proprietary data exhaust and
@@ -56,7 +56,7 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
     points: [
       <>
         Advance-payment model with <Mark>95%+ recurring revenue</Mark>; shifting mix
-        towards first-party data assets with <Mark>90%+ gross margin</Mark>
+        towards first-party data assets with 90%+ gross margin
       </>,
       <>
         Premium subscriptions scaling to 65% of mix. Proven land-and-expand, with
@@ -110,18 +110,21 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
       <div className="flex h-full flex-col justify-center gap-8">
         <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">
           {CARDS.map((c, i) => (
-            <div key={c.title} className={i === 0 ? "flex flex-col gap-3.5 pr-8" : "flex flex-col gap-3.5 px-8 last:pr-0"}>
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[9px] accent-gradient">
+            <div key={c.title} className={i === 0 ? "flex flex-col gap-4 pr-8" : "flex flex-col gap-4 px-8 last:pr-0"}>
+              <div className="flex items-center gap-2.5 border-b border-[var(--hairline)] pb-3">
+                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-[9px] accent-gradient">
                   {c.icon}
                 </span>
-                <h3 className="text-[16px] font-bold leading-tight text-[var(--ink)]">
+                <h3 className="text-[18px] font-bold leading-tight tracking-[-0.01em] text-[var(--ink)]">
                   {c.title}
                 </h3>
               </div>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-col gap-3">
                 {c.points.map((p, j) => (
-                  <Bullet key={j}>{p}</Bullet>
+                  <li key={j} className="flex gap-2.5">
+                    <span className="mt-1.5 h-[5px] w-[5px] flex-none rounded-full bg-[var(--muted)]" />
+                    <span className="text-[13px] leading-snug text-[var(--body)]">{p}</span>
+                  </li>
                 ))}
               </ul>
             </div>

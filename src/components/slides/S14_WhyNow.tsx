@@ -33,16 +33,47 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
           </Bullet>
         </ul>
 
-        <div className="flex flex-col justify-center border-l-2 border-[var(--accent)] pl-10">
-          <p className="font-serif text-[24px] italic leading-[1.5] text-[var(--ink)]">
+        <div className="relative flex flex-col justify-center pl-10">
+          <div
+            className="bar-grow absolute top-0 -left-[2px] h-full w-[2px] bg-[var(--accent)]"
+            style={{ transformOrigin: "top" }}
+          />
+
+          <div
+            className="glow-pulse pointer-events-none absolute -top-10 -left-4 h-40 w-40 rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(77,179,100,0.16) 0%, rgba(77,179,100,0) 70%)",
+            }}
+          />
+
+          <span
+            className="pop-in font-serif text-[64px] leading-none text-[var(--accent)] opacity-30"
+            style={{ animationDelay: "0.15s" }}
+          >
+            &ldquo;
+          </span>
+
+          <p
+            className="fade-up -mt-4 font-serif text-[24px] italic leading-[1.5] text-[var(--ink)]"
+            style={{ animationDelay: "0.35s" }}
+          >
             He who lives by the crystal ball will eat shattered glass. The only way to
             win is to understand more and faster than others — and that comes from
             data.
           </p>
-          <div className="mt-6 text-[13px] font-semibold text-[var(--ink)]">
+          <div
+            className="fade-up mt-6 text-[13px] font-semibold text-[var(--ink)]"
+            style={{ animationDelay: "0.75s" }}
+          >
             — Ray Dalio, Bridgewater Founder &amp; CIO
           </div>
-          <div className="text-[12px] text-[var(--muted)]">(The world&apos;s largest hedge fund)</div>
+          <div
+            className="fade-up text-[12px] text-[var(--muted)]"
+            style={{ animationDelay: "0.85s" }}
+          >
+            (The world&apos;s largest hedge fund)
+          </div>
         </div>
       </div>
     </Slide>

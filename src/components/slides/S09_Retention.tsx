@@ -37,14 +37,14 @@ function BarChart({
         <div key={b.l} className="flex flex-col items-center gap-2">
           <div
             className={`tabular text-[11px] font-semibold ${
-              b.featured ? "text-[var(--accent-deep)]" : "text-[var(--ai-pink)]"
+              b.featured ? "text-[var(--accent-deep)]" : "text-[var(--muted)]"
             }`}
           >
             {b.v}%
           </div>
           <div
             style={{ height: Math.max(b.v * SCALE, 4) }}
-            className={`w-11 ${b.featured ? "bg-[var(--accent)]" : "bg-[var(--ai-pink)]"}`}
+            className={`w-11 ${b.featured ? "bg-[var(--accent)]" : "bg-[#d7dce2]"}`}
           />
           <div className="w-16 text-center text-[9px] font-medium leading-tight text-[var(--muted)]">
             {b.l}

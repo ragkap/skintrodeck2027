@@ -30,12 +30,19 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
             <div className="text-[11px] text-[var(--muted)]">CAGR (2021-25)</div>
           </div>
           <div className="flex flex-1 items-end justify-center gap-12 pb-2 pt-4">
-            {ACV.map((b) => (
+            {ACV.map((b, i) => (
               <div key={b.l} className="flex flex-col items-center gap-2">
                 <div className="tabular text-[14px] font-bold text-[var(--accent-deep)]">
                   {b.v}%
                 </div>
-                <div style={{ height: b.v * ACV_SCALE, background: b.color }} className="w-14" />
+                <div
+                  style={{
+                    height: b.v * ACV_SCALE,
+                    background: b.color,
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                  className="bar-grow w-14"
+                />
                 <div className="caption uppercase tracking-wide">{b.l}</div>
               </div>
             ))}
@@ -50,7 +57,7 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
             <div className="caption uppercase tracking-wide">Share of Premium Subscriptions</div>
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
-                <span className="h-2.5 w-2.5 rounded-sm bg-[var(--accent-deep)]" /> Premium
+                <span className="h-2.5 w-2.5 rounded-sm bg-[var(--ai-pink)]" /> Premium
               </span>
               <span className="flex items-center gap-1.5 text-[11px] text-[var(--body)]">
                 <span className="h-2.5 w-2.5 rounded-sm bg-[var(--accent)]" /> Platform
@@ -58,20 +65,26 @@ export function S08_RevenueGrowth({ index, total }: { index: number; total: numb
             </div>
           </div>
           <div className="flex flex-1 items-end justify-center gap-12 pb-2 pt-4">
-            {MIX.map((m) => (
+            {MIX.map((m, i) => (
               <div key={m.year} className="flex flex-col items-center gap-2">
                 <div className="flex w-16 flex-col-reverse">
                   <div
-                    style={{ height: m.platform * MIX_SCALE }}
-                    className="flex items-start justify-center bg-[var(--accent)] pt-1"
-                  >
-                    <span className="tabular text-[10px] text-white">{m.platform}%</span>
-                  </div>
-                  <div
-                    style={{ height: m.premium * MIX_SCALE }}
-                    className="flex items-start justify-center bg-[var(--accent-deep)] pt-1"
+                    style={{
+                      height: m.premium * MIX_SCALE,
+                      animationDelay: `${i * 0.15}s`,
+                    }}
+                    className="bar-grow flex items-start justify-center bg-[var(--ai-pink)] pt-1"
                   >
                     <span className="tabular text-[10px] text-white">{m.premium}%</span>
+                  </div>
+                  <div
+                    style={{
+                      height: m.platform * MIX_SCALE,
+                      animationDelay: `${i * 0.15 + 0.1}s`,
+                    }}
+                    className="bar-grow flex items-start justify-center bg-[var(--accent)] pt-1"
+                  >
+                    <span className="tabular text-[10px] text-white">{m.platform}%</span>
                   </div>
                 </div>
                 <div className="caption uppercase tracking-wide">{m.year}</div>

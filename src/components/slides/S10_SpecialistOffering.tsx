@@ -79,7 +79,7 @@ export function S10_SpecialistOffering({ index, total }: { index: number; total:
           <div className="grid grid-cols-4 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-4">
             {EXPERTISE.map((e, i) => (
               <div key={e.t} className={i === 0 ? "pr-6" : "px-6 last:pr-0"}>
-                <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[var(--accent)] text-gradient">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]">
                   <e.icon />
                 </div>
                 <div className="mt-2 text-[13.5px] font-bold text-[var(--ink)]">{e.t}</div>

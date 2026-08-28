@@ -108,7 +108,7 @@ export function Table({
 
 export function IconRing({ icon }: { icon: ReactNode }) {
   return (
-    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--accent)] text-gradient">
+    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]">
       {icon}
     </div>
   );

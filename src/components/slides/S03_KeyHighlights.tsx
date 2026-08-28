@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Slide } from "../deck/Slide";
-import { Bullet, Stat } from "../deck/ui";
+import { Bullet, Mark, Stat } from "../deck/ui";
 
 function IconShield() {
   return (
@@ -36,27 +36,54 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
     title: "Durable, Competitive Advantage",
     icon: <IconShield />,
     points: [
-      "Only platform unifying real-time insight, specialist alt-data, and on-demand expertise across special-sits, index and ECM",
-      "Global blue-chip customer base of 300+ Tier-1 financial institutions, corporates and exchanges with US$14T+ in AUM",
-      "10+ year insight archive serves as a proprietary data exhaust and grounding layer for AI-ready workflows",
+      <>
+        <Mark>Only platform</Mark> unifying real-time insight, specialist alt-data, and
+        on-demand expertise across special-sits, index and ECM
+      </>,
+      <>
+        Global blue-chip customer base of <Mark>300+ Tier-1 institutions</Mark>, corporates
+        and exchanges with <Mark>US$14T+ in AUM</Mark>
+      </>,
+      <>
+        <Mark>10+ year insight archive</Mark> serves as a proprietary data exhaust and
+        grounding layer for AI-ready workflows
+      </>,
     ],
   },
   {
     title: "Financial Inflection",
     icon: <IconTrendUp />,
     points: [
-      "Advance-payment model with 95%+ recurring revenue; shifting mix towards first-party data assets with 90%+ gross margin",
-      "Premium subscriptions scaling to 65% of mix. Proven land-and-expand, with top-5 client revenue up 3× in the last 4 years",
-      "Material operating leverage driving 2026E gross profit +57% YoY, EBITDA margin 2% → 11% (Base) / 15% (Bull)",
+      <>
+        Advance-payment model with <Mark>95%+ recurring revenue</Mark>; shifting mix
+        towards first-party data assets with <Mark>90%+ gross margin</Mark>
+      </>,
+      <>
+        Premium subscriptions scaling to 65% of mix. Proven land-and-expand, with
+        top-5 client revenue <Mark>up 3× in the last 4 years</Mark>
+      </>,
+      <>
+        Material operating leverage driving <Mark>2026E gross profit +57% YoY</Mark>,
+        EBITDA margin 2% → 11% (Base) / 15% (Bull)
+      </>,
     ],
   },
   {
     title: "Consolidation Thesis",
     icon: <IconNetwork />,
     points: [
-      "Fragmented market ripe for a Buy & Build; global contracts allow for immediate cross-sell. APAC-leadership & asset-light",
-      "Identified pipeline of $100M+ cumulative LTM ARR across target opportunities, plus a maiden acquisition of a commodities data platform",
-      "Demonstrable track record with 10.6× valuation growth across 6 consecutive, structured up-rounds",
+      <>
+        Fragmented market ripe for a <Mark>Buy &amp; Build</Mark>; global contracts allow
+        for immediate cross-sell. APAC-leadership &amp; asset-light
+      </>,
+      <>
+        Identified pipeline of <Mark>$100M+ cumulative LTM ARR</Mark> across target
+        opportunities, plus a maiden acquisition of a commodities data platform
+      </>,
+      <>
+        Demonstrable track record with <Mark>10.6× valuation growth</Mark> across 6
+        consecutive, structured up-rounds
+      </>,
     ],
   },
 ];

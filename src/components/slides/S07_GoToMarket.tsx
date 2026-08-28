@@ -27,7 +27,7 @@ const STEPS: {
     partners: [
       { name: "AllianceBernstein", file: "alliancebernstein.webp" },
       { name: "Société Générale", file: "societe-generale.webp" },
-      { name: "BTIG", file: "btig.webp" },
+      { name: "BTIG", file: "btig.png" },
       { name: "Maybank", file: "maybank.webp" },
       { name: "CFA Institute", file: "cfa-institute.webp" },
       { name: "SGX Group", file: "sgx.webp" },

@@ -185,6 +185,26 @@ em,
   }
 }
 
+@keyframes bar-grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.bar-grow-x {
+  transform-origin: left;
+  animation: bar-grow-x 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar-grow-x {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spin-slow {
     animation: none;

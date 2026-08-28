@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Slide } from "../deck/Slide";
 import { Mark } from "../deck/ui";
 
@@ -103,16 +104,24 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
             data.
           </p>
           <div
-            className="fade-up mt-6 text-[13px] font-semibold text-[var(--ink)]"
+            className="fade-up mt-6 flex items-center gap-3"
             style={{ animationDelay: "0.75s" }}
           >
-            — Ray Dalio, Bridgewater Founder &amp; CIO
-          </div>
-          <div
-            className="fade-up text-[12px] text-[var(--muted)]"
-            style={{ animationDelay: "0.85s" }}
-          >
-            (The world&apos;s largest hedge fund)
+            <Image
+              src="/logos/ray-dalio.jpg"
+              alt="Ray Dalio"
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded-full object-cover"
+            />
+            <div>
+              <div className="text-[13px] font-semibold text-[var(--ink)]">
+                Ray Dalio, Bridgewater Founder &amp; CIO
+              </div>
+              <div className="text-[12px] text-[var(--muted)]">
+                (The world&apos;s largest hedge fund)
+              </div>
+            </div>
           </div>
         </div>
       </div>

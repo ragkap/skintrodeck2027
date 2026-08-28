@@ -27,14 +27,14 @@ const STEPS: {
     partners: [
       { name: "AllianceBernstein", file: "alliancebernstein.webp" },
       { name: "Société Générale", file: "societe-generale.webp" },
-      { name: "BTIG" },
+      { name: "BTIG", file: "btig.webp" },
       { name: "Maybank", file: "maybank.webp" },
       { name: "CFA Institute", file: "cfa-institute.webp" },
       { name: "SGX Group", file: "sgx.webp" },
-      { name: "TIM" },
-      { name: "DMA" },
+      { name: "TIM", file: "tim.webp" },
+      { name: "DMA", file: "dma.svg" },
       { name: "extractAlpha", file: "extractalpha.webp" },
-      { name: "Barrenjoey" },
+      { name: "Barrenjoey", file: "barrenjoey.webp" },
     ],
   },
 ];

@@ -49,12 +49,12 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
     <div
       className={
         premium
-          ? "relative flex h-full flex-col rounded-[12px] border-[1.5px] border-[var(--accent)] bg-[rgba(77,179,100,0.035)] p-7 shadow-[0_8px_24px_rgba(77,179,100,0.12)]"
+          ? "relative flex h-full flex-col rounded-[12px] border-[1.5px] border-[var(--premium)] bg-[rgba(13,69,103,0.035)] p-7 shadow-[0_8px_24px_rgba(13,69,103,0.14)]"
           : "flex h-full flex-col rounded-[12px] border border-[var(--hairline)] p-7"
       }
     >
       {premium && (
-        <span className="absolute -top-3 left-7 rounded-full bg-[var(--accent)] px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
+        <span className="absolute -top-3 left-7 rounded-full bg-[var(--premium)] px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
           Premium
         </span>
       )}
@@ -62,7 +62,7 @@ function TierCard({ t }: { t: (typeof TIERS)[number] }) {
         <div
           className={
             premium
-              ? "flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent)] text-white"
+              ? "flex h-10 w-10 items-center justify-center rounded-full bg-[var(--premium)] text-white"
               : "flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent-deep)]"
           }
         >
@@ -116,7 +116,7 @@ function ExpansionMath() {
         <path d="M7 13 L12 18 L17 13" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
 
-      <div className="flex flex-col items-center rounded-[10px] bg-[var(--accent)] px-3 py-2 text-center">
+      <div className="flex flex-col items-center rounded-[10px] bg-[var(--premium)] px-3 py-2 text-center">
         <div className="tabular text-[16px] font-bold leading-none text-white">N× Premium</div>
         <div className="mt-1 text-[10px] text-white/85">subscriptions per login</div>
       </div>

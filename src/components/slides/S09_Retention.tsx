@@ -74,9 +74,7 @@ export function S09_Retention({ index, total }: { index: number; total: number }
         </div>
 
         <div className="flex flex-col pl-10">
-          <div className="caption uppercase tracking-wide">
-            Resubscription Across Firms — by Number Subscribed At
-          </div>
+          <div className="caption uppercase tracking-wide">Resubscription Across Firms</div>
           <BarChart data={RESUB} dividerAfter={1} />
           <p className="border-t border-[var(--hairline)] pt-4 text-center font-serif text-[13px] italic text-[var(--body)]">
             94% of users re-subscribe after joining new firms, highlighting strong

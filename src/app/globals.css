@@ -25,6 +25,9 @@
      accents elsewhere. Used sparingly for extra pop. */
   --ai-pink: #b63998;
 
+  /* Premium subscription tier — used wherever "Premium" is called out. */
+  --premium: #0d4567;
+
   --slide-w: 1280px;
   --slide-h: 720px;
 }

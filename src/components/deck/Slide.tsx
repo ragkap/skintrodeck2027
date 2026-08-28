@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 interface SlideProps {
   index: number;
@@ -33,7 +34,14 @@ export function Slide({
       className={`relative flex h-[720px] w-[1280px] flex-col overflow-hidden bg-white text-[var(--ink)] ${className}`}
     >
       {!bare && (
-        <div className="px-16 pt-12 pb-6">
+        <div className="relative px-16 pt-12 pb-6">
+          <Image
+            src="/logos/smartkarma-logo.png"
+            alt="Smartkarma"
+            width={104}
+            height={20}
+            className="absolute top-12 right-16 h-[17px] w-auto opacity-90"
+          />
           {eyebrow ? (
             <div className="mb-2 flex items-center gap-2.5">
               <span className="rule" />

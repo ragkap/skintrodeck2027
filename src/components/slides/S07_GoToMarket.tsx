@@ -1,6 +1,15 @@
+import Image from "next/image";
 import { Slide } from "../deck/Slide";
+import { Mark } from "../deck/ui";
 
-const STEPS = [
+type Partner = { name: string; file?: string };
+
+const STEPS: {
+  n: string;
+  title: string;
+  desc: React.ReactNode;
+  partners?: Partner[];
+}[] = [
   {
     n: "01",
     title: "Direct Sales",
@@ -9,83 +18,118 @@ const STEPS = [
   {
     n: "02",
     title: "Platform Upsell",
-    desc: "Leveraging platform data for targeted upselling of premium & data subscriptions",
+    desc: (
+      <>
+        Platform usage data drives targeted, personalised upsell pathways — knowing
+        what matters most to each user. <Mark>60% of new revenue is inbound</Mark>,
+        then converted into premium subscriptions: a highly efficient flywheel.
+      </>
+    ),
   },
   {
     n: "03",
     title: "Channel Partners",
     desc: "Reselling Smartkarma solutions to their end customers",
-    logos: [
-      "AllianceBernstein",
-      "Société Générale",
-      "BTIG",
-      "Maybank",
-      "CFA Institute",
-      "SGX Group",
-      "TIM",
-      "DMA",
-      "extractAlpha",
-      "Barrenjoey",
+    partners: [
+      { name: "AllianceBernstein", file: "alliancebernstein.webp" },
+      { name: "Société Générale", file: "societe-generale.webp" },
+      { name: "BTIG" },
+      { name: "Maybank", file: "maybank.webp" },
+      { name: "CFA Institute", file: "cfa-institute.webp" },
+      { name: "SGX Group", file: "sgx.webp" },
+      { name: "TIM" },
+      { name: "DMA" },
+      { name: "extractAlpha", file: "extractalpha.webp" },
+      { name: "Barrenjoey" },
     ],
   },
 ];
 
-// Nodes sit on a ring of radius R around (CX, CY) at 120° apart, starting at
-// the top and going clockwise.
 const CX = 150;
-const CY = 132;
-const R = 108;
-const ANGLES = [-90, 30, 150];
-const pt = (deg: number) => ({
-  x: CX + R * Math.cos((deg * Math.PI) / 180),
-  y: CY + R * Math.sin((deg * Math.PI) / 180),
+const CY = 150;
+const OUTER_R = 130;
+const INNER_R = 80;
+const GAP = 3;
+const SEGMENTS = [
+  { start: -90, end: 30, color: "var(--accent-deep)" },
+  { start: 30, end: 150, color: "var(--accent)" },
+  { start: 150, end: 270, color: "var(--accent-deep)" },
+];
+
+const rad = (deg: number) => (deg * Math.PI) / 180;
+const pt = (r: number, deg: number) => ({
+  x: CX + r * Math.cos(rad(deg)),
+  y: CY + r * Math.sin(rad(deg)),
 });
-const NODES = ANGLES.map(pt);
+
+function donutSlice(startDeg: number, endDeg: number) {
+  const s = startDeg + GAP;
+  const e = endDeg - GAP;
+  const o1 = pt(OUTER_R, s);
+  const o2 = pt(OUTER_R, e);
+  const i1 = pt(INNER_R, e);
+  const i2 = pt(INNER_R, s);
+  const largeArc = e - s > 180 ? 1 : 0;
+  return `M ${o1.x} ${o1.y} A ${OUTER_R} ${OUTER_R} 0 ${largeArc} 1 ${o2.x} ${o2.y} L ${i1.x} ${i1.y} A ${INNER_R} ${INNER_R} 0 ${largeArc} 0 ${i2.x} ${i2.y} Z`;
+}
+
+const NETWORK_SATELLITES = [0, 60, 120, 180, 240, 300].map((deg) => pt(32, deg));
 
 function Flywheel() {
-  // Trim each 120° segment so it stops short of both node circles,
-  // leaving a visible gap for the arrowhead instead of hiding it behind
-  // the next node.
-  const arc = (fromDeg: number) => {
-    const start = pt(fromDeg + 16);
-    const end = pt(fromDeg + 104);
-    return `M ${start.x} ${start.y} A ${R} ${R} 0 0 1 ${end.x} ${end.y}`;
-  };
   return (
-    <svg viewBox="0 0 300 260" className="h-full w-full">
-      <defs>
-        <marker id="flyArrow" markerWidth="8" markerHeight="8" refX="3.5" refY="4" orient="auto">
-          <path d="M0,0 L8,4 L0,8 Z" fill="var(--accent)" />
-        </marker>
-      </defs>
-      {ANGLES.map((a) => (
-        <path
-          key={a}
-          d={arc(a)}
-          fill="none"
-          stroke="var(--accent)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          markerEnd="url(#flyArrow)"
-        />
-      ))}
+    <svg viewBox="0 0 300 300" className="h-full w-full">
+      {SEGMENTS.map((seg, i) => {
+        const mid = (seg.start + seg.end) / 2;
+        const labelPos = pt((OUTER_R + INNER_R) / 2, mid);
+        return (
+          <g key={i}>
+            <path d={donutSlice(seg.start, seg.end)} fill={seg.color} />
+            <text
+              x={labelPos.x}
+              y={labelPos.y + 9}
+              textAnchor="middle"
+              fontSize="26"
+              fontWeight="800"
+              fill="white"
+            >
+              0{i + 1}
+            </text>
+          </g>
+        );
+      })}
 
-      {NODES.map((p, i) => (
-        <g key={i}>
-          <circle cx={p.x} cy={p.y} r="30" fill="white" stroke="var(--accent)" strokeWidth="1.5" />
-          <text
-            x={p.x}
-            y={p.y + 7}
-            textAnchor="middle"
-            fontSize="18"
-            fontWeight="700"
-            fill="var(--accent-deep)"
-          >
-            {i + 1}
-          </text>
-        </g>
+      <circle cx={CX} cy={CY} r={INNER_R - 8} fill="white" />
+      <g stroke="var(--accent-deep)" strokeWidth="1.2" opacity="0.55">
+        {NETWORK_SATELLITES.map((s, i) => (
+          <line key={i} x1={CX} y1={CY} x2={s.x} y2={s.y} />
+        ))}
+      </g>
+      <circle cx={CX} cy={CY} r="5" fill="var(--accent-deep)" />
+      {NETWORK_SATELLITES.map((s, i) => (
+        <circle key={i} cx={s.x} cy={s.y} r="3.5" fill="var(--accent-deep)" opacity="0.75" />
       ))}
     </svg>
+  );
+}
+
+function PartnerCell({ p }: { p: Partner }) {
+  return (
+    <div className="flex h-8 items-center justify-center rounded-[5px] border border-[var(--hairline)] px-1.5">
+      {p.file ? (
+        <Image
+          src={`/logos/clients/${p.file}`}
+          alt={p.name}
+          width={100}
+          height={28}
+          className="h-[15px] w-auto object-contain"
+          unoptimized
+        />
+      ) : (
+        <span className="text-center text-[9px] font-semibold leading-tight text-[var(--ink)]">
+          {p.name}
+        </span>
+      )}
+    </div>
   );
 }
 
@@ -95,7 +139,7 @@ export function S07_GoToMarket({ index, total }: { index: number; total: number 
       index={index}
       total={total}
       title="Go To Market"
-      subtitle="Inbound flywheel repurposing published content, automation stack, and SEO with direct sales-led conversion"
+      subtitle="An inbound-led flywheel — repurposed content, automation and SEO feed direct sales, then platform usage data drives personalised upsell into premium"
     >
       <div className="grid h-full grid-cols-[0.85fr_1.15fr] items-center gap-10">
         <div className="flex h-full items-center justify-center">
@@ -111,15 +155,10 @@ export function S07_GoToMarket({ index, total }: { index: number; total: number 
               <div className="flex-1">
                 <h3 className="text-[15px] font-bold text-[var(--ink)]">{s.title}</h3>
                 <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--body)]">{s.desc}</p>
-                {s.logos && (
+                {s.partners && (
                   <div className="mt-3 grid grid-cols-5 gap-1.5">
-                    {s.logos.map((l) => (
-                      <div
-                        key={l}
-                        className="rounded-[5px] border border-[var(--hairline)] px-1.5 py-1 text-center text-[9px] font-semibold text-[var(--ink)]"
-                      >
-                        {l}
-                      </div>
+                    {s.partners.map((p) => (
+                      <PartnerCell key={p.name} p={p} />
                     ))}
                   </div>
                 )}

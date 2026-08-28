@@ -1,28 +1,75 @@
+import type { ReactNode } from "react";
 import { Slide } from "../deck/Slide";
 import { Bullet, Stat } from "../deck/ui";
 
-const CARDS = [
+function IconShield() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function IconTrendUp() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 17l6-6 4 4 8-8" />
+      <path d="M15 6h6v6" />
+    </svg>
+  );
+}
+
+function IconNetwork() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="5" cy="6" r="2.4" />
+      <circle cx="5" cy="18" r="2.4" />
+      <circle cx="18" cy="12" r="2.4" />
+      <path d="M7.2 6.8L15.8 11M7.2 17.2L15.8 13" />
+    </svg>
+  );
+}
+
+const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
   {
-    title: "Durable Competitive Advantage",
+    title: "Durable, Competitive Advantage",
+    icon: <IconShield />,
     points: [
-      "Only platform unifying real-time insight, specialist alt-data, and on-demand expertise",
-      "300+ Tier-1 institutions, corporates and exchanges as clients, with US$14T+ in AUM",
+      "Only platform unifying real-time insight, specialist alt-data, and on-demand expertise across special-sits, index and ECM",
+      "Global blue-chip customer base of 300+ Tier-1 financial institutions, corporates and exchanges with US$14T+ in AUM",
+      "10+ year insight archive serves as a proprietary data exhaust and grounding layer for AI-ready workflows",
     ],
   },
   {
     title: "Financial Inflection",
+    icon: <IconTrendUp />,
     points: [
-      "Advance-payment model, shifting mix toward first-party data at 30-90% gross margins",
-      "Profitable, ~10% net margins, no debt — growing 30% a year",
+      "Advance-payment model with 95%+ recurring revenue; shifting mix towards first-party data assets with 90%+ gross margin",
+      "Premium subscriptions scaling to 65% of mix. Proven land-and-expand, with top-5 client revenue up 3× in the last 4 years",
+      "Material operating leverage driving 2026E gross profit +57% YoY, EBITDA margin 2% → 11% (Base) / 15% (Bull)",
     ],
   },
   {
     title: "Consolidation Thesis",
+    icon: <IconNetwork />,
     points: [
-      "Fragmented market ripe for Buy & Build; global contracts enable immediate cross-sell",
-      "$100M+ cumulative LTM ARR pipeline identified, plus a maiden commodities data acquisition",
+      "Fragmented market ripe for a Buy & Build; global contracts allow for immediate cross-sell. APAC-leadership & asset-light",
+      "Identified pipeline of $100M+ cumulative LTM ARR across target opportunities, plus a maiden acquisition of a commodities data platform",
+      "Demonstrable track record with 10.6× valuation growth across 6 consecutive, structured up-rounds",
     ],
   },
+];
+
+const STATS = [
+  { value: "$112B", label: "TAM by 2030" },
+  { value: "60%+", label: "Gross margin, long-term target" },
+  { value: "+57%", label: "2026E gross profit, YoY" },
+  { value: "2%→11%", label: "EBITDA margin, 2025→FY26E" },
+  { value: ">$100M", label: "M&A pipeline, ARR identified" },
+  { value: "6/6", label: "Up-rounds, track record" },
+  { value: "30%", label: "Growth per year" },
+  { value: "25", label: "Team" },
 ];
 
 export function S03_KeyHighlights({ index, total }: { index: number; total: number }) {
@@ -33,19 +80,19 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
       title="Key Highlights"
       subtitle="Proven · Profitable · Scaling"
     >
-      <div className="flex h-full flex-col justify-center gap-10">
+      <div className="flex h-full flex-col justify-center gap-8">
         <div className="grid grid-cols-3 divide-x divide-[var(--hairline)]">
           {CARDS.map((c, i) => (
-            <div key={c.title} className={i === 0 ? "flex flex-col gap-4 pr-8" : "flex flex-col gap-4 px-8 last:pr-0"}>
-              <div className="flex items-baseline gap-2.5">
-                <span className="font-serif text-[22px] italic text-[var(--accent-deep)]">
-                  {i + 1}
+            <div key={c.title} className={i === 0 ? "flex flex-col gap-3.5 pr-8" : "flex flex-col gap-3.5 px-8 last:pr-0"}>
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[9px] bg-[var(--accent)]">
+                  {c.icon}
                 </span>
-                <h3 className="text-[17px] font-bold leading-tight text-[var(--ink)]">
+                <h3 className="text-[16px] font-bold leading-tight text-[var(--ink)]">
                   {c.title}
                 </h3>
               </div>
-              <ul className="flex flex-col gap-3.5">
+              <ul className="flex flex-col gap-2.5">
                 {c.points.map((p, j) => (
                   <Bullet key={j}>{p}</Bullet>
                 ))}
@@ -54,20 +101,10 @@ export function S03_KeyHighlights({ index, total }: { index: number; total: numb
           ))}
         </div>
 
-        <div className="grid grid-cols-5 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] pt-6">
-          <Stat value="30%" label="Growth per year" />
-          <div className="pl-8">
-            <Stat value="$6M" label="Cash, no debt" />
-          </div>
-          <div className="pl-8">
-            <Stat value="65%" label="Data as % of new sales" />
-          </div>
-          <div className="pl-8">
-            <Stat value="60%+" label="Inbound revenue" />
-          </div>
-          <div className="pl-8">
-            <Stat value="25" label="Team" />
-          </div>
+        <div className="grid grid-cols-4 gap-x-8 gap-y-5 border-t border-[var(--hairline)] pt-5">
+          {STATS.map((s) => (
+            <Stat key={s.label} value={s.value} label={s.label} />
+          ))}
         </div>
       </div>
     </Slide>

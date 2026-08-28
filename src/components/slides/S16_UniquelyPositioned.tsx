@@ -4,7 +4,7 @@ import { Mark } from "../deck/ui";
 const COLS = [40, 130, 220, 310];
 const ROWS = [30, 120, 210, 300];
 const NODE_COLOR = (i: number, j: number) => ((i + j) % 3 === 0 ? "var(--accent)" : "#d7dce2");
-const ICON_R = 34;
+const ICON_R = 16;
 
 function NetworkGraphic() {
   const nodes: { x: number; y: number; i: number; j: number }[] = [];
@@ -53,7 +53,17 @@ function NetworkGraphic() {
             <circle cx={cx} cy={cy} r={ICON_R} />
           </clipPath>
         </defs>
-        <circle cx={cx} cy={cy} r="40" fill="white" stroke="var(--accent)" strokeWidth="1.5" />
+        <circle cx={cx} cy={cy} r={ICON_R + 6} fill="white" />
+        <circle
+          className="glow-pulse"
+          cx={cx}
+          cy={cy}
+          r={ICON_R + 6}
+          fill="none"
+          stroke="var(--accent)"
+          strokeWidth="1.5"
+          style={{ transformBox: "fill-box", transformOrigin: "center" }}
+        />
         <image
           href="/logos/smartkarma-icon-brand.jpg"
           x={cx - ICON_R}

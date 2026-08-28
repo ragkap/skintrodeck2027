@@ -80,21 +80,20 @@ function NetworkGraphic() {
 
 const POINTS = [
   {
-    t: "Multi-Channel Distribution & Plug-and-Play Model:",
+    t: "Multi-Channel Distribution:",
     d: (
       <>
         <Mark>global enterprise contracts already in place</Mark> enable seamless
-        onboarding and immediate cross-sell opportunities for target customers.
+        onboarding and cross-sell.
       </>
     ),
   },
   {
-    t: "Scalable Technology & Easy Integration:",
+    t: "Scalable, Easy to Integrate:",
     d: (
       <>
-        cloud-native, AI-powered infrastructure supports{" "}
-        <Mark>rapid deployment across diverse data assets</Mark>, driving significant
-        operational efficiencies.
+        cloud-native, AI-powered infrastructure enables{" "}
+        <Mark>rapid deployment across diverse data assets</Mark>.
       </>
     ),
   },
@@ -102,8 +101,8 @@ const POINTS = [
     t: "Proven Market Credibility:",
     d: (
       <>
-        recognized industry expertise, <Mark>quoted 6+ times per day</Mark> in financial
-        media; recipient of the MAS Knowledge Enterprise Award (2021).
+        <Mark>quoted 6+ times per day</Mark> in financial media; recipient of the MAS
+        Knowledge Enterprise Award (2021).
       </>
     ),
   },
@@ -111,19 +110,17 @@ const POINTS = [
     t: "Strong Institutional Backing:",
     d: (
       <>
-        supported by trusted stakeholders including{" "}
-        <Mark>SGX, Enterprise Singapore, Peak XV (Sequoia), and Temasek-backed funds</Mark>{" "}
-        — reinforcing trust and execution strength.
+        supported by{" "}
+        <Mark>SGX, Enterprise Singapore, Peak XV (Sequoia), and Temasek-backed funds</Mark>.
       </>
     ),
   },
   {
-    t: "Attractive Valuations & Accretive M&A Landscape:",
+    t: "Attractive, Accretive M&A Landscape:",
     d: (
       <>
-        compelling public and precedent valuations create{" "}
-        <Mark>accretive acquisition opportunities</Mark> that accelerate scale and market
-        leadership.
+        compelling valuations create <Mark>accretive acquisition opportunities</Mark> that
+        accelerate scale.
       </>
     ),
   },

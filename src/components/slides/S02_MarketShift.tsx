@@ -66,7 +66,7 @@ export function S02_MarketShift({ index, total }: { index: number; total: number
               <svg
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
-                className="pointer-events-none absolute inset-0 h-full w-full"
+                className="pointer-events-none absolute inset-0 z-10 h-full w-full"
               >
                 <defs>
                   <marker id="growthArrow" markerWidth="7" markerHeight="7" refX="3.2" refY="3.5" orient="auto">

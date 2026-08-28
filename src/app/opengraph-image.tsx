@@ -56,26 +56,14 @@ export default async function Image() {
           style={{
             marginTop: 36,
             display: "flex",
-            flexDirection: "column",
             fontSize: 52,
             fontWeight: 700,
             lineHeight: 1.18,
             letterSpacing: "-0.015em",
+            color: "#111827",
           }}
         >
-          <div style={{ display: "flex", color: "#111827" }}>The Proprietary Investment</div>
-          <div style={{ display: "flex", color: "#111827" }}>Intelligence Platform</div>
-          <div style={{ display: "flex", color: "#3a9a53" }}>for the AI Era</div>
-        </div>
-        <div
-          style={{
-            marginTop: 28,
-            fontSize: 24,
-            color: "#64748b",
-            display: "flex",
-          }}
-        >
-          Investor Introduction
+          Smartkarma Introduction Presentation
         </div>
       </div>
     ),

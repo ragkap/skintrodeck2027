@@ -55,7 +55,7 @@ function NetworkGraphic() {
         </defs>
         <circle cx={cx} cy={cy} r="40" fill="white" stroke="var(--accent)" strokeWidth="1.5" />
         <image
-          href="/logos/smartkarma-icon.png"
+          href="/logos/smartkarma-icon-brand.jpg"
           x={cx - ICON_R}
           y={cy - ICON_R}
           width={ICON_R * 2}

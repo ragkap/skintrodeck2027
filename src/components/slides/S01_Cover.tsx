@@ -36,15 +36,14 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
           <div>
             <span className="rule mb-6 block" />
             <h1 className="max-w-[660px] text-[38px] font-bold leading-[1.18] tracking-[-0.015em] text-[var(--ink)]">
-              The Proprietary Investment Intelligence Platform{" "}
+              Investment Intelligence
+              <br />
               <span className="text-gradient">for the AI Era</span>
             </h1>
             <p className="mt-5 max-w-[560px] text-[15px] leading-relaxed text-[var(--body)]">
-              Smartkarma unifies real-time independent research, specialist alternative
-              data and direct access to analysts, augmented by{" "}
-              <span className="font-semibold text-[var(--ai-pink)]">αSK</span>, an AI
-              layer grounded in a decade of premium, curated research and designed to make
-              human expertise more accessible, not less.
+              The only platform unifying real-time independent insight, specialist
+              alternative data and on-demand analyst access, with an AI layer grounded in
+              that research that points readers to the analysts behind it, not around them.
             </p>
           </div>
           <div className="flex items-center justify-center">

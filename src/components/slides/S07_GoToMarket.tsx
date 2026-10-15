@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SkeletonImage } from "../deck/SkeletonImage";
 import { Slide } from "../deck/Slide";
 import { Flywheel } from "./flywheel";
 
@@ -43,7 +43,7 @@ function PartnerCell({ p }: { p: Partner }) {
   return (
     <div className="flex h-8 items-center justify-center rounded-[5px] border border-[var(--hairline)] px-1.5">
       {p.file ? (
-        <Image
+        <SkeletonImage
           src={`/logos/clients/${p.file}`}
           alt={p.name}
           width={100}

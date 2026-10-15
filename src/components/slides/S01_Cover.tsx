@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SkeletonImage } from "../deck/SkeletonImage";
 import { Slide } from "../deck/Slide";
 import { HeroTriangle } from "./hero-triangle";
 import { MASBadge } from "./mas-badge";
@@ -21,7 +21,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
         }}
       >
         <div className="relative flex items-center justify-between">
-          <Image
+          <SkeletonImage
             src="/logos/smartkarma-logo.png"
             alt="Smartkarma"
             width={156}
@@ -73,22 +73,22 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
         <div className="relative mt-2 flex items-center gap-6 border-t border-[var(--hairline)] pt-2">
           <span className="caption uppercase tracking-wide">Shareholders</span>
           <div className="flex items-center gap-5 opacity-80">
-            <Image src="/logos/sgx.png" alt="SGX" width={50} height={20} className="object-contain" />
-            <Image
+            <SkeletonImage src="/logos/sgx.png" alt="SGX" width={50} height={20} className="object-contain" />
+            <SkeletonImage
               src="/logos/peak-xv.jpg"
               alt="Peak XV"
               width={50}
               height={20}
               className="object-contain"
             />
-            <Image
+            <SkeletonImage
               src="/logos/jungle.jpg"
               alt="Jungle Ventures"
               width={70}
               height={26}
               className="h-4 w-auto object-contain"
             />
-            <Image
+            <SkeletonImage
               src="/logos/wavemaker.webp"
               alt="Wavemaker Partners"
               width={69}
@@ -96,7 +96,7 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
               className="h-4 w-auto object-contain"
               unoptimized
             />
-            <Image
+            <SkeletonImage
               src="/logos/enterprise-singapore.png"
               alt="Enterprise Singapore"
               width={40}

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SkeletonImage } from "../deck/SkeletonImage";
 import { Slide } from "../deck/Slide";
 
 export function S19_ThankYou({ index, total }: { index: number; total: number }) {
@@ -12,7 +12,7 @@ export function S19_ThankYou({ index, total }: { index: number; total: number })
         }}
       >
         <div className="relative">
-          <Image
+          <SkeletonImage
             src="/logos/smartkarma-logo.png"
             alt="Smartkarma"
             width={156}

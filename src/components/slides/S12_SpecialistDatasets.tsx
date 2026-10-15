@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SkeletonImage } from "../deck/SkeletonImage";
 import { Slide } from "../deck/Slide";
 import { Pill, Stat } from "../deck/ui";
 
@@ -76,7 +76,7 @@ function ClientLogo({ c }: { c: Client }) {
       }
     >
       {c.file ? (
-        <Image
+        <SkeletonImage
           src={`/logos/clients/${c.file}`}
           alt={c.name}
           width={100}

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SkeletonImage } from "../deck/SkeletonImage";
 import { Slide } from "../deck/Slide";
 import { Mark } from "../deck/ui";
 
@@ -107,7 +107,7 @@ export function S14_WhyNow({ index, total }: { index: number; total: number }) {
             className="fade-up mt-6 flex items-center gap-3"
             style={{ animationDelay: "0.75s" }}
           >
-            <Image
+            <SkeletonImage
               src="/logos/ray-dalio.jpg"
               alt="Ray Dalio"
               width={48}

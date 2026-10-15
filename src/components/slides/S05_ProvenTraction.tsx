@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SkeletonImage } from "../deck/SkeletonImage";
 import { Slide } from "../deck/Slide";
 import { Stat } from "../deck/ui";
 
@@ -77,7 +77,7 @@ function LogoCell({ logo }: { logo: Logo }) {
   return (
     <div className="flex h-9 items-center justify-center rounded-[6px] border border-[var(--hairline)] px-2.5">
       {logo.file ? (
-        <Image
+        <SkeletonImage
           src={`/logos/clients/${logo.file}`}
           alt={logo.name}
           width={120}

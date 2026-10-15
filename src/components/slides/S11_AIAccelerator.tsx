@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Slide } from "../deck/Slide";
 
 const PILLARS = [
@@ -69,8 +70,16 @@ function IconChart() {
   );
 }
 
-const FEATURES = [
-  { t: "Ask AI", d: "Your investment research AI sidekick", icon: IconChat },
+const FEATURES: { t: ReactNode; d: string; icon: () => ReactNode }[] = [
+  {
+    t: (
+      <>
+        Ask AI (<span className="text-[var(--ai-pink)]">αSK</span>)
+      </>
+    ),
+    d: "Your investment research AI sidekick",
+    icon: IconChat,
+  },
   { t: "Primer", d: "Up to speed on any company in minutes", icon: IconDoc },
   { t: "Meeting Prep", d: "Walk into any meeting fully briefed", icon: IconCalendar },
   { t: "SmartScript", d: "A synthetic expert call, on demand", icon: IconMic },
@@ -116,7 +125,7 @@ export function S11_AIAccelerator({ index, total }: { index: number; total: numb
           </div>
           <div className="grid grid-cols-6 gap-6">
             {FEATURES.map((f) => (
-              <div key={f.t} className="flex flex-col gap-2">
+              <div key={f.d} className="flex flex-col gap-2">
                 <div className="text-[var(--ai-pink)]">
                   <f.icon />
                 </div>

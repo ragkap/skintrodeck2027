@@ -60,7 +60,7 @@ export function S09_Retention({ index, total }: { index: number; total: number }
     <Slide
       index={index}
       total={total}
-      title="Retention"
+      title="Loyalty and Resubscription"
       subtitle="High user loyalty, with churn largely driven by structural employment changes"
     >
       <div className="grid h-full grid-cols-2 divide-x divide-[var(--hairline)] pt-2">

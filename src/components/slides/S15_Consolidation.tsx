@@ -1,7 +1,9 @@
 import { Slide } from "../deck/Slide";
 import { Mark, Table } from "../deck/ui";
 
-const DEALS: [string, string, string][] = [
+type Deal = [year: string, acquirer: string, target: string];
+
+const ALL_DEALS: Deal[] = [
   ["2015", "SS&C", "Advent Software"],
   ["2015", "NeoXam", "SmartCo"],
   ["2016", "Bloomberg", "Barclays RAIS"],
@@ -16,9 +18,6 @@ const DEALS: [string, string, string][] = [
   ["2020", "Nasdaq", "Solovis"],
   ["2020", "Morningstar", "Sustainalytics"],
   ["2020", "FactSet", "Truvalue Labs"],
-];
-
-const DEALS_2: [string, string, string][] = [
   ["2021", "LSEG", "Refinitiv"],
   ["2021", "Confluence", "Investment Metrics"],
   ["2021", "FactSet", "CUSIP Global Services"],
@@ -30,26 +29,46 @@ const DEALS_2: [string, string, string][] = [
   ["2025", "Clearwater", "Enfusion"],
   ["2025", "Alphasense", "Tegus"],
   ["2025", "S&P Global", "With Intelligence"],
+  ["2025", "BlueMatrix", "Street Context, Ranos, RMS"],
   ["2026", "Bloomberg", "Canoe Intelligence"],
   ["2026", "MSCI", "PM Insights, Compass & Vantager"],
+  ["2026", "BlueMatrix", "Aiera"],
+  ["2026", "Charles Schwab", "Forge Global"],
+  ["2026", "Uzabase", "Alternatives.pe"],
+  ["2026", "Fitch", "Trepp"],
+  ["2026", "Sixth Street Partners", "Kpler"],
+  ["2026", "Uzabase", "Global Information"],
+  ["2026", "Citadel Securities", "Wolfe Research"],
+  ["2026", "LSEG", "Octus (TBC)"],
 ];
 
-function styleRows(rows: [string, string, string][], padTo?: number) {
+const HALF = Math.ceil(ALL_DEALS.length / 2);
+const DEALS = ALL_DEALS.slice(0, HALF);
+const DEALS_2 = ALL_DEALS.slice(HALF);
+
+function rowTint(year: string) {
+  const y = Number(year);
+  if (y >= 2026) return "bg-[rgba(77,179,100,0.14)]";
+  if (y >= 2025) return "bg-[rgba(77,179,100,0.07)]";
+  return "";
+}
+
+function styleRows(rows: Deal[], padTo = 0) {
   const styled = rows.map(([year, acquirer, target]) => {
     const recent = Number(year) >= 2025;
     return [
       <span key="y" className={recent ? "font-bold text-gradient" : undefined}>
         {year}
       </span>,
-      <span key="a" className={recent ? "font-semibold text-[var(--ink)]" : undefined}>
+      <span key="a" className={`whitespace-nowrap ${recent ? "font-semibold text-[var(--ink)]" : ""}`}>
         {acquirer}
       </span>,
-      <span key="t" className={recent ? "font-semibold text-[var(--ink)]" : undefined}>
+      <span key="t" className={`whitespace-nowrap ${recent ? "font-semibold text-[var(--ink)]" : ""}`}>
         {target}
       </span>,
     ];
   });
-  while (padTo && styled.length < padTo) {
+  while (styled.length < padTo) {
     styled.push([<span key="pad">&nbsp;</span>, <span key="pad2" />, <span key="pad3" />]);
   }
   return styled;
@@ -110,7 +129,7 @@ export function S15_Consolidation({ index, total }: { index: number; total: numb
       title="An Industry Ripe for Consolidation"
       subtitle="Rapidly growing, highly fragmented, increasingly strategic: deal activity is consistent and accelerating"
     >
-      <div className="grid h-full grid-cols-[0.85fr_1.15fr] items-center gap-10 pt-1">
+      <div className="grid h-full grid-cols-[0.72fr_1.28fr] items-center gap-10 pt-1">
         <ul className="flex flex-col gap-5 border-r border-[var(--hairline)] pr-8">
           {POINTS.map((p, i) => (
             <li key={i} className="flex gap-2.5">
@@ -122,17 +141,24 @@ export function S15_Consolidation({ index, total }: { index: number; total: numb
           ))}
         </ul>
 
-        <div className="grid grid-cols-2 gap-3 text-[11px]">
-          <Table
-            dense
-            columns={["Year", "Acquirer", "Target"]}
-            rows={styleRows(DEALS, DEALS_2.length)}
-          />
-          <Table
-            dense
-            columns={["Year", "Acquirer", "Target"]}
-            rows={styleRows(DEALS_2, DEALS.length)}
-          />
+        <div className="flex flex-col">
+          <div className="grid grid-cols-2 gap-3 text-[11px]">
+            <Table
+              dense
+              columns={["Year", "Acquirer", "Target"]}
+              rows={styleRows(DEALS, DEALS_2.length)}
+              rowClassName={(_, i) => (DEALS[i] ? rowTint(DEALS[i][0]) : "")}
+            />
+            <Table
+              dense
+              columns={["Year", "Acquirer", "Target"]}
+              rows={styleRows(DEALS_2, DEALS.length)}
+              rowClassName={(_, i) => (DEALS_2[i] ? rowTint(DEALS_2[i][0]) : "")}
+            />
+          </div>
+          <p className="mt-3 text-[9.5px] leading-snug text-[var(--muted)]">
+            Non-exhaustive list of selected transactions.
+          </p>
         </div>
       </div>
     </Slide>

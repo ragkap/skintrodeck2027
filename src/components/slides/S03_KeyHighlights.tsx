@@ -59,11 +59,11 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
         towards first-party data assets with 90%+ gross margin
       </>,
       <>
-        Premium subscriptions scaling to 65% of mix. Proven land-and-expand, with
-        top-5 client revenue <Mark>up 3× in the last 4 years</Mark>
+        Premium subscriptions scaling to 65% of mix. Proven land-and-expand:{" "}
+        <Mark>113% net retention</Mark>, with top-5 client revenue up 3× in the last 4 years
       </>,
       <>
-        Material operating leverage driving <Mark>2026E gross profit +70% YoY</Mark>,
+        Material operating leverage driving <Mark>1H26A gross profit +85% YoY</Mark>,
         EBITDA margin 2% → 11% (Base) / 15% (Bull)
       </>,
     ],
@@ -90,12 +90,12 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
 
 const STATS = [
   { value: "$112B", label: "TAM by 2030" },
+  { value: "+33%", label: "ACV growth, year to Q2 2026" },
+  { value: "+85%", label: "1H26A gross profit, YoY" },
+  { value: "2%→21%", label: "EBITDA margin, 2025→1H26A" },
   { value: "60%+", label: "Gross margin, long-term target" },
-  { value: "+70%", label: "2026E gross profit, YoY" },
-  { value: "2%→11%", label: "EBITDA margin, 2025→FY26E" },
   { value: ">$100M", label: "M&A pipeline, ARR identified" },
   { value: "6/6", label: "Up-rounds, track record" },
-  { value: "30%", label: "Growth per year" },
   { value: "25", label: "Team" },
 ];
 

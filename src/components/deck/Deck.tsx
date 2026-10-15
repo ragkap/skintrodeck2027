@@ -46,6 +46,29 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
     return () => window.removeEventListener("keydown", onKey);
   }, [index, go, total]);
 
+  // Mouse wheel / trackpad: scrolling down advances, scrolling up goes back,
+  // one slide per gesture. Trackpads keep emitting momentum events for ~1s
+  // after a swipe, so only a wheel event that follows a pause starts a new
+  // gesture.
+  const lastWheel = useRef(0);
+  const wheelLockedUntil = useRef(0);
+
+  useEffect(() => {
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (Math.abs(delta) < 4) return;
+      const now = performance.now();
+      const pause = now - lastWheel.current;
+      lastWheel.current = now;
+      if (pause < 150 || now < wheelLockedUntil.current) return;
+      wheelLockedUntil.current = now + 400;
+      go(index + (delta > 0 ? 1 : -1));
+    };
+    window.addEventListener("wheel", onWheel, { passive: false });
+    return () => window.removeEventListener("wheel", onWheel);
+  }, [index, go]);
+
   return (
     <div className="fixed inset-0 bg-[#1a1d21]">
       <ImagePrefetch />

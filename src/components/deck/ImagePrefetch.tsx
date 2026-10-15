@@ -58,6 +58,7 @@ const IMAGE_PATHS = [
   "/logos/jungle.jpg",
   "/logos/peak-xv.jpg",
   "/logos/pvtiq.png",
+  "/logos/mas-logo.svg",
   "/logos/ray-dalio.jpg",
   "/logos/sgx.png",
   "/logos/smartkarma-icon-brand.jpg",

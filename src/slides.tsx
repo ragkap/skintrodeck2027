@@ -16,6 +16,9 @@ import { S15_Consolidation } from "@/components/slides/S15_Consolidation";
 import { S16_UniquelyPositioned } from "@/components/slides/S16_UniquelyPositioned";
 import { S17_SynergisticMA } from "@/components/slides/S17_SynergisticMA";
 import { S18_FundraiseHistory } from "@/components/slides/S18_FundraiseHistory";
+import { S20_ACVBridge } from "@/components/slides/S20_ACVBridge";
+import { S21_CustomerComposition } from "@/components/slides/S21_CustomerComposition";
+import { S22_RetentionByAccountSize } from "@/components/slides/S22_RetentionByAccountSize";
 import { S19_ThankYou } from "@/components/slides/S19_ThankYou";
 
 export const SLIDE_COMPONENTS = [
@@ -31,6 +34,9 @@ export const SLIDE_COMPONENTS = [
   S13_PrivateMarkets,
   S11_AIAccelerator,
   S08_RevenueGrowth,
+  S20_ACVBridge,
+  S21_CustomerComposition,
+  S22_RetentionByAccountSize,
   S09_Retention,
   S15_Consolidation,
   S14_WhyNow,

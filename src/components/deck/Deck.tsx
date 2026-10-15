@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ScaledStage } from "./ScaledStage";
 import { ImagePrefetch } from "./ImagePrefetch";
+import { AccessGate, useAccessStatus } from "./AccessGate";
 import type { ReactNode } from "react";
 
 export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initialIndex?: number }) {
@@ -10,6 +11,8 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
   const [index, setIndex] = useState(initialIndex);
   // Avoid rewriting the URL for the index we were mounted with.
   const lastPushed = useRef(initialIndex);
+  const { status: access, grant } = useAccessStatus();
+  const unlocked = access === "open";
 
   const go = useCallback(
     (next: number) => {
@@ -30,6 +33,7 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (!unlocked) return; // keep keys (incl. space) for the access form
       if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) {
         e.preventDefault();
         go(index + 1);
@@ -44,7 +48,7 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [index, go, total]);
+  }, [index, go, total, unlocked]);
 
   // Mouse wheel / trackpad: scrolling down advances, scrolling up goes back,
   // one slide per gesture. Trackpads keep emitting momentum events for ~1s
@@ -56,6 +60,7 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
+      if (!unlocked) return;
       const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
       if (Math.abs(delta) < 4) return;
       const now = performance.now();
@@ -67,12 +72,13 @@ export function Deck({ slides, initialIndex = 0 }: { slides: ReactNode[]; initia
     };
     window.addEventListener("wheel", onWheel, { passive: false });
     return () => window.removeEventListener("wheel", onWheel);
-  }, [index, go]);
+  }, [index, go, unlocked]);
 
   return (
     <div className="fixed inset-0 bg-[#1a1d21]">
       <ImagePrefetch />
       <ScaledStage>{slides[index]}</ScaledStage>
+      <AccessGate status={access} onGranted={grant} />
 
       {/* Click zones for advancing/going back without hunting for arrows */}
       <button

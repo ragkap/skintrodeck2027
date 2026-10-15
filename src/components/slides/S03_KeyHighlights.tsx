@@ -41,7 +41,7 @@ const CARDS: { title: string; icon: ReactNode; points: ReactNode[] }[] = [
         on-demand expertise across special-sits, index and ECM
       </>,
       <>
-        Global blue-chip customer base of <Mark>300+ Tier-1 institutions</Mark>, corporates
+        Global blue-chip customer base of <Mark>Tier-1 institutions</Mark>, corporates
         and exchanges with US$14T+ in AUM
       </>,
       <>

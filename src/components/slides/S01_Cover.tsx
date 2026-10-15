@@ -6,7 +6,7 @@ import { MASBadge } from "./mas-badge";
 const STATS = [
   { v: "60M+", l: "Data points" },
   { v: "256k+", l: "Discussions" },
-  { v: "46k+", l: "Companies covered" },
+  { v: "50k+", l: "Companies covered" },
   { v: "$14T", l: "Client AUM" },
 ];
 

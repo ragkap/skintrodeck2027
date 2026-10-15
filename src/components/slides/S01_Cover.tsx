@@ -42,8 +42,8 @@ export function S01_Cover({ index, total }: { index: number; total: number }) {
             </h1>
             <p className="mt-5 max-w-[560px] text-[15px] leading-relaxed text-[var(--body)]">
               The only platform unifying real-time independent insight, specialist
-              alternative data and on-demand analyst access, with an AI layer grounded in
-              that research that points readers to the analysts behind it, not around them.
+              alternative data and on-demand analyst access, with an AI layer that points
+              readers to the analysts behind it, not around them.
             </p>
           </div>
           <div className="flex items-center justify-center">
